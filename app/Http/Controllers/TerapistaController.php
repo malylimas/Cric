@@ -33,6 +33,16 @@ class TerapistaController extends Controller
     public function modificar(Terapista $terapista){
         return view('terapista.modificar')->with('terapista',$terapista);
     }
+
+    public function delete(Terapista $terapista){
+        $terapista->delete();
+        return redirect('terapista/index');
+    }
+
+    public function eliminar(Terapista $terapista){
+        
+        return view('terapista.eliminar')->with('terapista', $terapista);
+    }
     
     public function put(Request  $request, Terapista $terapista){
        
