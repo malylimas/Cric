@@ -28,8 +28,8 @@
       <td>{{ $terapista->Direccion }}</td>
       <td>
         <div class="btn-group" role="group" aria-label="...">
-          <button type="button" class="btn btn-default">Modificar</button>
-          <button type="button" class="btn btn-default">Eliminar</button>
+          <a type="button" class="btn btn-default" href="modificar/{{$terapista->id}}">Modificar</a>
+          <a type="button" class="btn btn-default">Eliminar</a>
         </div>
 
       </td>

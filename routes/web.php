@@ -11,8 +11,9 @@
 |
 */
 
-route::get('terapista/crear','TerapistaController@create');
+route::get('terapista/crear','TerapistaController@crear');
 route::post('terapista/crear','TerapistaController@store');
+route::get('terapista/modificar/{id}','TerapistaController@modificar');
 
 Route::get('/', function () {
     return view('welcome');

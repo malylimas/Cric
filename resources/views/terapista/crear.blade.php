@@ -2,11 +2,6 @@
 
 @section('content')
 
-
-
-<div class = "container">
-
-
 <form action= "crear" method="Post" role="form">
    {{ csrf_field()}}
 
