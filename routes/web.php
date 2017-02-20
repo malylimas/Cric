@@ -11,6 +11,9 @@
 |
 */
 
+route::get('terapista/crear','TerapistaController@create');
+route::post('terapista/crear','TerapistaController@store');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+route::get('terapista/index', 'TerapistaController@index');
+
+route::get('terapista/modificar', 'TerapistaController@modificar');
