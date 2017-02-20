@@ -4,17 +4,18 @@
 
 <div>
 
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-info" role="alert">
+
             <h3>
-                Desea deshabilitar al terapista?
+                Desea Habilitar un Terapista
              </h3>
 
              <h4>{{$terapista->Nombre}}</h4>
              
              <p>
-                <form action="/terapista/eliminar/{{$terapista->id}}" method ="Post" role="form"  >
+                <form action="/terapista/habilitar/{{$terapista->id}}" method ="Post" role="form"  >
                 {{ csrf_field()}}
-                    <button type="submit" class="btn btn-danger">Elminar</button>
+                    <button type="submit" class="btn btn-primary">Habilitar</button>
                     <a class= "btn btn-default" href="/terapista/index"> Cancelar</a>
                 </form>
              </p>

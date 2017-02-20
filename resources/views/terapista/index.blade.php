@@ -28,8 +28,12 @@
                 <td>{{ $terapista->Direccion }}</td>
                 <td>
                   <div class="btn-group" role="group" aria-label="...">
-                    <a type="button" class="btn btn-default" href="modificar/{{$terapista->id}}">Modificar</a>
-                    <a type="button" class="btn btn-default" href="eliminar/{{$terapista->id}}" >Eliminar</a>
+                    <a type="button" class="btn btn-primary" href="modificar/{{$terapista->id}}">Modificar</a>
+                    @if($terapista->trashed())
+                    <a type="button" class="btn btn-success" href="habilitar/{{$terapista->id}}" >Habilitar</a>
+                    @else
+                    <a type="button" class="btn btn-danger" href="eliminar/{{$terapista->id}}" >Deshabilitar</a>
+                    @endif
                   </div>
 
                 </td>

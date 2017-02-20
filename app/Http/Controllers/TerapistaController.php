@@ -9,6 +9,10 @@ use App\Terapista;
 class TerapistaController extends Controller
 {
     //
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function crear (){
         return view('terapista.crear');
@@ -26,7 +30,7 @@ class TerapistaController extends Controller
     }
 
     public function index(){
-        $terapistas = Terapista::all();
+        $terapistas = Terapista::withTrashed()->get();
         return view('terapista.index')->with('terapistas', $terapistas);
     }
 
@@ -53,5 +57,15 @@ class TerapistaController extends Controller
         $terapista->save();
         return redirect('terapista/index');
     }
-    
+     public function habilitar ($id){
+         $terapista = Terapista::withTrashed()->find($id);
+         return view ('terapista.habilitar')->with('terapista', $terapista);
+
+     }
+
+     public function success($id) {
+        $terapista = Terapista::withTrashed()->find($id);
+        $terapista->restore();
+        return redirect('terapista/index');
+     }  
 }

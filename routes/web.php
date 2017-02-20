@@ -17,6 +17,8 @@ route::get('terapista/modificar/{terapista}','TerapistaController@modificar');
 route::post('terapista/modificar/{terapista}','TerapistaController@put');
 route::get('terapista/eliminar/{terapista}','TerapistaController@eliminar');
 route::post('terapista/eliminar/{terapista}','TerapistaController@delete');
+route::get('terapista/habilitar/{id}','TerapistaController@habilitar');
+route::post('terapista/habilitar/{id}','TerapistaController@success');
 
 Route::get('/', function () {
     return view('welcome');
