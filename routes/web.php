@@ -13,7 +13,8 @@
 
 route::get('terapista/crear','TerapistaController@crear');
 route::post('terapista/crear','TerapistaController@store');
-route::get('terapista/modificar/{id}','TerapistaController@modificar');
+route::get('terapista/modificar/{terapista}','TerapistaController@modificar');
+route::post('terapista/modificar/{terapista}','TerapistaController@put');
 
 Route::get('/', function () {
     return view('welcome');

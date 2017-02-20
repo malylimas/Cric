@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action= "modificar/{{$terapista->id}}" method="Post" role="form">
+<form action= "/terapista/modificar/{{$terapista->id}}" method="Post" role="form">
    {{ csrf_field()}}
 
 <div class="form-group row">

@@ -22,7 +22,7 @@ class TerapistaController extends Controller
             'Direccion' => $request->Direccion
         ]);
         
-        return redirect('index');
+        return redirect('terapista/index');
     }
 
     public function index(){
@@ -30,15 +30,18 @@ class TerapistaController extends Controller
         return view('terapista.index')->with('terapistas', $terapistas);
     }
 
-    public function modificar($id){
-        $terapista= Terapista::find($id);
-
+    public function modificar(Terapista $terapista){
         return view('terapista.modificar')->with('terapista',$terapista);
     }
     
-    public function put($id){
-        $terapista= Terapista::find($id);
+    public function put(Request  $request, Terapista $terapista){
+       
+        $terapista->Nombre= $request->Nombre;
+        $terapista->Telefono=$request->Telefono;
+        $terapista->Direccion=$request->Direccion;
 
-        return view('terapista.modificar')->with('terapista',$terapista);
+        $terapista->save();
+        return redirect('terapista/index');
     }
+    
 }
