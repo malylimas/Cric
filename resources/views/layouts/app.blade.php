@@ -50,7 +50,7 @@
                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Terapia <span class="caret"></span></a>
                                   <ul class="dropdown-menu">
                                     <li><a href="/terapista/index">Terapistas</a></li>
-                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Terapias</a></li>
                                     <li><a href="#">Something else here</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="#">Separated link</a></li>

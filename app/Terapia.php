@@ -17,7 +17,7 @@ class Terapia extends Model
      * @var array
      */
     protected $fillable = [
-        'Nombre', 'precio', 
+        'Nombre', 'Precio', 
     ];
 
     protected $dates = ['deleted_at'];

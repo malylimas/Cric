@@ -20,6 +20,19 @@ route::post('terapista/eliminar/{terapista}','TerapistaController@delete');
 route::get('terapista/habilitar/{id}','TerapistaController@habilitar');
 route::post('terapista/habilitar/{id}','TerapistaController@success');
 
+
+
+
+route::get('terapia/crear','TerapiaController@crear');
+route::post('terapia/crear','TerapiaController@store');
+route::get('terapia/modificar/{terapia}','TerapiaController@modificar');
+route::post('terapia/modificar/{terapia}','TerapiaController@modificar');
+route::get('terapia/eliminar/{terapia}','TerapiaController@eliminar');
+route::post('terapia/eliminar/{terapia}','TerapiaController@delete');
+route::get('terapia/index','TerapiaController@index');
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
