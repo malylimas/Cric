@@ -16,11 +16,12 @@ class CreatePatologiasTable extends Migration
         Schema::create('patologias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Nombre_Patologia');
-            $table->string('terapia_id')->unsigned();
-            $table->foreign('terapia_id')->references('id')->on('terapia');
+            $table->integer('terapia_id')->unsigned();
+            
             $table->softDeletes();
             $table->timestamps();
 
+            
         });
     }
 
