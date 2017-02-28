@@ -11,6 +11,9 @@
 |
 */
 
+
+/* Terapista*/
+
 route::get('terapista/crear','TerapistaController@crear');
 route::post('terapista/crear','TerapistaController@store');
 route::get('terapista/modificar/{terapista}','TerapistaController@modificar');
@@ -19,17 +22,32 @@ route::get('terapista/eliminar/{terapista}','TerapistaController@eliminar');
 route::post('terapista/eliminar/{terapista}','TerapistaController@delete');
 route::get('terapista/habilitar/{id}','TerapistaController@habilitar');
 route::post('terapista/habilitar/{id}','TerapistaController@success');
+route::get('terapista/index', 'TerapistaController@index');
+route::get('terapista/modificar', 'TerapistaController@modificar');
 
-
-
+/* Terapia*/
 
 route::get('terapia/crear','TerapiaController@crear');
 route::post('terapia/crear','TerapiaController@store');
 route::get('terapia/modificar/{terapia}','TerapiaController@modificar');
-route::post('terapia/modificar/{terapia}','TerapiaController@modificar');
+route::post('terapia/modificar/{terapia}','TerapiaController@put');
 route::get('terapia/eliminar/{terapia}','TerapiaController@eliminar');
 route::post('terapia/eliminar/{terapia}','TerapiaController@delete');
+route::get('terapia/habilitar/{id}','TerapiaController@habilitar');
+route::post('terapia/habilitar/{id}','TerapiaController@success');
 route::get('terapia/index','TerapiaController@index');
+
+
+/*Patologia*/
+route::get('Patologia/crear','PatologiaController@crear');
+route::post('Patologia/crear','PatologiaController@store');
+route::get('Patologia/index','PatologiaController@index');
+route::get('Patologia/modificar/{Patologia}','PatologiaController@modificar');
+route::post('Patologia/modificar/{Patologia}','PatologiaController@modificar');
+route::get('Patologia/eliminar/{Patologia}','PatologiaController@eliminar');
+route::post('Patologia/eliminar/{Patologia}','PatologiaController@delete');
+route::get('Patologia/habilitar/{id}','PatologiaController@habilitar');
+route::post('Patologia/habilitar/{id}','PatologiaController@success');
 
 
 
@@ -41,6 +59,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-route::get('terapista/index', 'TerapistaController@index');
-
-route::get('terapista/modificar', 'TerapistaController@modificar');

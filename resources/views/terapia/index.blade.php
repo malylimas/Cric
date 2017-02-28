@@ -12,23 +12,28 @@
           <table class="table table-hover">
             <thead>
               <tr>
+                <th>#</th>
                 <th>Nombre</th>
                 <th>Precio</th>
-            
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
             @foreach ($terapias as $terapia)
               <tr>
-                <th scope="row">{{ $terapia->id }}</th>
+                <th>{{ $terapia->id }}</th>
                 <td>{{ $terapia->Nombre }}</td>
                 <td>{{ $terapia->Precio }}</td>
                 
                 <td>
                   <div class="btn-group" role="group" aria-label="...">
-                    <a type="button" class="btn btn-primary" href="modificar/{{$terapia->id}}">Modificar</a>
-                   
-                  </div>
+                     <a type="button" class="btn btn-primary" href="modificar/{{$terapia->id}}">Modificar</a>
+                      @if($terapia->trashed())
+                    <a type="button" class="btn btn-success" href="habilitar/{{$terapia->id}}" >Habilitar</a>
+                    @else
+                    <a type="button" class="btn btn-danger" href="eliminar/{{$terapia->id}}" >Deshabilitar</a>
+                    @endif                     
+                   </div>
 
                 </td>
               </tr>
