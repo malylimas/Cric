@@ -52,6 +52,7 @@
                                     <li><a href="/terapista/index">Terapistas</a></li>
                                     <li><a href="/terapia/index">Terapias</a></li>
                                     <li><a href="/Patologia/index">Patologia</a></li>
+                                    <li><a href="/expediente/index">Expediente</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="#">Separated link</a></li>
                                     <li role="separator" class="divider"></li>

@@ -18,7 +18,7 @@ use SoftDeletes;
      * @var array
      */
     protected $fillable = [
-        'Nombre_Patologia', 'Tipo_Terapia', 
+        'Nombre_Patologia', 'terapia_id', 
     ];
 
     protected $dates = ['deleted_at'];

@@ -11,18 +11,16 @@
   </div>
   <div class="form-group">
       <label for="disabledSelect">Tipo Terapia</label>
-      <select id="disabledSelect" name= "Tipo_terapia" class="form-control">
+      <select id="disabledSelect" name="terapia_id" class="form-control">
         
         @foreach($terapias as $terapia)
           <option value="{{$terapia->id}}"> {{$terapia->Nombre}} </option>
         @endforeach
-
       </select>
-    </div>
+      </div> 
   
-  
-  <button type="submit" class="btn btn-default">Guardar</button>
+      <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
-
+    
 
 @endsection

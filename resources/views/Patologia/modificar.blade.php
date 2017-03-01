@@ -2,28 +2,31 @@
 
 @section('content')
 
-<form action= "modificar"  method="Post" role="form">
-   {{ csrf_field()}}
 
-<div class="form-group row">
-  <label for="example-text-input" >Nombre De Patologia</label>
-  <input class="form-control" type="text" name= "Nombre_Patologia"  id="example-text-input" value= "{{$patologia->Nombre_Patologia}}">
+
+<form action= "/Patalogia/modificar/{{$patologia->id}}" method="Post" role="form">
+   {{ csrf_field()}}
+  
+  <div class="form-group">
+    <label for="example-text-input">Nombre De Patologia</label>
+    <input type="text" class="form-control" name= "Nombre_Patologia" id="example-text-input"value= "{{$patologia->Nombre_Patologia}}">
   </div>
 
-<div class="form-group">
+
+  <div class="form-group">
       <label for="disabledSelect">Tipo Terapia</label>
-      <select id="disabledSelect" name="Tipo_terapia" class="form-control">
+      <select id="disabledSelect" name="terapia_id" class="form-control">
        
         @foreach($terapias as $terapia)
-          @if ($terapia->id =  $patologia->terapia->id)
+            @if ($terapia->id =  $patologia->terapia->id)
             <option value="{{$terapia->id}}" selected> {{$terapia->Nombre}} </option>
-          @else
+            @else
             <option value="{{$terapia->id}}"> {{$terapia->Nombre}} </option>
-          @endif
+            @endif
         @endforeach
 
       </select>
-    </div>
+ </div>
   
  
 <button type="submit" class="btn btn-default">Guardar</button>

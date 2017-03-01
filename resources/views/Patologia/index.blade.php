@@ -22,7 +22,7 @@
               <tr>
                 <th>{{ $Patologia->id }}</th>
                 <td>{{ $Patologia->Nombre_Patologia }}</td>
-                <td>{{ $Patologia->Tipo_Terapia}}</td>
+                <td>{{ $Patologia->terapia->Nombre}}</td>
                 
                 <td>
                   <div class="btn-group" role="group" aria-label="...">

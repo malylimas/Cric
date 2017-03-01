@@ -43,11 +43,22 @@ route::get('Patologia/crear','PatologiaController@crear');
 route::post('Patologia/crear','PatologiaController@store');
 route::get('Patologia/index','PatologiaController@index');
 route::get('Patologia/modificar/{Patologia}','PatologiaController@modificar');
-route::post('Patologia/modificar/{Patologia}','PatologiaController@modificar');
+route::post('Patologia/modificar/{Patologia}','PatologiaController@put');
 route::get('Patologia/eliminar/{Patologia}','PatologiaController@eliminar');
 route::post('Patologia/eliminar/{Patologia}','PatologiaController@delete');
 route::get('Patologia/habilitar/{id}','PatologiaController@habilitar');
 route::post('Patologia/habilitar/{id}','PatologiaController@success');
+
+/*Expediente*/
+route::get('expediente/crear','ExpedienteController@crear');
+route::post('expediente/crear','ExpedienteController@store');
+route::get('expediente/index','ExpedienteController@index');
+route::get('expediente/modificar/{expediente}','ExpedienteController@modificar');
+route::post('expediente/modificar/{expediente}','ExpedienteController@put');
+route::get('expediente/eliminar/{expediente}','ExpedienteController@eliminar');
+route::post('expediente/eliminar/{expediente}','ExpedienteController@delete');
+route::get('expediente/habilitar/{id}','ExpedienteController@habilitar');
+route::post('expediente/habilitar/{id}','ExpedienteController@success');
 
 
 

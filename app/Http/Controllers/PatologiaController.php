@@ -23,7 +23,7 @@ class PatologiaController extends Controller
         
         patologia::create([
             'Nombre_Patologia'=>$request->Nombre_Patologia,
-            'Tipo_Terapia' => $request->Tipo_terapia,   
+            'terapia_id' => $request->terapia_id,   
 
         ]);
 
@@ -56,7 +56,7 @@ class PatologiaController extends Controller
        public function put(Request  $request, Patologia $Patologia){
        
         $Patologia->Nombre_Patologia= $request->Nombre_Patologia;
-        $Patologia->Tipo_Terapia=$request->Tipo_Terapia;
+        $Patologia->terapia_id=$request->terapia_id;
     
         $Patologia->save();
         return redirect('Patologia/index');
