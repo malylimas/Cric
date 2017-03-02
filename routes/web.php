@@ -60,6 +60,11 @@ route::post('expediente/eliminar/{expediente}','ExpedienteController@delete');
 route::get('expediente/habilitar/{id}','ExpedienteController@habilitar');
 route::post('expediente/habilitar/{id}','ExpedienteController@success');
 
+//Citas
+route::get('cita/crear','CitaController@crear');
+
+route::post('cita/crear/{expediente}','CitaController@store');
+route::get('cita/index','CitaController@index');
 
 
 Route::get('/', function () {

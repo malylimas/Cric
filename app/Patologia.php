@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Patologia extends Model
 {
 
-use SoftDeletes;
+    use SoftDeletes;
      //
     
 
@@ -18,19 +18,20 @@ use SoftDeletes;
      * @var array
      */
     protected $fillable = [
-        'Nombre_Patologia', 'terapia_id', 
+        'Nombre_Patologia', 'terapia_id',
     ];
 
     protected $dates = ['deleted_at'];
 
-    public function terapia(){
+    public function terapia()
+    {
         return $this->belongsTo('App\Terapia');
     }
 
 
 
 
-    /*   
+    /*
   
    protected  $table ='Patologia';
 
@@ -41,7 +42,5 @@ use SoftDeletes;
     return $this->hasMany('APP/tratamiento');
 }
 
- */ 
-     
-
+ */
 }

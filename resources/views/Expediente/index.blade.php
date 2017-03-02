@@ -17,7 +17,6 @@
                 <th>Direccion</th>
                 <th>Observacion</th>
                 <th>Identidad</th>
-                <th>Telefono</th>
                 <th>Sexo</th>
                 <th>Acciones</th>
                 
@@ -32,7 +31,7 @@
                 <td>{{ $expediente->Direccion }}</td>
                 <td>{{ $expediente->Observacion}}</td>
                 <td>{{ $expediente->Identidad}}</td>
-                <td>{{ $expediente->Sexo}}</td>
+                <td>{{ $expediente->sexo}}</td>
                 <td>
                   <div class="btn-group" role="group" aria-label="...">
                     <a type="button" class="btn btn-primary" href="modificar/{{$expediente->id}}">Modificar</a>

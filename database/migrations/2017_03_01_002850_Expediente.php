@@ -22,7 +22,6 @@ class Expediente extends Migration
             $table->string('Identidad');
             $table->string('Telefono');
             $table->string('sexo');
-            
             $table->softDeletes();
             $table->timestamps();
 

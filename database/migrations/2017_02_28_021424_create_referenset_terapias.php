@@ -28,6 +28,6 @@ class CreateReferensetTerapias extends Migration
     public function down()
     {
         //
-        $table->dropForeign('posts_user_id_foreign');
+        $table->dropForeign('patologias');
     }
 }

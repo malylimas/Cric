@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action= "expediente" method="Post" role="form">
+<form action= "crear" method="Post" role="form">
    {{ csrf_field()}}
 
 <div class="form-group row">
@@ -39,7 +39,7 @@
   <div class="form-group">
    <label for="disabledSelect">Sexo</label>
    <div class="col-10">
-   <select id="disabledSelect" class="form-control">
+   <select id="disabledSelect" name="Sexo" class="form-control">
    <option>Femenino</option>
    <option>Masculino</option>
   </select>

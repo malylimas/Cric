@@ -39,12 +39,15 @@
   </div>
 </div>
 
-<div class="form-group row">
-  <label for="example-text-input" class="col-2 col-form-label">Sexo</label>
-  <div class="col-10">
-    <input class="form-control" type="text" name="Sexo" value = "{{$expediente->Sexo}}" id="example-text-input">
+<div class="form-group">
+   <label for="disabledSelect">Sexo</label>
+   <div class="col-10">
+   <select id="disabledSelect" name="Sexo" class="form-control">
+   <option>Femenino</option>
+   <option>Masculino</option>
+  </select>
   </div>
-</div>
+  </div>
  
 
 <div class="form-group row">
