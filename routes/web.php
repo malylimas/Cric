@@ -67,6 +67,7 @@ route::post('cita/crear/{expediente}','CitaController@store');
 route::get('cita/index','CitaController@index');
 
 
+
 Route::get('/', function () {
     return view('welcome');
 });

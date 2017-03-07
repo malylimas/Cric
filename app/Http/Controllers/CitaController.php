@@ -43,4 +43,10 @@ class CitaController extends Controller
         
        return $request->Fecha;
     }
+
 }
+    
+
+     
+
+
