@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Expediente extends Model
+class municipio extends Model
 {
     use SoftDeletes;
      //
@@ -17,9 +17,17 @@ class Expediente extends Model
      * @var array
      */
     protected $fillable = [
-        'Nombre_Paciente', 'Direccion', 'Observacion','Identidad','Telefono','Sexo',
+        'Nombre_Municipio','Descripcion','departamento_id'
     ];
 
+    protected $dates = ['deleted_at'];
 
-    
+    public function departamento()
+    {
+        return $this->belongsTo('App\departamento');
+    }
+
+
+
+
 }

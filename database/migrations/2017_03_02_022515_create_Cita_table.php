@@ -20,7 +20,7 @@ class CreateCitaTable extends Migration
             $table->string('Hora');
             $table->integer('terapista_id')->unsigned();
             $table->integer('Patologia_id')->unsigned();
-            $table->integer('expediente_id')->unsigned();
+            $table->integer('Paciente_id')->unsigned();
             $table->softDeletes();
             $table->timestamps();
 

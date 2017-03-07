@@ -6,16 +6,16 @@
 
     <div class="alert alert-danger" role="alert">
             <h3>
-                Desea eliminar el Expediente?
+                Desea eliminar el Paciente?
              </h3>
 
-             <h4>{{$expediente->Nombre_Paciente}}</h4>
+             <h4>{{$Paciente->Nombre_Paciente}}</h4>
              
              <p>
-                <form action="/expediente/eliminar/{{$expediente->id}}" method ="Post" role="form"  >
+                <form action="/Paciente/eliminar/{{$Paciente->id}}" method ="Post" role="form"  >
                 {{ csrf_field()}}
                     <button type="submit" class="btn btn-danger">Elminar</button>
-                    <a class= "btn btn-default" href="/expediente/index"> Cancelar</a>
+                    <a class= "btn btn-default" href="/Paciente/index"> Cancelar</a>
                 </form>
              </p>
     </div>

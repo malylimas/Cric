@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Expediente extends Migration
+class CreatedepartamentoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,13 @@ class Expediente extends Migration
      */
     public function up()
     {
-    
-         Schema::create('expedientes', function (Blueprint $table) {
+        Schema::create('departamento', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Nombre_Paciente');
-            $table->string('Direccion');
-            $table->string('Observacion');
-            $table->string('Identidad');
-            $table->string('Telefono');
-            $table->string('sexo');
+            $table->string('Nombre_Departamento');
             $table->softDeletes();
             $table->timestamps();
 
-            
-        });
-    
+     });        
     }
 
     /**
@@ -37,6 +29,6 @@ class Expediente extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('expedientes');
+        $table->dropForeign('departamento');
     }
 }

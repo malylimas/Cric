@@ -16,7 +16,7 @@ class CreateReferensetCitasTable extends Migration
          Schema::table('citas', function (Blueprint $table) {
         $table->foreign('terapista_id')->references('id')->on('terapistas');
         $table->foreign('Patologia_id')->references('id')->on('Patologias');
-        $table->foreign('expediente_id')->references('id')->on('expedientes');
+        $table->foreign('Paciente_id')->references('id')->on('pacientes');
     });
         
     
