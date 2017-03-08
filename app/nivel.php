@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class niveleducativo extends Model
+class nivel extends Model
 {
      use SoftDeletes;
      //
@@ -22,5 +22,15 @@ class niveleducativo extends Model
 
     protected $dates = ['deleted_at'];
 
-    
+    protected $table ="nivel";
+
+
+
+ 
+
+ 
+        
+
+
+
 }

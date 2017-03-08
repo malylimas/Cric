@@ -19,11 +19,11 @@ class Paciente extends Migration
             $table->string('Identidad',13)->unique();
             $table->string('Nombre_Paciente');
             $table->string('Direccion_Actual');
-            $table->string('Fecha_Nacimineto');
+            $table->string('Fecha_Nacimiento');
             $table->string('Edad');
             $table->string('Telefono');
             $table->string('Ocupacion');
-            $table->integer('niveleducativo_id')->unsigned();
+            $table->integer('nivel_id')->unsigned();
             $table->integer('municipio_id')->unsigned();
             $table->integer('departamento_id')->unsigned();
             $table->softDeletes();

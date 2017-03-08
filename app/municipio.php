@@ -28,6 +28,6 @@ class municipio extends Model
     }
 
 
-
+     protected $table ="municipio";
 
 }

@@ -9,13 +9,13 @@
                 Desea eliminar el Paciente?
              </h3>
 
-             <h4>{{$Paciente->Nombre_Paciente}}</h4>
+             <h4>{{$paciente->Nombre_Paciente}}</h4>
              
              <p>
-                <form action="/Paciente/eliminar/{{$Paciente->id}}" method ="Post" role="form"  >
+                <form action="/Paciente/eliminar/{{paciente->id}}" method ="Post" role="form"  >
                 {{ csrf_field()}}
                     <button type="submit" class="btn btn-danger">Elminar</button>
-                    <a class= "btn btn-default" href="/Paciente/index"> Cancelar</a>
+                    <a class= "btn btn-default" href="/paciente/index"> Cancelar</a>
                 </form>
              </p>
     </div>

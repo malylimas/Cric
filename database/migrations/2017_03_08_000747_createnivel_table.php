@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRefpacientesTable extends Migration
+class CreatenivelTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateRefpacientesTable extends Migration
      */
     public function up()
     {
-     
-        Schema::table('pacientes', function (Blueprint $table) {
-        $table->foreign('municipio_id')->references('id')->on('municipio');
-        $table->foreign('departamento_id')->references('id')->on('departamento');
-    });
-    
+       Schema::create('nivel', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('Descripcion');
+            $table->softDeletes();
+            $table->timestamps(); 
+     });        
 
     }
 
@@ -29,6 +29,6 @@ class CreateRefpacientesTable extends Migration
      */
     public function down()
     {
-       $table->dropForeign('pacientes'); 
+        $table->dropForeign('nivel');
     }
 }

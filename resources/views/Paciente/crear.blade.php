@@ -9,7 +9,7 @@
 <div class="form-group row">
   <label for="example-text-input" class="col-2 col-form-label">Identidad</label>
   <div class="col-10">
-    <input class="form-control" type="text"  name="Identidad" id="example-text-input">
+    <input class="form-control" type="text"  name="Identidad"  id="example-text-input">
   </div>
   </div>
 
@@ -24,7 +24,7 @@
   <div class="col-10">
     <input class="form-control" type="text" name="Direccion_Actual"  id="example-text-input">
   </div>
-</div>
+  </div>
 <div class="form-group row">
   <label for="example-text-input" class="col-2 col-form-label">Fecha De Nacimiento</label>
   <div class="col-10">
@@ -50,12 +50,48 @@
   </div>
   </div>
 
-<div class="form-group row">
-      <div class="offset-sm-2 col-sm-10">
-        <button type="submit" class="btn btn-primary">Guardar</button>
-      </div>
+ 
+  <div class="form-group row">
+  <label for="disabledSelect">Nivel Educativo</label>
+  <div class="col-10">
+  <select id="disabledSelect" name="nivel_id" class="form-control">
+    
+    @foreach($niveles as $nivel)
+      <option value="{{$nivel->id}}"> {{$nivel->Descripcion}} </option>
+    @endforeach
+      </select
+
+  </div>
+  </div>
+  </div>
+
+
+   <div class="form-group row">
+   <label for="disabledSelect">Municipio</label>
+   <div class="col-10">
+   <select id="disabledSelect" name="municipio_id" class="form-control">
+    
+    @foreach($municipios as $municipio)
+      <option value="{{$municipio->id}}"> {{$municipio->Nombre_Municipio}} </option>
+    @endforeach
+      </select
+  </div>
+  </div>
+  </div>
+  
+
+    <div class="form-group row">
+    <label for="disabledSelect">Departamento</label>
+    <select id="disabledSelect" name="departamento_id" class="form-control">
+    
+     @foreach($departamentos as $departamento)
+       <option value="{{$departamento->id}}"> {{$departamento->Nombre_Departamento}} </option>
+     @endforeach
+      </select
     </div>
-</div>
+    </div> 
+  
+      <button type="submit" class="btn btn-primary">Guardar</button>
 </form
 
 @endsection

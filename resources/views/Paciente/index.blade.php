@@ -19,6 +19,9 @@
                 <th>Edad</th>
                 <th>Telefono</th>
                 <th>Ocupacion</th>
+                <th>Nivel Educativo</th>
+                <th>Municipio</th>
+                <th>Departamento</th>
                 <th>Acciones</th>
                 
               </tr>
@@ -26,6 +29,7 @@
             <tbody>
             @foreach ($pacientes as $paciente)
               <tr>
+
                 <th scope="row">{{ $paciente->id }}</th>
                 <td>{{ $paciente->Identidad }}</td>
                 <td>{{ $paciente->Nombre_Paciente }}</td>
@@ -34,6 +38,9 @@
                 <td>{{ $paciente->Edad}}</td>
                 <td>{{ $paciente->Telefono}}</td>
                 <td>{{ $paciente->Ocupacion}}</td>
+                <td>{{ $paciente->nivel->Descripcion}}</td>
+                <td>{{$paciente->municipio->Nombre_Municipio}}</td>
+                <td>{{$paciente->departamento->Descripcion}}</td>
                 <td>
                   <div class="btn-group" role="group" aria-label="...">
                     <a type="button" class="btn btn-primary" href="modificar/{{$paciente->id}}">Modificar</a>

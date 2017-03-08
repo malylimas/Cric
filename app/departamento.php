@@ -17,7 +17,7 @@ class departamento extends Model
      * @var array
      */
     protected $fillable = [
-       ' Nombre_Departamento',
+       'Nombre_Departamento',
     ];
 
     protected $dates = ['deleted_at'];
@@ -27,5 +27,5 @@ class departamento extends Model
         return $this->HasMany('App\municipio');
     }
 
-
+     protected $table ="departamento";
 }

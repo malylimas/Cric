@@ -17,14 +17,14 @@ class Paciente extends Model
      * @var array
      */
     protected $fillable = [
-        'Nombre_Paciente', 'Direccion_Actual', 'Fecha_Nacimiento','Edad','Telefono','Ocupacion','niveleducativo_id','municipio_id','departamento_id',
+       'Identidad','Nombre_Paciente', 'Direccion_Actual', 'Fecha_Nacimiento','Edad','Telefono','Ocupacion','nivel','municipio','departamento','nivel_id','municipio_id','departamento_id',
     ];
 
     protected $dates = ['deleted_at'];
 
-    public function niveleducativo()
+    public function nivel()
     {
-        return $this->belongsTo('App\niveleducativo');
+        return $this->belongsTo('App\nivel');
     }
     
 

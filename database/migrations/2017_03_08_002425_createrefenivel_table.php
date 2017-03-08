@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateniveleducativoTable extends Migration
+class CreaterefenivelTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateniveleducativoTable extends Migration
      */
     public function up()
     {
-       Schema::create('niveleducativo', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('Descripcion');
-            $table->softDeletes();
-            $table->timestamps(); 
-     });        
+     Schema::table('pacientes', function (Blueprint $table) {
+        $table->foreign('nivel_id')->references('id')->on('nivel');
+        
+    });
     }
 
     /**
@@ -28,6 +26,9 @@ class CreateniveleducativoTable extends Migration
      */
     public function down()
     {
-        $table->dropForeign('niveleducativo');
+        $table->dropForeign('pacientes');
     }
 }
+
+
+

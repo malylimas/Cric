@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Expediente;
-
+use App\Paciente;
+use App\nivel;
+use App\municipio;
+use App\departamento;
 
 class PacienteController extends Controller
 {
@@ -14,7 +16,10 @@ class PacienteController extends Controller
     }
 
     public function crear (){
-        return view('Paciente.crear');
+        $niveles= nivel:: All();
+        $municipios= municipio:: All();
+        $departamentos= departamento::All();
+        return view('Paciente.crear')->with('niveles',$niveles)->with('municipios',$municipios)->with('departamentos',$departamentos);
     }
 
     public function store(Request $request){
@@ -23,10 +28,14 @@ class PacienteController extends Controller
             'Identidad' => $request->Identidad,
             'Nombre_Paciente'=>$request->Nombre_Paciente,
             'Direccion_Actual' => $request->Direccion_Actual, 
-            'Fecha_Nacimiento' => $request->Observacion,
+            'Fecha_Nacimiento' => $request->Fecha_Nacimiento,
+            'Edad' =>$request->Edad,
             'Telefono' => $request->Telefono,
             'Ocupacion' => $request->Ocupacion,
-            'Sexo' => $request->Sexo,
+            'nivel_id'=>$request->nivel_id,
+            'municipio_id'=>$request->municipio_id,
+            'departamento_id'=>$request->departamento_id,
+            
 
         ]);
 
@@ -40,17 +49,17 @@ class PacienteController extends Controller
 
 
     public function modificar(Paciente $paciente){
-        return view('Paciente.modificar')->with('Paciente',$paciente);
+        return view('Paciente.modificar')->with('pacientes',$paciente);
     }
 
     public function delete(Paciente $paciente){
         $paciente->delete();
-        return redirect('Paciente/index');
+        return redirect('pacientes/index');
     }
 
     public function eliminar(Paciente $paciente){
         
-        return view('Paciente.eliminar')->with('Paciente', $paciente);
+        return view('pacientes.eliminar')->with('pacientes', $paciente);
     }
 
 
@@ -62,26 +71,27 @@ class PacienteController extends Controller
         $paciente->Edad=$request->Edad;
         $paciente->Telefono=$request->Telefono;
         $paciente->Ocupacion=$request->Ocupacion;
-      
-    
+        $paciente->nivel_id=$request->nivel_id;
+        $paciente->municipio_id=$request->municipio_id;
+        $paciente->departamento_id=$request->departamento_id;   
         $paciente->save();
-        return redirect('Paciente/index');
+        return redirect('pacientes/index');
         
     }
     public function habilitar ($id){
          $paciente = Paciente::withTrashed()->find($id);
-         return view ('Paciente.habilitar')->with('Paciente', $paciente);
+         return view ('pacientes.habilitar')->with('pacientes', $paciente);
 
      }
 
      public function success($id) {
         $paciente = Paciente::withTrashed()->find($id);
         $paciente->restore();
-        return redirect('Paciente/index');
+        return redirect('pacientes/index');
      }  
 
      public function Paciente(Paciente $paciente){
-        return view('Paciente.Paciente')->with('Paciente',$Paciente);
+        return view('pacientes.pacientes')->with('Paciente',$Paciente);
     }
 }
      
