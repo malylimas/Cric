@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action= "/paciente/modificar/{{$expediente->id}}" method="Post" role="form">
+<form action= "/paciente/modificar/{{$paciente->id}}" method="Post" role="form">
    {{ csrf_field()}}
 
 
@@ -20,7 +20,7 @@
   </div>
 </div>
 <div class="form-group row">
-  <label for="example-text-input" class="col-2 col-form-label">Dirección_Actual</label>
+  <label for="example-text-input" class="col-2 col-form-label">Dirección Actual</label>
   <div class="col-10">
     <input class="form-control" type="text" name="Direccion_Actual" value = "{{$paciente->Direccion_Actual}}" id="example-text-input">
   </div>

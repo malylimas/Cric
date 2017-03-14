@@ -6,7 +6,7 @@
 
     <div class="alert alert-danger" role="alert">
             <h3>
-                Desea eliminar la Cita?
+                Desea deshabilitar al cita?
              </h3>
 
              <h4>{{$cita->Nombre}}</h4>

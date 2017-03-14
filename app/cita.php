@@ -18,7 +18,7 @@ class cita extends Model
      * @var array
      */
     protected $fillable = [
-        'Nombre_Paciente' , 'Fecha', 'Hora','terapista_id', 'Patologia_id', 'expediente_id', 
+        'Nombre_Paciente' , 'Fecha_Hora','terapista_id', 'Patologia_id', 'paciente_id', 
     ];
 
     protected $dates = ['deleted_at'];
@@ -28,10 +28,12 @@ class cita extends Model
     }
 
     public function Patologia(){
-        return $this->belongsTo('App\Patologia');
+        return $this->belongsTo(Patologia::class, 'Patologia_id');
     }
     
-    public function expediente(){
-        return $this->belongsTo('App\Expediente');
+    public function paciente(){
+        return $this->belongsTo('App\Paciente');
     }
+
+     protected $table ="cita";
 }

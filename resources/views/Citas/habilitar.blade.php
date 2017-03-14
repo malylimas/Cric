@@ -7,7 +7,7 @@
     <div class="alert alert-info" role="alert">
 
             <h3>
-                Desea Habilitar una Cita
+                Desea Habilitar un Cita
              </h3>
 
              <h4>{{$cita->Nombre}}</h4>

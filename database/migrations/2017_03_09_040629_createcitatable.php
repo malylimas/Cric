@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCitaTable extends Migration
+class Createcitatable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateCitaTable extends Migration
      */
     public function up()
     {
-        Schema::create('citas', function (Blueprint $table) {
+        Schema::create('cita', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Nombre_Patologia');
-            $table->string('Fecha');
-            $table->string('Hora');
+            $table->integer('paciente_id')->unsigned();
             $table->integer('terapista_id')->unsigned();
             $table->integer('Patologia_id')->unsigned();
-            $table->integer('Paciente_id')->unsigned();
+            $table->Datetime('Fecha_Hora');
             $table->softDeletes();
             $table->timestamps();
 
@@ -28,6 +26,7 @@ class CreateCitaTable extends Migration
         });
 
     
+
 
     }
 
@@ -38,7 +37,6 @@ class CreateCitaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('citas');
+      $table->dropForeign('cita');      
     }
-
 }

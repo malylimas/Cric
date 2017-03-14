@@ -40,7 +40,7 @@
                 <td>{{ $paciente->Ocupacion}}</td>
                 <td>{{ $paciente->nivel->Descripcion}}</td>
                 <td>{{$paciente->municipio->Nombre_Municipio}}</td>
-                <td>{{$paciente->departamento->Descripcion}}</td>
+                <td>{{$paciente->departamento->Nombre_Departamento}}</td>
                 <td>
                   <div class="btn-group" role="group" aria-label="...">
                     <a type="button" class="btn btn-primary" href="modificar/{{$paciente->id}}">Modificar</a>

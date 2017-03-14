@@ -25,6 +25,7 @@ class PacienteController extends Controller
     public function store(Request $request){
         
         Paciente::create([
+           
             'Identidad' => $request->Identidad,
             'Nombre_Paciente'=>$request->Nombre_Paciente,
             'Direccion_Actual' => $request->Direccion_Actual, 
@@ -36,7 +37,6 @@ class PacienteController extends Controller
             'municipio_id'=>$request->municipio_id,
             'departamento_id'=>$request->departamento_id,
             
-
         ]);
 
         return redirect('Paciente/index');
@@ -49,17 +49,17 @@ class PacienteController extends Controller
 
 
     public function modificar(Paciente $paciente){
-        return view('Paciente.modificar')->with('pacientes',$paciente);
+        return view('Paciente.modificar')->with('paciente',$paciente);
     }
 
     public function delete(Paciente $paciente){
         $paciente->delete();
-        return redirect('pacientes/index');
+        return redirect('Paciente/index');
     }
 
     public function eliminar(Paciente $paciente){
         
-        return view('pacientes.eliminar')->with('pacientes', $paciente);
+        return view('Paciente.eliminar')->with('paciente', $paciente);
     }
 
 
@@ -80,18 +80,18 @@ class PacienteController extends Controller
     }
     public function habilitar ($id){
          $paciente = Paciente::withTrashed()->find($id);
-         return view ('pacientes.habilitar')->with('pacientes', $paciente);
+         return view ('paciente.habilitar')->with('paciente', $paciente);
 
      }
 
      public function success($id) {
         $paciente = Paciente::withTrashed()->find($id);
         $paciente->restore();
-        return redirect('pacientes/index');
+        return redirect('paciente/index');
      }  
 
      public function Paciente(Paciente $paciente){
-        return view('pacientes.pacientes')->with('Paciente',$Paciente);
+        return view('paciente.paciente')->with('paciente',$Paciente);
     }
 }
      

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReferensetCitasTable extends Migration
+class CreateRefcitatable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,17 @@ class CreateReferensetCitasTable extends Migration
      */
     public function up()
     {
-         Schema::table('citas', function (Blueprint $table) {
+              Schema::table('cita', function (Blueprint $table) {
+        $table->foreign('paciente_id')->references('id')->on('pacientes');         
         $table->foreign('terapista_id')->references('id')->on('terapistas');
         $table->foreign('Patologia_id')->references('id')->on('Patologias');
-        $table->foreign('Paciente_id')->references('id')->on('pacientes');
+        
     });
         
     
     }
+
+    
 
     /**
      * Reverse the migrations.
@@ -29,6 +32,6 @@ class CreateReferensetCitasTable extends Migration
      */
     public function down()
     {
-        $table->dropForeign('citas');
+       $table->dropForeign('cita');
     }
 }

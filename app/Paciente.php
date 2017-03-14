@@ -26,7 +26,13 @@ class Paciente extends Model
     {
         return $this->belongsTo('App\nivel');
     }
-    
-
+    public function municipio()
+    {
+        return $this->belongsTo('App\municipio');
+    }
+    public function departamento()
+    {
+        return $this->belongsTo('App\departamento');
+    }
     
 }
