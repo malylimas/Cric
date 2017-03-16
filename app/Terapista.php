@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\cita;
 
 class Terapista extends Model
 {
@@ -20,4 +21,8 @@ class Terapista extends Model
     ];
 
     protected $dates = ['deleted_at'];
+
+    public function citas(){
+        return $this->hasMany(cita::class);
+    }
 }

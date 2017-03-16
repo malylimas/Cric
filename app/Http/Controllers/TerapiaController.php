@@ -70,6 +70,8 @@ class TerapiaController extends Controller
      }  
 
      public function Patologia(Terapia $terapia){
+
+         
         return view('terapia.patologia')->with('terapia',$terapia);
     }
 }

@@ -16,6 +16,7 @@
                 <th>Telefono</th>
                 <th>Direccion</th>
                 <th>Acciones</th>
+                <th>Disponibilidad</th>
                 
               </tr>
             </thead>
@@ -26,6 +27,7 @@
                 <td>{{ $terapista->Nombre }}</td>
                 <td>{{ $terapista->Telefono }}</td>
                 <td>{{ $terapista->Direccion }}</td>
+                <td>{{ $terapista->disponibilidad}}</td>
                 <td>
                   <div class="btn-group" role="group" aria-label="...">
                     <a type="button" class="btn btn-primary" href="modificar/{{$terapista->id}}">Modificar</a>
@@ -37,7 +39,14 @@
                   </div>
 
                 </td>
-              </tr>
+
+                <td>
+                  <div class="btn-group" role="group" aria-label="...">
+                  <a type="button" class="btn btn-primary" href="disponibilidad/{{$terapista->id}}/?tipo=m&fecha={{$now}}">Disponibilidad</a>
+                  </div>
+                </tr>
+
+              
               
               @endforeach
             </tbody>

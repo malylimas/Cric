@@ -102,7 +102,9 @@ class CitaController extends Controller
 
      
     public function imprimir(Cita $cita){
-        return view('Citas.imprimir')->with('cita',$cita);
+
+        
+        return view('Citas.imprimir')->with('cita', $cita);
     }
      
 }

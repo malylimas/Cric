@@ -26,7 +26,7 @@
     <div class="form-group">
         <label for="patologiaCombo" class="col-2 col-form-label">Patologia</label>
         <div class="col-10">
-            <select class="form-control"  name="patologia_id" id="patologiaCombo" >
+            <select class="form-control"  name="Patologia_id" id="patologiaCombo" >
                 @foreach ($patologias as $patologia)
                     <option value="{{$patologia->id}}">{{$patologia->Nombre_Patologia}}</option>
                 @endforeach

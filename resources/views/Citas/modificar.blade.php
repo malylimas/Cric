@@ -14,7 +14,6 @@
   </div>
 
 
-  
   <div class="form-group">
         <label for="example-text-input" class="col-2 col-form-label">Terapista</label>
         <div class="col-10">
@@ -26,21 +25,23 @@
         </div>
     </div>
 
-    <div class="form-group">
+
+   <div class="form-group">
         <label for="patologiaCombo" class="col-2 col-form-label">Patologia</label>
         <div class="col-10">
             <select class="form-control"  name="Patologia_id" id="PatologiaCombo" value="{{$cita->Nombre_Patologia}}" >
-                @foreach ($patologias as $Patologia)
-                    <option value="{{$Patologia->id}}">{{$Patologia->Nombre_Patologia}}</option>
+                @foreach ($patologias as $patologia)
+                    <option value="{{$patologia->id}}">{{$patologia->Nombre_Patologia}}</option>
                 @endforeach
             </select>
         </div>
-    </div>
+
+    
 
     <div class="form-group">
         <label for="fechaPicker" class="col-2 col-form-label">Fecha Hora</label>
         <div class="col-10">
-            <input class="form-control" id= "fechaPicker" name = "Fecha_Hora" type="datetime-local" value="{{$cita->Fecha_Hora}}">
+            <input class="form-control" id= "fechaPicker" name ="Fecha_Hora" type="datetime-local" value="{{$cita->Fecha_Hora}}">
         </div>
     </div>
        

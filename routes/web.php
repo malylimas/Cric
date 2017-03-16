@@ -75,7 +75,8 @@ route::post('cita/habilitar/{id}','CitaController@success');
 
 
 //Reporte de Citas
-route::get('cita/imprimir/{id}','CitaController@imprimir');
+route::get('cita/imprimir/{cita}','CitaController@imprimir');
+route::get('terapista/disponibilidad/{terapista}','TerapistaController@disponibilidad');
 
 
 Route::get('/', function () {

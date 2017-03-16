@@ -56,7 +56,7 @@
                                     <li role="separator" class="divider"></li>
                                     <li><a href="/cita/index">Citas</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="/cita/imprimir/{{$cita->id}}">Cita Imprimir</a></li>
+                                    <li><a href=""></a></li>
                                 </ul>
                             </li>
                            
