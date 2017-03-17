@@ -1,6 +1,6 @@
 
 window._ = require('lodash');
-
+require('bootstrap-datepicker');
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -16,6 +16,7 @@ require('bootstrap-sass');
  * using reactive data binding and reusable components. Vue's API is clean
  * and simple, leaving you to focus on building your next great project.
  */
+
 
 window.Vue = require('vue');
 
@@ -44,3 +45,6 @@ window.axios.defaults.headers.common = {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+
+

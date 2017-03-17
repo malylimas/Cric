@@ -1,4 +1,5 @@
-@extends('layouts.app') @section('content')
+@extends('layouts.app') 
+@section('content')
 <div>
   <div class="row">
     <div class="page-header">
@@ -8,6 +9,9 @@
       <div class="form-group">
         <label for="exampleInputName2">Fecha</label>
         <input type="date" class="form-control" id="exampleInputName2" name="fecha" placeholder="Jane Doe" value="{{$fecha}}">
+      </div>
+      <div class="input-group date">
+        <input type="text"  class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail2">Tipo</label>
@@ -22,7 +26,7 @@
     </form>
   </div>
 
- 
+
 
 
   <div id="imprimirDatos">
@@ -59,13 +63,14 @@
     </div>
   </div>
 
+  
+  @endsection
+
+  @section('script')
+
   <script>
-    function printDiv(divName) {
-      var printContents = document.getElementById(divName).innerHTML;
-      var originalContents = document.body.innerHTML;
-      document.body.innerHTML = printContents;
-      window.print();
-      document.body.innerHTML = originalContents;
-    }
+    
+
   </script>
+
   @endsection
