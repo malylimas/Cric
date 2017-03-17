@@ -7,6 +7,8 @@ use App\Paciente;
 use App\nivel;
 use App\municipio;
 use App\departamento;
+use Carbon\Carbon;
+use App\cita;
 
 class PacienteController extends Controller
 {
@@ -44,7 +46,9 @@ class PacienteController extends Controller
 
      public function index(){
         $pacientes = Paciente::withTrashed()->get();
-        return view('Paciente.index')->with('pacientes', $pacientes);
+        $var  = Carbon::today();
+        return view('Paciente.index')->with('pacientes', $pacientes)->with('var',$var);
+
     }
 
 
@@ -93,6 +97,38 @@ class PacienteController extends Controller
      public function Paciente(Paciente $paciente){
         return view('paciente.paciente')->with('paciente',$Paciente);
     }
+    
+     public function pacientesatendidos(Request $request, Paciente $paciente){
+        $citas=[];
+        $fecha =Carbon::parse($request->fecha);
+        if($request->diarios )
+        {
+            $citas= cita::
+            whereMonth('Fecha_Hora',$fecha->month)->
+            whereYear('Fecha_Hora', $fecha->year)
+            ->orderby('Fecha_Hora')
+            ->get();
+            
+        }else{
+            
+            $citas= cita::
+            whereMonth('Fecha_Hora',$fecha->month)->
+            whereYear('Fecha_Hora', $fecha->year)->
+            whereDay('Fecha_Hora', $fecha->day)
+            ->orderby('Fecha_Hora')
+            ->get();
+        }
+        
+        
+        return view('paciente.pacientesatendidos')->with('paciente', $paciente)->with('citas',$citas)->with('fecha',$fecha)->with('diarios', $request->diarios);
+    }
+
+
+
+
+
+
+
 }
      
 

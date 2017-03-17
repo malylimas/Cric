@@ -106,6 +106,10 @@ class CitaController extends Controller
         
         return view('Citas.imprimir')->with('cita', $cita);
     }
+
+    public function reporteIngresos(){
+        return view('Citas.reporteingreso');
+    }
      
 }
 

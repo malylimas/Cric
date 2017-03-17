@@ -7,7 +7,7 @@
     <div class="alert alert-info" role="alert">
 
             <h3>
-                Desea Habilitar un Terapista
+                Desea activar  al  Terapista
              </h3>
 
              <h4>{{$terapista->Nombre}}</h4>

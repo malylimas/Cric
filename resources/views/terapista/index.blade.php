@@ -27,14 +27,14 @@
                 <td>{{ $terapista->Nombre }}</td>
                 <td>{{ $terapista->Telefono }}</td>
                 <td>{{ $terapista->Direccion }}</td>
-                <td>{{ $terapista->disponibilidad}}</td>
+                
                 <td>
                   <div class="btn-group" role="group" aria-label="...">
                     <a type="button" class="btn btn-primary" href="modificar/{{$terapista->id}}">Modificar</a>
                     @if($terapista->trashed())
-                    <a type="button" class="btn btn-success" href="habilitar/{{$terapista->id}}" >Habilitar</a>
+                    <a type="button" class="btn btn-success" href="habilitar/{{$terapista->id}}" >Activar</a>
                     @else
-                    <a type="button" class="btn btn-danger" href="eliminar/{{$terapista->id}}" >Deshabilitar</a>
+                    <a type="button" class="btn btn-danger" href="eliminar/{{$terapista->id}}" >Dar de Baja</a>
                     @endif
                   </div>
 

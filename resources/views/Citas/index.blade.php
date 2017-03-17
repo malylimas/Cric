@@ -1,15 +1,19 @@
 @extends('layouts.app') @section('content')
 <div>
- 
-  <div class="row">
-    <form action="crear" method="GET" class="form-inline">
-      <div class="form-group">
-        <label class="sr-only" for="exampleInputEmail3">Numero Identidad</label>
-        <input type="text" required name="numeroIdentidad" class="form-control" id="exampleInputEmail3" placeholder="Numero Identidad">
-      </div>
-      <button class="btn btn-primary"> Crear Cita</button>
-    </form>
 
+  <div class="row">
+    <div class="col-md-4">
+      <form action="crear" method="GET" class="form-inline">
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputEmail3">Numero Identidad</label>
+          <input type="text" required name="numeroIdentidad" class="form-control" id="exampleInputEmail3" placeholder="Numero Identidad">
+        </div>
+        <button class="btn btn-primary"> Crear Cita</button>
+      </form>
+    </div>
+    <div class="col-md-4">
+      <a class="btn btn-primary" href="reportes/ingresos" >Reporte de Nuevos/Reingresos</a>
+    </div>
   </div>
 
   <div class="row">
@@ -39,8 +43,8 @@
             <div class="btn-group" role="group" aria-label="...">
 
               <a type="button" class="btn btn-primary" href="modificar/{{$cita->id}}">Modificar</a> @if($cita->trashed())
-              <a type="button" class="btn btn-success" href="habilitar/{{$cita->id}}">Habilitar</a> @else
-              <a type="button" class="btn btn-danger" href="eliminar/{{$cita->id}}">Deshabilitar</a> @endif
+              <a type="button" class="btn btn-success" href="habilitar/{{$cita->id}}">Activo</a> @else
+              <a type="button" class="btn btn-danger" href="eliminar/{{$cita->id}}">De Baja</a> @endif
 
             </div>
 

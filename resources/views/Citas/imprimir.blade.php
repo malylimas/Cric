@@ -4,12 +4,12 @@
 <input type = "button" onclick = "printDiv ('Imprimir')" value = "imprimir" />
 <div id = "Imprimir">
       
- <body>
+ 
 <div id="wrapper">
- <h1>Fundacion Centro De Rehabilitacion Integral De Comayagua (CRIC)</h1>
  <center>
- <h1> Dr Marcial Ponce Ochoa</h1>
- <h1> Tarjetas De Citas </h1>
+ <h2>Fundacion Centro De Rehabilitacion Integral De Comayagua (CRIC)</h2>
+ <h2> Dr Marcial Ponce Ochoa</h2>
+ <h2> Tarjetas De Citas </h2>
  </center>
 </div>
 

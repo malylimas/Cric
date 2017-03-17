@@ -5,6 +5,11 @@
     <div class ="row">
         <a class="btn btn-primary" href="crear" > Crear Paciente</a>
     </div>
+    <br>
+     
+     <div class="row">
+      <a  class="btn btn-primary" href="pacientesatendidos/?tipo=m&fecha={{$var}}">Pacientes Atendidos</a>
+     </div>
     
     <div class = "row">
 
@@ -23,6 +28,7 @@
                 <th>Municipio</th>
                 <th>Departamento</th>
                 <th>Acciones</th>
+               
                 
               </tr>
             </thead>
@@ -52,7 +58,7 @@
                   </div>
 
                 </td>
-              </tr>
+                </tr>
               
               @endforeach
             </tbody>

@@ -71,12 +71,13 @@ route::get('cita/eliminar/{cita}','CitaController@eliminar');
 route::post('cita/eliminar/{cita}','CitaController@delete');
 route::get('cita/habilitar/{id}','CitaController@habilitar');
 route::post('cita/habilitar/{id}','CitaController@success');
-
+route::get('cita/reportes/ingresos','CitaController@reporteIngresos');
 
 
 //Reporte de Citas
 route::get('cita/imprimir/{cita}','CitaController@imprimir');
 route::get('terapista/disponibilidad/{terapista}','TerapistaController@disponibilidad');
+route::get('Paciente/pacientesatendidos/','PacienteController@pacientesatendidos');
 
 
 Route::get('/', function () {

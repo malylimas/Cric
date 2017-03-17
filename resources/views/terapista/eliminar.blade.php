@@ -6,7 +6,7 @@
 
     <div class="alert alert-danger" role="alert">
             <h3>
-                Desea deshabilitar al terapista?
+                Desea dar de Baja al Terapista?
              </h3>
 
              <h4>{{$terapista->Nombre}}</h4>
