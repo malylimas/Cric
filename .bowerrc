@@ -1,0 +1,8 @@
+{
+  "directory": "public/js/bower",
+  "timeout": 120000,
+  "ignoredDependencies": [
+    "jquery"
+  ]
+ 
+}

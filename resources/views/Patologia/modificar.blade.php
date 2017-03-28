@@ -1,7 +1,8 @@
-@extends('layouts.app')
 
-@section('content')
+@extends('layouts.form') 
 
+@section('form-content')
+    @define $pageTitle = 'Modificar Patologia'
 
 
 <form action= "/Patalogia/modificar/{{$patologia->id}}" method="Post" role="form">

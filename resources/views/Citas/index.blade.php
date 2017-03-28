@@ -43,8 +43,8 @@
             <div class="btn-group" role="group" aria-label="...">
 
               <a type="button" class="btn btn-primary" href="modificar/{{$cita->id}}">Modificar</a> @if($cita->trashed())
-              <a type="button" class="btn btn-success" href="habilitar/{{$cita->id}}">Activo</a> @else
-              <a type="button" class="btn btn-danger" href="eliminar/{{$cita->id}}">De Baja</a> @endif
+              
+              @endif
 
             </div>
 

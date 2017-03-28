@@ -1,7 +1,8 @@
-@extends('layouts.app')
 
-@section('content')
+@extends('layouts.form') 
 
+@section('form-content')
+    @define $pageTitle = 'Crear Patologia'
 <form action= "crear" method="Post" role="form">
    {{ csrf_field()}}
   
@@ -24,3 +25,4 @@
     
 
 @endsection
+

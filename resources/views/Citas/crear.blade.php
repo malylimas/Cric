@@ -1,6 +1,9 @@
-@extends('layouts.app')
 
-@section('content')
+
+@extends('layouts.form') 
+
+@section('form-content')
+    @define $pageTitle = 'Crear Citas'
 
 <form action= "crear/{{$paciente->id}}" method="Post" role="form">
    {{ csrf_field()}}

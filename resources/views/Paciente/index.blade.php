@@ -50,13 +50,7 @@
                 <td>
                   <div class="btn-group" role="group" aria-label="...">
                     <a type="button" class="btn btn-primary" href="modificar/{{$paciente->id}}">Modificar</a>
-                    @if($paciente->trashed())
-                    <a type="button" class="btn btn-success" href="habilitar/{{$paciente->id}}" >Activo</a>
-                    @else
-                    <a type="button" class="btn btn-danger" href="eliminar/{{$paciente->id}}" >Debaja</a>
-                    @endif
-                  </div>
-
+                   
                 </td>
                 </tr>
               

@@ -27,12 +27,7 @@
                 <td>
                   <div class="btn-group" role="group" aria-label="...">
                      <a type="button" class="btn btn-primary" href="modificar/{{$Patologia->id}}">Modificar</a>
-                      @if($Patologia->trashed())
-                    <a type="button" class="btn btn-success" href="habilitar/{{$Patologia->id}}" >Activo</a>
-                    @else
-                    <a type="button" class="btn btn-danger" href="eliminar/{{$Patologia->id}}" >De Baja</a>
-                    @endif                     
-                   </div>
+                     
 
                 </td>
               </tr>

@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.form') 
 
-@section('content')
+@section('form-content')
+    @define $pageTitle = 'Modificar Citas'
 
 
 
@@ -47,7 +48,7 @@
        
        
  
-<button type="submit" class="btn btn-default">Guardar</button>
+<button type="submit" class="btn btn-primary">Guardar</button>
 </form>
 
 

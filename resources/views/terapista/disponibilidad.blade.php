@@ -1,17 +1,16 @@
-@extends('layouts.app') 
-@section('content')
+@extends('layouts.app') @section('content')
 <div>
   <div class="row">
     <div class="page-header">
       <h1 class="text-center">Disponibilidad</h1>
     </div>
     <form class="form-inline" action="/terapista/disponibilidad/{{$terapista->id}}">
-      <div class="form-group">
-        <label for="exampleInputName2">Fecha</label>
-        <input type="date" class="form-control" id="exampleInputName2" name="fecha" placeholder="Jane Doe" value="{{$fecha}}">
-      </div>
-      <div class="input-group date">
-        <input type="text"  class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+
+      <div class='input-group date' id='datetimepicker3'>
+        <input type='text' class="form-control" name="fecha" />
+        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+        </span>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail2">Tipo</label>
@@ -63,14 +62,16 @@
     </div>
   </div>
 
-  
-  @endsection
 
-  @section('script')
+  @endsection @section('script')
 
   <script>
-    
 
+    $(function () {
+                $('#datetimepicker3').datetimepicker({
+                    format: 'LT'
+                });
+            });
   </script>
 
   @endsection
