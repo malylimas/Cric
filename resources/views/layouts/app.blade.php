@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    <link rel="stylesheet" href="/js/bower/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    
 
     <!-- Scripts -->
     <script>
@@ -102,12 +102,9 @@
     </div>
 
     <!-- Scripts -->
-    <script  src="/js/bower/moment/min/moment.min.js"></script>
-    
+     
 
     <script src="/js/app.js"></script>
-    <script  src="/js/bower/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-    
 
     @yield('script')
 </body>
