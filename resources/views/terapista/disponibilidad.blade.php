@@ -1,4 +1,9 @@
-@extends('layouts.app') @section('content')
+@extends('layouts.form') 
+
+@section('form-content')
+    @define $pageTitle = 'Disponibilidad'
+
+
 <div>
   <div class="row">
     <div class="page-header">
@@ -30,15 +35,17 @@
                
           </select>
       </div>
-      <button type="submit" class="btn btn-primary">Buscar</button>
+      <button type="submit" class="btn btn-primary btn-lg active">Buscar</button>
+      <button type="button" name="imprimir" class="btn btn-default btn-lg active" id="ImprimirPac" onClick="printDiv('imprimirDatos')" value="Imprimir">Imprimir</button>
     </form>
   </div>
   <div id="imprimirDatos">
     <div class="page-header">
-      <h2>{{$terapista->Nombre}}</h2>
+      <p class="lead">{{$terapista->Nombre}}</p>
     </div>
+
     <div class="row">
-      <table class="table table-hover">
+      <table class="table table-bordered"> 
         <thead>
           <tr>
             <th>#</th>

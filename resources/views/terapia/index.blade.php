@@ -6,16 +6,17 @@
     <div class ="row">
         <a class="btn btn-primary" href="crear" > Crear Terapia</a>
     </div>
+    </br>
     
     <div class = "row">
 
-          <table class="table table-hover">
+          <table class="table table-bordered">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Acciones</th>
+                <th><center><b>#</center></b></th>
+                <th><center><b>Nombre</center></b></th>
+                <th><center><b>Precio</center></b></th>
+                <th><center><b>Acciones</center></b></th>
               </tr>
             </thead>
             <tbody>
@@ -26,9 +27,10 @@
                 <td>{{ $terapia->Precio }}</td>
                 
                 <td>
+                <center>
                   <div class="btn-group" role="group" aria-label="...">
                      <a type="button" class="btn btn-primary" href="modificar/{{$terapia->id}}">Modificar</a>
-                     
+                     </center>
                 </td>
               </tr>
               

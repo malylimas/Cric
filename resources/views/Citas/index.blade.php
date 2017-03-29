@@ -15,19 +15,19 @@
       <a class="btn btn-primary" href="reportes/ingresos" >Reporte de Nuevos/Reingresos</a>
     </div>
   </div>
-
+   </br>
   <div class="row">
 
-    <table class="table table-hover">
+    <table class="table table-bordered">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Nombre_Paciente</th>
-          <th>Terapista</th>
-          <th>Patologia</th>
-          <th>Fecha_Hora</th>
-          <th>Acciones</th>
-          <th>Imprimir</th>
+          <th><center><b>#</center></b></th>
+          <th><center><b>Nombre_Paciente</center></b></th>
+          <th><center><b>Terapista</center></b></th>
+          <th><center><b>Patologia</center></b></th>
+          <th><center><b>Fecha_Hora</center></b></th>
+          <th><center><b>Acciones</center></b></th>
+          <th><center><b>Imprimir</center></b></th>
         </tr>
       </thead>
       <tbody>
@@ -40,6 +40,7 @@
           <td>{{ $cita->Patologia->Nombre_Patologia}}</td>
           <td>{{ $cita->Fecha_Hora}}</td>
           <td>
+            <center>
             <div class="btn-group" role="group" aria-label="...">
 
               <a type="button" class="btn btn-primary" href="modificar/{{$cita->id}}">Modificar</a> @if($cita->trashed())
@@ -47,13 +48,15 @@
               @endif
 
             </div>
-
+            </center>
           </td>
           <td>
+             <center>
             <div class="panel-heading">
               <a href="/cita/imprimir/{{$cita->id}}"> <img src="/img/ImagenHTML2.jpg" border="0" width="30" height="30"></a>
           </td>
           </div>
+          </center>
 
 
 

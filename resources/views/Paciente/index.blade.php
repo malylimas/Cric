@@ -10,24 +10,25 @@
      <div class="row">
       <a  class="btn btn-primary" href="pacientesatendidos/?tipo=m&fecha={{$var}}">Pacientes Atendidos</a>
      </div>
+     </br>
     
     <div class = "row">
 
-          <table class="table table-hover">
+          <table class="table table-bordered">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Identidad</th>
-                <th>Nombre Paciente</th>
-                <th>Direccion Actual</th>
-                <th>Fecha De Nacimiento</th>
-                <th>Edad</th>
-                <th>Telefono</th>
-                <th>Ocupacion</th>
-                <th>Nivel Educativo</th>
-                <th>Municipio</th>
-                <th>Departamento</th>
-                <th>Acciones</th>
+                <th><center><b>#</center></b></th>
+                <th><center><b>Identidad</center></b></th>
+                <th><center><b>Nombre Paciente</center></b></th>
+                <th><center><b>Direccion Actual</center></b></th>
+                <th><center><b>Fecha De Nacimiento</center></b></th>
+                <th><center><b>Edad</center></b></th>
+                <th><center><b>Telefono</center></b></th>
+                <th><center><b>Ocupacion</center></b></th>
+                <th><center><b>Nivel Educativo</center></b></th>
+                <th><center><b>Municipio</center></b></th>
+                <th><center><b>Departamento</center></b></th>
+                <th><center><b>Acciones</center></b></th>
                
                 
               </tr>
