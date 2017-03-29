@@ -75,9 +75,15 @@ class TerapistaController extends Controller
     
     public function disponibilidad(Request $request, Terapista $terapista){
         $citas=[];
-        $fecha =Carbon::parse($request->fecha);
+        
+  
         if($request->tipo == 'm')
         {
+            $dates = explode('/',$request->fechaMensual);
+
+            $fecha =Carbon::create($dates[1], $dates[0], 1, 0, 0, 0, 0);
+
+            
             $citas= cita::where('terapista_id', '=', $terapista->id)->
             whereMonth('Fecha_Hora',$fecha->month)->
             whereYear('Fecha_Hora', $fecha->year)
@@ -85,7 +91,7 @@ class TerapistaController extends Controller
             ->get();
             
         }else{
-            
+            $fecha =Carbon::parse($request->fechaDiaria);
             $citas= cita::where('terapista_id', '=', $terapista->id)->
             whereMonth('Fecha_Hora',$fecha->month)->
             whereYear('Fecha_Hora', $fecha->year)->
@@ -95,7 +101,7 @@ class TerapistaController extends Controller
         }
         
         
-        return view('terapista.disponibilidad')->with('terapista', $terapista)->with('citas',$citas)->with('fecha',$fecha)->with('tipo', $request->tipo);
+        return view('terapista.disponibilidad')->with('terapista', $terapista)->with('citas',$citas)->with('tipo', $request->tipo);
     }
 
       

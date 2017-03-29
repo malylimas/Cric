@@ -42,7 +42,7 @@
 
                 <td>
                   <div class="btn-group" role="group" aria-label="...">
-                  <a type="button" class="btn btn-primary" href="disponibilidad/{{$terapista->id}}/?tipo=m&fecha={{$now}}">Disponibilidad</a>
+                  <a type="button" class="btn btn-primary" href="disponibilidad/{{$terapista->id}}/?tipo=d&fechaDiaria={{$now}}">Disponibilidad</a>
                   </div>
                 </tr>
 
