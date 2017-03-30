@@ -18,6 +18,12 @@ class TerapiaController extends Controller
     }
 
     public function store(Request $request){
+
+         $this->validate($request, [
+        'Nombre' => 'required|max:30|alpha',
+        'Precio' => 'required|min:0|numeric',
+        
+        ]);
         
         Terapia::create([
             'Nombre'=>$request->Nombre,
@@ -50,6 +56,11 @@ class TerapiaController extends Controller
 
 
      public function put(Request  $request, Terapia $terapia){
+          $this->validate($request, [
+        'Nombre' => 'required|max:30|alpha',
+        'Precio' => 'required|min:0|numeric',
+        
+        ]);
        
         $terapia->Nombre= $request->Nombre;
         $terapia->Precio=$request->Precio;

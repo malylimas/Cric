@@ -24,8 +24,8 @@ class TerapistaController extends Controller
         
         
         $this->validate($request, [
-        'Nombre' => 'required|max:30',
-        'Telefono' => 'required|max:10',
+        'Nombre' => 'required|max:30|alpha',
+        'Telefono' => 'required|max:10|numeric',
         'Direccion' => 'required|max:150',
         ]);
         

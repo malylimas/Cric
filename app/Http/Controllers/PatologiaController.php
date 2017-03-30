@@ -20,6 +20,11 @@ class PatologiaController extends Controller
     }
 
     public function store (Request $request){
+        $this->validate($request, [
+        'Nombre_Patologia' => 'required|max:30|alpha',
+        'terapia_id' => 'required|exists:terapias,id',
+        
+        ]);
         
         patologia::create([
             'Nombre_Patologia'=>$request->Nombre_Patologia,
@@ -55,6 +60,12 @@ class PatologiaController extends Controller
 
        public function put(Request  $request, Patologia $Patologia){
        
+       
+       $this->validate($request, [
+        'Nombre_Patologia' => 'required|max:30|alpha',
+        'terapia_id' => 'required|exists:terapias,id',
+        
+        ]);
         $Patologia->Nombre_Patologia= $request->Nombre_Patologia;
         $Patologia->terapia_id=$request->terapia_id;
     
