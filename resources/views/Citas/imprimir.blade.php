@@ -1,31 +1,31 @@
-@extends('layouts.app')
 
-@section('content')
-<input type = "button" onclick = "printDiv ('Imprimir')" value = "imprimir" />
+@extends('layouts.form') @section('form-content') @define $pageTitle = 'Cita'
+
+<input type = "button" name="imprimir" onclick = "printDiv ('Imprimir')"class="btn btn-default btn-lg active"id="ImprimirCita" value = "imprimir" />
 <div id = "Imprimir">
-      
- 
-<div id="wrapper">
- <center>
- <h2>Fundacion Centro De Rehabilitacion Integral De Comayagua (CRIC)</h2>
- <h2> Dr Marcial Ponce Ochoa</h2>
- <h2> Tarjetas De Citas </h2>
- </center>
-</div>
+
+
+  <div id="wrapper">
+  <center>
+  <h1>Fundacion Centro De Rehabilitacion Integral De Comayagua (CRIC)</h1>
+  <h3> Dr Marcial Ponce Ochoa</h3>
+  <h3> Tarjetas De Citas </h3>
+  </center>
+  </div>
 
       
-      <section style= Color:black; fond-size; 20px;>
+   <section style= Color:black; fond-size; 20px;>
        
-       <h4>Area:{{$cita->patologia->terapia->Nombre}}</h4></h4>
+      <h4> Area: {{$cita->patologia->terapia->Nombre}}</h4></h4>
        <br>
-       <h4>#Expediente:</h4>
+       <h4> #Expediente: </h4>
        <br>
-       <h4>Nombre Px:{{$cita->paciente->Nombre_Paciente}}</h4>
+       <h4> Nombre Px: {{$cita->paciente->Nombre_Paciente}}</h4>
        <br>
-       <h4>Dirección:{{$cita->paciente->Direccion_Actual}}</h4>
+       <h4> Dirección: {{$cita->paciente->Direccion_Actual}}</h4>
        <br>
-       <h4>Observaciónes:</h4>
-       <br>
+       
+      
                   
       </section>
       
