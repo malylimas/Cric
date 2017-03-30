@@ -4,37 +4,37 @@
   <div class="form-group row">
     <label for="example-text-input" class="col-2 col-form-label">Identidad</label>
     <div class="col-10">
-      <input class="form-control" type="text" name="Identidad" id="example-text-input">
+      <input class="form-control" type="text" name="Identidad" id="example-text-input" value="{{ old('Identidad') }}">
     </div>
   </div>
   <div class="form-group row">
     <label for="example-text-input" class="col-2 col-form-label">Nombre Del Paciente</label>
     <div class="col-10">
-      <input class="form-control" type="text" name="Nombre_Paciente" id="example-text-input">
+      <input class="form-control" type="text" name="Nombre_Paciente" id="example-text-input" value="{{ old('Nombre_Paciente') }}">
     </div>
   </div>
   <div class="form-group row">
     <label for="example-text-input" class="col-2 col-form-label">Dirección Actual</label>
     <div class="col-10">
-      <input class="form-control" type="text" name="Direccion_Actual" id="example-text-input">
+      <input class="form-control" type="text" name="Direccion_Actual" id="example-text-input" value="{{ old('Direccion_Actual') }}">
     </div>
   </div>
   <div id="date-container" class="form-group row">
     <label for="example-text-input" class="col-2 col-form-label">Fecha De Nacimiento</label>
     <div class="col-10">
-      <input class="form-control" type="text" name="Fecha_Nacimiento" id="example-text-input">
+      <input class="form-control" type="text" name="Fecha_Nacimiento" id="example-text-input" value="{{ old('Fecha_Nacimiento') }}">
     </div>
   </div>
   <div class="form-group row">
     <label for="example-text-input" class="col-2 col-form-label">Telefono</label>
     <div class="col-10">
-      <input class="form-control" type="text" name="Telefono" id="example-text-input">
+      <input class="form-control" type="text" name="Telefono" id="example-text-input" value="{{ old('Telefono') }}" >
     </div>
   </div>
   <div class="form-group row">
     <label for="example-text-input" class="col-2 col-form-label">Ocupacion</label>
     <div class="col-10">
-      <input class="form-control" type="text" name="Ocupacion" id="example-text-input">
+      <input class="form-control" type="text" name="Ocupacion" id="example-text-input" value="{{ old('Ocupacion') }}">
     </div>
   </div>
   <div class="form-group row">

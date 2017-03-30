@@ -29,10 +29,10 @@ class PacienteController extends Controller
     public function store(Request $request){
         
       $validator = Validator::make($request->all(), [
-        'Identidad' => 'required|digits:13',
+        'Identidad' => 'required|digits:13|unique:pacientes,Identidad',
         'Nombre_Paciente' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
         'Direccion_Actual' => 'required|max:255',
-        'Fecha_Nacimiento' => 'required|date_format:dd/mm/yyyy|before:'. date('Y-m-d'),
+        'Fecha_Nacimiento' => 'required|date_format:d/m/Y|before:'. date('Y-m-d'),
         'Telefono' => 'required|max:10',
         'Ocupacion' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
         'nivel_id' => 'required|exists:nivel,id',
@@ -48,10 +48,10 @@ class PacienteController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }
-        $fecha = Carbon::create($request->Fecha_Nacimiento);
+        $fecha = Carbon::createFromFormat('d/m/Y',$request->Fecha_Nacimiento);
 
         $age = $fecha->diff(Carbon::now())->format('%y');
-
+      
         Paciente::create([
            
             'Identidad' => $request->Identidad,
@@ -97,19 +97,45 @@ class PacienteController extends Controller
     }
 
 
-     public function put(Request  $request, Expediente $paciente){
+     public function put(Request  $request, Paciente $paciente){
+
+        $validator = Validator::make($request->all(), [
+        'Identidad' => 'required|digits:13',
+        'Nombre_Paciente' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
+        'Direccion_Actual' => 'required|max:255',
+        'Fecha_Nacimiento' => 'required|date_format:d/m/Y|before:'. date('Y-m-d'),
+        'Telefono' => 'required|max:10',
+        'Ocupacion' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
+        'nivel_id' => 'required|exists:nivel,id',
+        'municipio_id' => 'required|exists:departamento,id',
+        'departamento_id' => 'required|exists:municipio,id',
+        
+        
+        ]);
+
+
+        if ($validator->fails()) {
+            return redirect('Paciente/crear')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        $fecha = Carbon::createFromFormat('d/m/Y',$request->Fecha_Nacimiento);
+
+        $age = $fecha->diff(Carbon::now())->format('%y');
+
+
         $paciente->Identidad= $request->Identidad;
         $paciente->Nombre_Paciente= $request->Nombre_Paciente;
         $paciente->Direccion_Actual=$request->Direccion_Actual;
         $paciente->Fecha_Nacimiento= $request->Fecha_Nacimiento;
-        $paciente->Edad=$request->Edad;
+        $paciente->Edad=$age;
         $paciente->Telefono=$request->Telefono;
         $paciente->Ocupacion=$request->Ocupacion;
         $paciente->nivel_id=$request->nivel_id;
         $paciente->municipio_id=$request->municipio_id;
         $paciente->departamento_id=$request->departamento_id;   
         $paciente->save();
-        return redirect('pacientes/index');
+        return redirect('Paciente/index');
         
     }
     public function habilitar ($id){

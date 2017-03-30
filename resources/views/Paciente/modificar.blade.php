@@ -3,7 +3,7 @@
 
 @section('form-content')
     @define $pageTitle = 'Modificar Paciente'
-<form action= "/paciente/modificar/{{$paciente->id}}" method="Post" role="form">
+<form action= "/Paciente/modificar/{{$paciente->id}}" method="Post" role="form">
    {{ csrf_field()}}
 
 
@@ -27,17 +27,10 @@
   </div>
 </div>
 
-  <div class="form-group row">
+  <div id="date-container" class="form-group row">
   <label for="example-text-input" class="col-2 col-form-label">Fecha De Nacimiento</label>
   <div class="col-10">
-    <input class="form-control" type="text" name="Fecha_Nacimiento" value = "{{$paciente->Fecha_Nacimineto}}" id="example-text-input">
-  </div>
-</div>
-
-  <div class="form-group row">
-  <label for="example-text-input" class="col-2 col-form-label">Edad</label>
-  <div class="col-10">
-    <input class="form-control" type="text" name="Edad" value = "{{$paciente->Edad}}" id="example-text-input">
+    <input class="form-control" type="text" name="Fecha_Nacimiento" value = "{{$paciente->Fecha_Nacimiento}}" id="example-text-input">
   </div>
 </div>
 

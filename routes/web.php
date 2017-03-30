@@ -54,7 +54,7 @@ route::get('Paciente/crear','PacienteController@crear');
 route::post('Paciente/crear','PacienteController@store');
 route::get('Paciente/index','PacienteController@index');
 route::get('Paciente/modificar/{paciente}','PacienteController@modificar');
-route::post('Paciente/modificar/{Paciente}','PacienteController@put');
+route::post('Paciente/modificar/{paciente}','PacienteController@put');
 route::get('Paciente/eliminar/{paciente}','PacienteController@eliminar');
 route::post('Paciente/eliminar/{paciente}','PacienteController@delete');
 route::get('Paciente/habilitar/{id}','PacienteController@habilitar');
