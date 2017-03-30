@@ -22,6 +22,13 @@ class TerapistaController extends Controller
     
     public function store(Request $request){
         
+        
+        $this->validate($request, [
+        'Nombre' => 'required|max:30',
+        'Telefono' => 'required|max:10',
+        'Direccion' => 'required|max:150',
+        ]);
+        
         Terapista::create([
         'Nombre'=>$request->Nombre,
         'Telefono' => $request->Telefono,
@@ -52,6 +59,12 @@ class TerapistaController extends Controller
     }
     
     public function put(Request  $request, Terapista $terapista){
+
+        $this->validate($request, [
+        'Nombre' => 'required|max:30',
+        'Telefono' => 'required|max:10',
+        'Direccion' => 'required|max:150',
+        ]);
         
         $terapista->Nombre= $request->Nombre;
         $terapista->Telefono=$request->Telefono;
