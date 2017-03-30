@@ -13,25 +13,25 @@
   </center>
   </div>
 
-      
+   <br>   
    <section style= Color:black; fond-size; 20px;>
+       <center>
+       <h5> Area: {{$cita->patologia->terapia->Nombre}}</h5>
+       <br>
+       <h5> #Expediente: {{$cita->paciente->Identidad}} </h5>
+       <br>
+       <h5> Nombre Px:  {{$cita->paciente->Nombre_Paciente}}</h5>
+       <br>
+       <h5> Dirección:  {{$cita->paciente->Direccion_Actual}}</h5>
+       <br>
        
-      <h4> Area: {{$cita->patologia->terapia->Nombre}}</h4></h4>
-       <br>
-       <h4> #Expediente: </h4>
-       <br>
-       <h4> Nombre Px: {{$cita->paciente->Nombre_Paciente}}</h4>
-       <br>
-       <h4> Dirección: {{$cita->paciente->Direccion_Actual}}</h4>
-       <br>
-       
-      
+      </center>
                   
       </section>
       
        <center>
       <section style= color: blue; fond-size; 10px;>
-      <h5> Tels 2772-29-91, 2772-0459, 8869-0754 /9923-2369 E-mail: el_cric@yahoo.com.mx</h5>
+      <h5> Tels 2772-29-91, 2772-0459, 8869-0754 /9923-2369 E-mail: el_cric@yahoo.com.mx</h4>
       <h5> Horario:Lunes a Viernes</h5>
       <h5> 7:10 a.m.-11:45 a.m.</h5>
       <h5> 1:15 a.m.-3:45 a.m.</h5> 

@@ -11,14 +11,16 @@
  
  </center>
 </div>
+    <center>
     
     <form  action="/terapista/disponibilidad/{{$terapista->id}}">
       <div class="form-group col-md-4">
         <label for="fechaDatos">Fecha</label>
-
+    
         <div id="month-container">
+      
+        <div  class="input-group date">
         
-          <div class="input-group date">
             <input id="fechaDatos" type="text" class="form-control" name="fechaMensual" value="{{$fechaMensual}}" >
             <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
           </div>
@@ -31,10 +33,10 @@
           </div>
         </div>
       </div>
-
+      
       <div class="row">
-        <div class="form-group col-md-4" >
-          <label for="exampleInputEmail2">Tipo</label>
+        <div class="form-group col-md-4">
+        <label for="exampleInputEmail2">Tipo</label>
           <select id="tipo" class="form-control" name="tipo" id="exampleInputEmail2">
                 
                 @if($tipo == 'm' )
@@ -45,21 +47,25 @@
                     <option value="d" selected>Diarios</option>
                 @endif 
              
-               
+          
           </select>
+          
         </div>
       </div>
+      
       <button type="submit" class="btn btn-primary btn-lg active">Buscar</button>
       <button type="button" name="imprimir" class="btn btn-default btn-lg active" id="ImprimirPac" onClick="printDiv('imprimirDatos')"
         value="Imprimir">Imprimir</button>
      
     </form>
   </div>
+  
+</div>
   <div id="imprimirDatos">
     <div class="page-header">
       <p class="lead">{{$terapista->Nombre}}</p>
     </div>
-
+    
     <div class="row">
       <table class="table table-bordered">
         <thead>
@@ -71,6 +77,7 @@
           </tr>
         </thead>
         <tbody>
+        
           @foreach ($citas as $cita)
           <tr>
             <th>{{ $cita->id }}</th>
@@ -78,12 +85,12 @@
             <td>{{ $cita->Patologia->Nombre_Patologia}}</td>
             <td>{{ $cita->Fecha_Hora}}</td>
             <tr>
-              @endforeach
+              @endforeach      
         </tbody>
       </table>
     </div>
   </div>
-
+ 
 
 
 
