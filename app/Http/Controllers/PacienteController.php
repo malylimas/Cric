@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use App\Paciente;
 use App\nivel;
@@ -27,11 +28,11 @@ class PacienteController extends Controller
 
     public function store(Request $request){
         
-        $this->validate($request, [
+      $validator = Validator::make($request->all(), [
         'Identidad' => 'required|digits:13',
         'Nombre_Paciente' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
         'Direccion_Actual' => 'required|max:255',
-        'Fecha_Nacimiento' => 'required|date|before:'. date('Y-m-d'),
+        'Fecha_Nacimiento' => 'required|date_format:dd/mm/yyyy|before:'. date('Y-m-d'),
         'Telefono' => 'required|max:10',
         'Ocupacion' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
         'nivel_id' => 'required|exists:nivel,id',
@@ -41,6 +42,12 @@ class PacienteController extends Controller
         
         ]);
 
+
+        if ($validator->fails()) {
+            return redirect('Paciente/crear')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
         $fecha = Carbon::create($request->Fecha_Nacimiento);
 
         $age = $fecha->diff(Carbon::now())->format('%y');
