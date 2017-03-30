@@ -156,8 +156,8 @@ class PacienteController extends Controller
     
      public function pacientesatendidos(Request $request, Paciente $paciente){
         $citas=[];
-        $fecha =Carbon::parse($request->fecha);
-        if($request->diarios )
+        $fecha =Carbon::createFromFormat('d/m/Y',$request->fecha);
+        if($request->diarios ) 
         {
             $citas= cita::
             whereMonth('Fecha_Hora',$fecha->month)->
