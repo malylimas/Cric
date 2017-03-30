@@ -79,7 +79,11 @@ class PacienteController extends Controller
 
 
     public function modificar(Paciente $paciente){
-        return view('Paciente.modificar')->with('paciente',$paciente);
+        $niveles= nivel:: All();
+        $municipios= municipio:: All();
+        $departamentos= departamento::All();
+        return view('Paciente.modificar')->with ('paciente',$paciente)->with('niveles',$niveles)->with('municipios',$municipios)->with('departamentos',$departamentos);
+        
     }
 
     public function delete(Paciente $paciente){

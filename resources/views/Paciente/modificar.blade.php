@@ -55,8 +55,47 @@
   </div>
 </div>
 
+<div class="form-group row">
+  <label for="disabledSelect">Nivel Educativo</label>
+  <div class="col-10">
+  <select id="disabledSelect" name="nivel_id" class="form-control">
+    
+    @foreach($niveles as $nivel)
+      <option value="{{$nivel->id}}"> {{$nivel->Descripcion}} </option>
+    @endforeach
+      </select
+
+  </div>
+  </div>
+  </div>
 
 
+   <div class="form-group row">
+   <label for="disabledSelect">Municipio</label>
+   <div class="col-10">
+   <select id="disabledSelect" name="municipio_id" class="form-control">
+    
+    @foreach($municipios as $municipio)
+      <option value="{{$municipio->id}}"> {{$municipio->Nombre_Municipio}} </option>
+    @endforeach
+      </select
+  </div>
+  </div>
+  </div>
+
+
+
+
+ <div class="form-group row">
+    <label for="disabledSelect">Departamento</label>
+    <select id="disabledSelect" name="departamento_id" class="form-control">
+    
+     @foreach($departamentos as $departamento)
+       <option value="{{$departamento->id}}"> {{$departamento->Nombre_Departamento}} </option>
+     @endforeach
+      </select
+    </div>
+    </div> 
  
 <div class="form-group row">
       <div class="offset-sm-2 col-sm-10">
