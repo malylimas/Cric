@@ -37,7 +37,7 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div  class="form-group">
         <label for="fechaPicker" class="col-2 col-form-label">Fecha Hora</label>
         <div class="col-10">
             <input class="form-control" id= "fechaPicker" name = "Fecha_Hora" type="datetime-local">

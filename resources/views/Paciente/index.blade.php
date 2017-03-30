@@ -8,7 +8,7 @@
     <br>
      
      <div class="row">
-      <a  class="btn btn-primary" href="pacientesatendidos/?tipo=m&fecha={{$var}}">Pacientes Atendidos</a>
+      <a  class="btn btn-primary" href="pacientesatendidos/?fecha={{$var}}">Pacientes Atendidos</a>
      </div>
      </br>
     

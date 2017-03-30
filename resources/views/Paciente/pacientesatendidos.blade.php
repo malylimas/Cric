@@ -11,7 +11,7 @@
      <h3> Pacientes Atendidos </h3>
     </div>
     <center>
-    <form class="form-inline" action="/Paciente/pacientesatendiidos/{{$paciente->id}}">
+    <form class="form-inline" action="/Paciente/pacientesatendidos/{{$paciente->id}}" >
       <div class="form-group">
         <label for="exampleInputName2">Fecha</label>
         <input type="date" class="form-control" id="exampleInputName2" name="fecha" placeholder="Jane Doe" value="{{$fecha}}">
