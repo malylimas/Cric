@@ -10,6 +10,7 @@ use App\departamento;
 use Carbon\Carbon;
 use App\cita;
 
+
 class PacienteController extends Controller
 {
     public function __construct()
@@ -26,13 +27,31 @@ class PacienteController extends Controller
 
     public function store(Request $request){
         
+        $this->validate($request, [
+        'Identidad' => 'required|digits:13',
+        'Nombre_Paciente' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
+        'Direccion_Actual' => 'required|max:255',
+        'Fecha_Nacimiento' => 'required|date|before:'. date('Y-m-d'),
+        'Telefono' => 'required|max:10',
+        'Ocupacion' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
+        'nivel_id' => 'required|exists:nivel,id',
+        'municipio_id' => 'required|exists:departamento,id',
+        'departamento_id' => 'required|exists:municipio,id',
+        
+        
+        ]);
+
+        $fecha = Carbon::create($request->Fecha_Nacimiento);
+
+        $age = $fecha->diff(Carbon::now())->format('%y');
+
         Paciente::create([
            
             'Identidad' => $request->Identidad,
             'Nombre_Paciente'=>$request->Nombre_Paciente,
             'Direccion_Actual' => $request->Direccion_Actual, 
             'Fecha_Nacimiento' => $request->Fecha_Nacimiento,
-            'Edad' =>$request->Edad,
+            'Edad' =>$age,
             'Telefono' => $request->Telefono,
             'Ocupacion' => $request->Ocupacion,
             'nivel_id'=>$request->nivel_id,

@@ -2,7 +2,17 @@
 
 return [
 
-    
+	/*
+	|--------------------------------------------------------------------------
+	| Validation Language Lines
+	|--------------------------------------------------------------------------
+	|
+	| The following language lines contain the default error messages used by
+	| the validator class. Some of these rules have multiple versions such
+	| as the size rules. Feel free to tweak each of these messages here.
+	|
+	*/
+
 	'accepted'              => 'El campo :attribute debe ser aceptado.',
 	'active_url'            => 'El campo :attribute no es una URL válida.',
 	'after'                 => 'El campo :attribute debe ser una fecha después de :date.',
@@ -73,6 +83,7 @@ return [
 	'unique'                => 'El campo :attribute ya ha sido tomado.',
 	'url'                   => 'El formato de :attribute es inválido.',
 	'uploaded'              => 'El campo :attribute no ha podido ser cargado.',
+
 	/*
 	|--------------------------------------------------------------------------
 	| Custom Validation Language Lines
@@ -83,11 +94,13 @@ return [
 	| specify a specific custom language line for a given attribute rule.
 	|
 	*/
+
 	'custom' => [
 		'attribute-name' => [
 			'rule-name'  => 'custom-message',
 		],
 	],
+
 	/*
 	|--------------------------------------------------------------------------
 	| Custom Validation Attributes
@@ -98,6 +111,7 @@ return [
 	| of "email". This simply helps us make messages a little cleaner.
 	|
 	*/
+
 	'attributes' => [
 		'username' => 'usuario',
 		'password' => 'contraseña'

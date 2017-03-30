@@ -5,7 +5,7 @@
     @define $pageTitle = 'Modificar Patologia'
 
 
-<form action= "/Patalogia/modificar/{{$patologia->id}}" method="Post" role="form">
+<form action= "/Patologia/modificar/{{$patologia->id}}" method="POST" role="form">
    {{ csrf_field()}}
   
   <div class="form-group">
@@ -20,9 +20,9 @@
        
         @foreach($terapias as $terapia)
             @if ($terapia->id =  $patologia->terapia->id)
-            <option value="{{$terapia->id}}" selected> {{$terapia->Nombre}} </option>
+                <option value="{{$terapia->id}}" selected> {{$terapia->Nombre}} </option>
             @else
-            <option value="{{$terapia->id}}"> {{$terapia->Nombre}} </option>
+                <option value="{{$terapia->id}}"> {{$terapia->Nombre}} </option>
             @endif
         @endforeach
 
@@ -30,7 +30,7 @@
  </div>
   
  
-<button type="submit" class="btn btn-default">Guardar</button>
+<button type="submit" class="btn btn-primary">Guardar</button>
 </form>
 
 
