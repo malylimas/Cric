@@ -9,7 +9,7 @@
       <div class="form-group ">
         <label for="nombretxt" class="">Nombre</label>
         <div class="col-10">
-          <input class="form-control" type="text" name="Nombre" id="nombretxt" >
+          <input class="form-control" type="text" name="Nombre" id="nombretxt"  >
         </div>
 
       </div>
@@ -17,14 +17,14 @@
       <div class="form-group ">
         <label for="example-text-input" class="col-2 col-form-label">Telefono</label>
         <div class="col-10">
-          <input class="form-control" type="text" name="Telefono" id="example-text-input">
+          <input class="form-control" type="text" name="Telefono" id="example-text-input" >
         </div>
       </div>
 
       <div class="form-group ">
         <label for="example-text-input" class="col-2 col-form-label">Dirección</label>
         <div class="col-10">
-          <input class="form-control" type="text" name="Direccion" id="example-text-input">
+          <input class="form-control" type="text" name="Direccion" id="example-text-input" >
         </div>
       </div>
 
