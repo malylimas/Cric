@@ -14,9 +14,28 @@
     <center>
     
     <form  action="/terapista/disponibilidad/{{$terapista->id}}">
+
+     <div class="row">
+        <div class="form-group col-md-4">
+        <label for="exampleInputEmail2">Buscar por:</label>
+          <select id="tipo" class="form-control" name="tipo" id="exampleInputEmail2">
+                
+                @if($tipo == 'm' )
+                <option value="m" selected>Mensual</option>
+                    <option value="d">Diarios</option>
+                @else
+                  <option value="m" >Mensual</option>
+                    <option value="d" selected>Diarios</option>
+                @endif 
+             
+          </select>
+          
+        </div>
+      </div>
+      
       <div class="form-group col-md-4">
-        <label for="fechaDatos">Fecha</label>
-    
+      <label for="fechaDatos">Fecha</label>
+        </center>
         <div id="month-container">
       
         <div  class="input-group date">
@@ -34,35 +53,20 @@
         </div>
       </div>
       
-      <div class="row">
-        <div class="form-group col-md-4">
-        <label for="exampleInputEmail2">Tipo</label>
-          <select id="tipo" class="form-control" name="tipo" id="exampleInputEmail2">
-                
-                @if($tipo == 'm' )
-                <option value="m" selected>Mensual</option>
-                    <option value="d">Diarios</option>
-                @else
-                  <option value="m" >Mensual</option>
-                    <option value="d" selected>Diarios</option>
-                @endif 
-             
-          
-          </select>
-          
-        </div>
-      </div>
       
-      <button type="submit" class="btn btn-primary btn-lg active">Buscar</button>
-      <button type="button" name="imprimir" class="btn btn-default btn-lg active" id="ImprimirPac" onClick="printDiv('imprimirDatos')"
+      
+      <button type="submit" class="btn btn-primary ">Buscar</button>
+      <button type="button" name="imprimir" class="btn btn-default " id="ImprimirPac" onClick="printDiv('imprimirDatos')"
         value="Imprimir">Imprimir</button>
      
     </form>
   </div>
   
 </div>
-  <div id="imprimirDatos">
-    <div class="page-header">
+        <div id="imprimirDatos">
+        <div class="container-fluid">
+        <div class="page-header">
+        <h3>Disponibilidad del Terapista </h3>
       <p class="lead">{{$terapista->Nombre}}</p>
     </div>
     
@@ -90,6 +94,8 @@
       </table>
     </div>
   </div>
+  </div>
+</div>
  
 
 

@@ -4,7 +4,7 @@
 <input type = "button" name="imprimir" onclick = "printDiv ('Imprimir')"class="btn btn-default btn-lg active"id="ImprimirCita" value = "imprimir" />
 <div id = "Imprimir">
 
-
+ <br>
   <div id="wrapper">
   <center>
   <h1>Fundacion Centro De Rehabilitacion Integral De Comayagua (CRIC)</h1>

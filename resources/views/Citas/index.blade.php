@@ -11,9 +11,7 @@
         <button class="btn btn-primary"> Crear Cita</button>
       </form>
     </div>
-    <div class="col-md-4">
-      <a class="btn btn-primary" href="reportes/ingresos" >Reporte de Nuevos/Reingresos</a>
-    </div>
+  
   </div>
    </br>
   <div class="row">

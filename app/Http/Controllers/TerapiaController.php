@@ -20,7 +20,7 @@ class TerapiaController extends Controller
     public function store(Request $request){
 
          $this->validate($request, [
-        'Nombre' => 'required|max:30|alpha',
+        'Nombre' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
         'Precio' => 'required|min:0|numeric',
         
         ]);
@@ -57,7 +57,7 @@ class TerapiaController extends Controller
 
      public function put(Request  $request, Terapia $terapia){
           $this->validate($request, [
-        'Nombre' => 'required|max:30|alpha',
+        'Nombre' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
         'Precio' => 'required|min:0|numeric',
         
         ]);

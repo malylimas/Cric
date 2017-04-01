@@ -46,9 +46,9 @@
       <option value="{{$nivel->id}}"> {{$nivel->Descripcion}} </option>
     @endforeach
       </select>
-    </div>
   </div>
   </div>
+  
 
   <div class="form-group row">
     <label for="disabledSelect">Municipio</label>
@@ -58,8 +58,11 @@
             <option value="{{$municipio->id}}"> {{$municipio->Nombre_Municipio}} </option>
           @endforeach
       </select>
-    </div>
   </div>
+  </div>
+  
+  
+  
   
   <div class="form-group row">
     <label for="dptoSelect">Departamento</label>
@@ -69,7 +72,9 @@
        <option value="{{$departamento->id}}"> {{$departamento->Nombre_Departamento}} </option>
      @endforeach
       </select>
-  </div>
+   </div>
+
+
 
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
