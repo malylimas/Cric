@@ -13,7 +13,7 @@
       </div>
       
       <button type="submit" class="btn btn-primary">Buscar Pacientes</button>
-      <input type="button" name="imprimir" onclick="printDiv ('imprimirPacientes')" class="btn btn-default btn-lg active" id="ImprimirPaten"
+      <input type="button" name="imprimir" onclick="printDiv ('imprimirPacientes')" class="btn btn-default" id="ImprimirPaten"
         value="imprimir" />
     </form>
   </center>

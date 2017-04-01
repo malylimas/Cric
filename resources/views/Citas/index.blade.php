@@ -22,6 +22,7 @@
           <th><center><b>#</center></b></th>
           <th><center><b>Nombre_Paciente</center></b></th>
           <th><center><b>Terapista</center></b></th>
+          <th><center><b>Tipo De Terapia</center></b></th>
           <th><center><b>Patologia</center></b></th>
           <th><center><b>Fecha_Hora</center></b></th>
           <th><center><b>Acciones</center></b></th>
@@ -35,6 +36,7 @@
           <th>{{ $cita->id }}</th>
           <th>{{ $cita->paciente->Nombre_Paciente}}</th>
           <td>{{ $cita->terapista->Nombre}}</td>
+          <td>{{ $cita->Patologia->terapia->Nombre}}</td>
           <td>{{ $cita->Patologia->Nombre_Patologia}}</td>
           <td>{{ $cita->Fecha_Hora}}</td>
           <td>

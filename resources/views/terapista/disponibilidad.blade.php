@@ -14,8 +14,9 @@
     <center>
     
     <form  action="/terapista/disponibilidad/{{$terapista->id}}">
-
-     <div class="row">
+            
+        <br>
+        <div class="row">
         <div class="form-group col-md-4">
         <label for="exampleInputEmail2">Buscar por:</label>
           <select id="tipo" class="form-control" name="tipo" id="exampleInputEmail2">
@@ -33,9 +34,10 @@
         </div>
       </div>
       
+      <div class="row">
       <div class="form-group col-md-4">
-      <label for="fechaDatos">Fecha</label>
-        </center>
+      <label for="fechaDatos">Fecha:</label>
+        
         <div id="month-container">
       
         <div  class="input-group date">
@@ -52,13 +54,14 @@
           </div>
         </div>
       </div>
-      
-      
-      
+    
+    
+      <center>
+      <br>
       <button type="submit" class="btn btn-primary ">Buscar</button>
       <button type="button" name="imprimir" class="btn btn-default " id="ImprimirPac" onClick="printDiv('imprimirDatos')"
         value="Imprimir">Imprimir</button>
-     
+       </center>
     </form>
   </div>
   

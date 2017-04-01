@@ -7,6 +7,7 @@ use App\cita;
 use App\Terapista;
 use App\Patologia;
 use App\Paciente;
+use App\terapia;
 
 class CitaController extends Controller
 {
@@ -33,9 +34,11 @@ class CitaController extends Controller
         }
         
         $terapistas = Terapista::All();
+        $terapias=Terapia::All();
         $patalogias= Patologia::All();
+        
 
-        return view('Citas.crear')->with('paciente',$paciente)->with('terapistas',$terapistas)->with('patologias',$patalogias);
+        return view('Citas.crear')->with('paciente',$paciente)->with('terapistas',$terapistas)->with('terapias',$terapias)->with('patologias',$patalogias);
     }
 
 
@@ -46,6 +49,7 @@ class CitaController extends Controller
        cita::create([
             'paciente_id' =>$paciente->id,
             'terapista_id'=>$request->terapista_id,
+            'terapia_id'=>$request->terpia_id,
             'Patologia_id'=>$request->Patologia_id,
             'Fecha_Hora'=>$request->Fecha_Hora,
 
@@ -60,8 +64,10 @@ class CitaController extends Controller
 
     
         $terapistas = Terapista::All();
+        $terapias= Terapia::All();
         $patalogias= Patologia::All();
-        return view('Citas.modificar')->with('terapistas',$terapistas)->with('patologias',$patalogias)->with('cita',$cita);
+       
+        return view('Citas.modificar')->with('terapistas',$terapistas)->with('terapia',$terapias)->with('patologias',$patalogias)->with('cita',$cita);
     }
     
    
@@ -80,6 +86,7 @@ class CitaController extends Controller
       public function put(Request  $request, Cita $cita){
         
         $cita->terapista_id= $request->terapista_id;
+        $cita->terapia_id= $request->terapia_id;
         $cita->Patologia_id= $request->Patologia_id;
         $cita->Fecha_Hora= $request->Fecha_Hora;
         $cita->save();

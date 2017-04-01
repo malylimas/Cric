@@ -26,6 +26,18 @@
         </div>
     </div>
 
+       <div class="form-group">
+      <label for="disabledSelect" class="col-2 col-form-label">Tipo Terapia</label>
+      <select id="disabledSelect" name="terapia_id" class="form-control">
+        
+        @foreach($terapias as $terapia)
+          <option value="{{$terapia->id}}"> {{$terapia->Nombre}} </option>
+        @endforeach
+      </select>
+      </div> 
+      
+       
+
     <div class="form-group">
         <label for="patologiaCombo" class="col-2 col-form-label">Patologia</label>
         <div class="col-10">
