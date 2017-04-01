@@ -18,13 +18,17 @@ class cita extends Model
      * @var array
      */
     protected $fillable = [
-        'Nombre_Paciente' , 'Fecha_Hora', 'terapista_id', 'Patologia_id', 'paciente_id', 
+        'Nombre_Paciente' , 'Fecha_Hora', 'terapista_id','terapista_id','Patologia_id', 'paciente_id', 
     ];
 
     protected $dates = ['deleted_at'];
 
     public function terapista(){
         return $this->belongsTo('App\Terapista');
+    }
+
+    public function terapia(){
+        return $this->belongsTo('App\terapia');
     }
 
     public function Patologia(){

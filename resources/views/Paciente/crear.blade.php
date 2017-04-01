@@ -48,7 +48,18 @@
       </select>
   </div>
   </div>
-  
+   
+    <div class="form-group row">
+    <label for="dptoSelect">Departamento</label>
+    <select id="dptoSelect" name="departamento_id" class="form-control">
+    
+     @foreach($departamentos as $departamento)
+       <option value="{{$departamento->id}}"> {{$departamento->Nombre_Departamento}} </option>
+     @endforeach
+      </select>
+   </div>
+
+
 
   <div class="form-group row">
     <label for="disabledSelect">Municipio</label>
@@ -62,19 +73,6 @@
   </div>
   
   
-  
-  
-  <div class="form-group row">
-    <label for="dptoSelect">Departamento</label>
-    <select id="dptoSelect" name="departamento_id" class="form-control">
-    
-     @foreach($departamentos as $departamento)
-       <option value="{{$departamento->id}}"> {{$departamento->Nombre_Departamento}} </option>
-     @endforeach
-      </select>
-   </div>
-
-
 
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
