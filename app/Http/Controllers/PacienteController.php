@@ -115,7 +115,8 @@ class PacienteController extends Controller
 
 
         if ($validator->fails()) {
-            return redirect('Paciente/crear')
+           
+            return back()
                         ->withErrors($validator)
                         ->withInput();
         }
