@@ -15,7 +15,7 @@
 </div>
 
 <div class="form-group row">
-  <label for="example-text-input" class="col-2 col-form-label">Nombre Del Paciente</label>
+  <label for="example-text-input" class="col-2 col-form-label">Nombre del Paciente</label>
   <div class="col-10">
     <input class="form-control" type="text" name="Nombre_Paciente" value="{{ $paciente->Nombre_Paciente}}"   id="example-text-input">
   </div>
@@ -35,14 +35,14 @@
 </div>
 
   <div class="form-group row">
-  <label for="example-text-input" class="col-2 col-form-label">Telefono</label>
+  <label for="example-text-input" class="col-2 col-form-label">Teléfono</label>
   <div class="col-10">
     <input class="form-control" type="text" name="Telefono" value = "{{$paciente->Telefono}}" id="example-text-input">
   </div>
 </div>
 
  <div class="form-group row">
-  <label for="example-text-input" class="col-2 col-form-label">Ocupacion</label>
+  <label for="example-text-input" class="col-2 col-form-label">Ocupación</label>
   <div class="col-10">
     <input class="form-control" type="text" name="Ocupacion" value = "{{$paciente->Ocupacion}}" id="example-text-input">
   </div>

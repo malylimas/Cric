@@ -7,7 +7,7 @@
    {{ csrf_field()}}
   
   <div class="form-group">
-    <label for="example-text-input">Nombre Patologia</label>
+    <label for="example-text-input">Nombre Patología</label>
     <input type="text" class="form-control" name= "Nombre_Patologia" id="example-text-input">
   </div>
   <div class="form-group">

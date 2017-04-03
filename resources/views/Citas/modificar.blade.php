@@ -39,7 +39,7 @@
 
 
    <div class="form-group">
-        <label for="patologiaCombo" class="col-2 col-form-label">Patologia</label>
+        <label for="patologiaCombo" class="col-2 col-form-label">Patología</label>
         <div class="col-10">
             <select class="form-control"  name="Patologia_id" id="patologiaCombo" >
               

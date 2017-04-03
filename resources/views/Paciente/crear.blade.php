@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="example-text-input" class="col-2 col-form-label">Nombre Del Paciente</label>
+    <label for="example-text-input" class="col-2 col-form-label">Nombre del Paciente</label>
     <div class="col-10">
       <input class="form-control" type="text" name="Nombre_Paciente" id="example-text-input" value="{{ old('Nombre_Paciente') }}">
     </div>
@@ -28,13 +28,13 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="example-text-input" class="col-2 col-form-label">Telefono</label>
+    <label for="example-text-input" class="col-2 col-form-label">Teléfono</label>
     <div class="col-10">
       <input class="form-control" type="text" name="Telefono" id="example-text-input" value="{{ old('Telefono') }}" >
     </div>
   </div>
   <div class="form-group row">
-    <label for="example-text-input" class="col-2 col-form-label">Ocupacion</label>
+    <label for="example-text-input" class="col-2 col-form-label">Ocupación</label>
     <div class="col-10">
       <input class="form-control" type="text" name="Ocupacion" id="example-text-input" value="{{ old('Ocupacion') }}">
     </div>

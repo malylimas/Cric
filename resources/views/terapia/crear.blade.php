@@ -20,7 +20,7 @@
         <label for="example-text-input" class="col-2 col-form-label">Precio</label>
         <div class="col-10">
           <input class="form-control" type="number" placeholder="Ingrese Lps" name="Precio" id="example-text-input" >
-          <img src="/img/imagenMoney.jpg" align="right" border="0" width="50" height="50">
+         
           
           
           

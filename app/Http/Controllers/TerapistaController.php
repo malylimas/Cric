@@ -25,7 +25,7 @@ class TerapistaController extends Controller
         
         $this->validate($request, [
         'Nombre' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
-        'Telefono' => 'required |numeric',
+        'Telefono' => 'required |digits:8',
         'Direccion' => 'required|max:150',
         ]);
         
@@ -62,7 +62,7 @@ class TerapistaController extends Controller
 
         $this->validate($request, [
         'Nombre' => 'required|max:30',
-        'Telefono' => 'required |numeric',
+        'Telefono' => 'required |digits:8',
         'Direccion' => 'required|max:150',
         ]);
         

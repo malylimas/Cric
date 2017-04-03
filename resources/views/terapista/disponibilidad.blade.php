@@ -6,7 +6,7 @@
     
       <div id="wrapper">
  <center>
- <h1>Fundacion Centro De Rehabilitacion Integral De Comayagua (CRIC)</h1>
+ <h1>Fundación Centro de Rehabilitación Integral De Comayagua (CRIC)</h1>
  <h3> Dr Marcial Ponce Ochoa</h3>
  
  </center>
@@ -79,7 +79,7 @@
           <tr>
             <th>#</th>
             <th>Nombre Paciente</th>
-            <th>Patologia</th>
+            <th>Patología</th>
             <th>Fecha Hora</th>
           </tr>
         </thead>

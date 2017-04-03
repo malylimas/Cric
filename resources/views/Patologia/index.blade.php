@@ -13,7 +13,7 @@
             <thead>
               <tr>
                 <th><center><b>#</center></b></th>
-                <th><center><b>Nombre De Patologia</center></b></th>
+                <th><center><b>Nombre De Patología</center></b></th>
                 <th><center><b>Tipo De Terapia</center></b></th>
                 <th><center><b>Acciones</center></b></th>
               </tr>

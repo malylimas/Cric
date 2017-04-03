@@ -9,7 +9,7 @@
    {{ csrf_field()}}
 
     <div class="form-group">
-        <label for="example-text-input" class="col-2 col-form-label">Nombre Del Paciente</label>
+        <label for="example-text-input" class="col-2 col-form-label">Nombre del Paciente</label>
         <div class="col-10">
             <input class="form-control" id= "fechaPicker" name = "paciente" type="text" value="{{$paciente->Nombre_Paciente}}" disabled>
             
@@ -40,7 +40,7 @@
        
 
     <div class="form-group">
-        <label for="patologiaCombo" class="col-2 col-form-label">Patologia</label>
+        <label for="patologiaCombo" class="col-2 col-form-label">Patología</label>
         <div class="col-10">
             <select class="form-control"  name="Patologia_id" id="patologiaCombo" >
                

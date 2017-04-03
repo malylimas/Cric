@@ -13,8 +13,8 @@
               <tr>
                <th><center><b>#</b></center></th>
                <th><center><b>Nombre</b></center></th>
-               <th><center><b>Telefono</b</center></th>
-              <th><center><b>Direccion</b></center></th>
+               <th><center><b>Teléfono</b</center></th>
+              <th><center><b>Dirección</b></center></th>
               <th><center><b>Acciones</b></center></th>
               <th><center><b> Disponibilidad</b></center> </th>
        

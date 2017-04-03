@@ -21,10 +21,10 @@
                 <th><center><b>Identidad</center></b></th>
                 <th><center><b>Nombre Paciente</center></b></th>
                 <th><center><b>Direccion Actual</center></b></th>
-                <th><center><b>Fecha De Nacimiento</center></b></th>
+                <th><center><b>Fecha de Nacimiento</center></b></th>
                 <th><center><b>Edad</center></b></th>
-                <th><center><b>Telefono</center></b></th>
-                <th><center><b>Ocupacion</center></b></th>
+                <th><center><b>Teléfono</center></b></th>
+                <th><center><b>Ocupación</center></b></th>
                 <th><center><b>Nivel Educativo</center></b></th>
                 <th><center><b>Departamento</center></b></th>
                 <th><center><b>Municipio</center></b></th>

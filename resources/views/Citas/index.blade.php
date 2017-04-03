@@ -20,11 +20,11 @@
       <thead>
         <tr>
           <th><center><b>#</center></b></th>
-          <th><center><b>Nombre_Paciente</center></b></th>
+          <th><center><b>Nombre Paciente</center></b></th>
           <th><center><b>Terapista</center></b></th>
           <th><center><b>Tipo De Terapia</center></b></th>
-          <th><center><b>Patologia</center></b></th>
-          <th><center><b>Fecha_Hora</center></b></th>
+          <th><center><b>Patología</center></b></th>
+          <th><center><b>Fecha Hora</center></b></th>
           <th><center><b>Acciones</center></b></th>
           <th><center><b>Imprimir</center></b></th>
         </tr>

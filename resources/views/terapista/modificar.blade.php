@@ -14,7 +14,7 @@
   </div>
 </div>
 <div class="form-group row">
-  <label for="example-text-input" class="col-2 col-form-label">Telefono</label>
+  <label for="example-text-input" class="col-2 col-form-label">Teléfono</label>
   <div class="col-10">
     <input class="form-control" type="text" name="Telefono" value = "{{$terapista->Telefono}}" id="example-text-input">
   </div>
