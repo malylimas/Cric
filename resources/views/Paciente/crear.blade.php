@@ -1,4 +1,6 @@
- @extends('layouts.form') @section('form-content') @define $pageTitle = 'Crear Paciente'
+ @extends('layouts.form') 
+ @section('form-content') 
+ @define $pageTitle = 'Crear Paciente'
 <form action="crear" method="Post" role="form">
   {{ csrf_field()}}
   <div class="form-group row">
@@ -62,12 +64,10 @@
 
 
   <div class="form-group row">
-    <label for="disabledSelect">Municipio</label>
+    <label for="municipioSelect">Municipio</label>
     <div class="col-10">
-      <select id="disabledSelect" name="municipio_id" class="form-control">    
-          @foreach($municipios as $municipio)
-            <option value="{{$municipio->id}}"> {{$municipio->Nombre_Municipio}} </option>
-          @endforeach
+      <select id="municipioSelect" name="municipio_id" class="form-control">    
+          
       </select>
   </div>
   </div>
@@ -77,3 +77,11 @@
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
 @endsection
+
+
+ @section('script')
+  <script>
+     var municipios = convertToJson('{{ $municipios->toJson() }}');
+     loadChildCombo('#dptoSelect','#municipioSelect',municipios,'departamento_id','Nombre_Municipio')
+  </script>
+ @endSection

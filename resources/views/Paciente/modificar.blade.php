@@ -64,8 +64,8 @@
 
 
    <div class="form-group row">
-    <label for="disabledSelect">Departamento</label>
-    <select id="disabledSelect" name="departamento_id" class="form-control">
+    <label for="dptoSelect">Departamento</label>
+    <select id="dptoSelect" name="departamento_id" class="form-control">
     
      @foreach($departamentos as $departamento)
        <option value="{{$departamento->id}}"> {{$departamento->Nombre_Departamento}} </option>
@@ -76,13 +76,11 @@
 
 
    <div class="form-group row">
-   <label for="disabledSelect">Municipio</label>
+   <label for="municipioSelect">Municipio</label>
    <div class="col-10">
-   <select id="disabledSelect" name="municipio_id" class="form-control">
+   <select id="municipioSelect" name="municipio_id" class="form-control">
     
-    @foreach($municipios as $municipio)
-      <option value="{{$municipio->id}}"> {{$municipio->Nombre_Municipio}} </option>
-    @endforeach
+   
       </select
   </div>
   </div>
@@ -100,3 +98,10 @@
 
 
 @endsection
+
+ @section('script')
+  <script>
+     var municipios = convertToJson('{{ $municipios->toJson() }}');
+     loadChildCombo('#dptoSelect','#municipioSelect',municipios,'departamento_id','Nombre_Municipio')
+  </script>
+ @endSection

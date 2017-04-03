@@ -27,8 +27,8 @@
     </div>
 
        <div class="form-group">
-      <label for="disabledSelect" class="col-2 col-form-label">Tipo Terapia</label>
-      <select id="disabledSelect" name="terapia_id" class="form-control">
+      <label for="terapiaSelect" class="col-2 col-form-label">Tipo Terapia</label>
+      <select id="terapiaSelect" name="terapia_id" class="form-control">
         
         @foreach($terapias as $terapia)
           <option value="{{$terapia->id}}"> {{$terapia->Nombre}} </option>
@@ -42,9 +42,7 @@
         <label for="patologiaCombo" class="col-2 col-form-label">Patologia</label>
         <div class="col-10">
             <select class="form-control"  name="Patologia_id" id="patologiaCombo" >
-                @foreach ($patologias as $patologia)
-                    <option value="{{$patologia->id}}">{{$patologia->Nombre_Patologia}}</option>
-                @endforeach
+               
             </select>
         </div>
     </div>
@@ -56,14 +54,16 @@
         </div>
     </div>
    
-    
-
-    
-
-    
 
  <button class= "btn btn-primary" type ="Submit" >Guardar</button>
 </from>
 
 @endsection
  
+
+  @section('script')
+  <script>
+     var municipios = convertToJson('{{ $patologias->toJson() }}');
+     loadChildCombo('#terapiaSelect','#patologiaCombo',municipios,'terapia_id','Nombre_Patologia')
+  </script>
+ @endSection

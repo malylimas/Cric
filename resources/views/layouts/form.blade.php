@@ -18,14 +18,9 @@
 @if (count($errors) > 0)
 
   <script>
-      var search = '&quot;';
-      var replace = '"'
-      var jsonString = '{{ ( $errors->toJson()) }}'.split(search).join(replace);
-
-      var errors = JSON.parse(jsonString);
-
+      var errors = convertToJson('{{ ( $errors->toJson()) }}') 
       showError(errors);
      
   </script>
-    @endif
+@endif
 @endsection

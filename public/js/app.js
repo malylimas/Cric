@@ -11215,7 +11215,10 @@ module.exports = g;
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {__webpack_require__(30);
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+__webpack_require__(30);
 
 (function () {
     $('#date-container input').datepicker({
@@ -11261,6 +11264,46 @@ window.showError = function () {
             var group = element.closest('.form-group');
             group.addClass('has-error');
         }
+    };
+}();
+
+window.convertToJson = function () {
+    return function (valueJsonString) {
+
+        var search = '&quot;';
+        var replace = '"';
+        var jsonString = valueJsonString.split(search).join(replace);
+
+        return JSON.parse(jsonString);
+    };
+}();
+
+window.loadChildCombo = function () {
+    return function (father, child, childData, childId, childDisplay) {
+        var fatherElement = $(father);
+        var childElement = $(child);
+
+        fatherElement.on('change', function () {
+            var value = this.value;
+
+            loadData(childElement, childData, value, childId, childDisplay);
+        });
+
+        loadData(childElement, childData, '1', childId, childDisplay);
+    };
+}();
+
+window.loadData = function () {
+    return function (element, data, value, childId, childDisplay) {
+        var newOptions = _.filter(data, function (o) {
+            return o[childId].toString() === value;
+        });
+
+        element.find('option').remove().end();
+
+        _.forEach(newOptions, function (item) {
+            element.append($("<option />").val(item.id).text(item[childDisplay]));
+        });
     };
 }();
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
