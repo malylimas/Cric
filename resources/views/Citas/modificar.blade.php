@@ -27,13 +27,22 @@
     </div>
 
 
+<div class="form-group">
+      <label for="terapiaSelect" class="col-2 col-form-label">Tipo Terapia</label>
+      <select id="terapiaSelect" name="terapia_id" class="form-control">
+        
+        @foreach($terapias as $terapia)
+          <option value="{{$terapia->id}}"> {{$terapia->Nombre}} </option>
+        @endforeach
+      </select>
+      </div>
+
+
    <div class="form-group">
         <label for="patologiaCombo" class="col-2 col-form-label">Patologia</label>
         <div class="col-10">
-            <select class="form-control"  name="Patologia_id" id="PatologiaCombo" value="{{$cita->Nombre_Patologia}}" >
-                @foreach ($patologias as $patologia)
-                    <option value="{{$patologia->id}}">{{$patologia->Nombre_Patologia}}</option>
-                @endforeach
+            <select class="form-control"  name="Patologia_id" id="patologiaCombo" >
+              
             </select>
         </div>
 
@@ -53,3 +62,11 @@
 
 
 @endsection
+
+
+  @section('script')
+  <script>
+     var municipios = convertToJson('{{ $patologias->toJson() }}');
+     loadChildCombo('#terapiaSelect','#patologiaCombo',municipios,'terapia_id','Nombre_Patologia')
+  </script>
+ @endSection
