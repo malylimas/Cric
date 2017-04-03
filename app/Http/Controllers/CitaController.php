@@ -7,8 +7,9 @@ use App\cita;
 use App\Terapista;
 use App\Patologia;
 use App\Paciente;
+use Validator;
 use App\terapia;
-
+use Illuminate\Validation\Rule;
 class CitaController extends Controller
 {
     
@@ -45,7 +46,30 @@ class CitaController extends Controller
 
     public function store(Request $request,  Paciente $paciente)
     {
+        $validator = Validator::make($request->all(), [
+        'paciente_id' => ['required', Rule::exists('cita')->where(function ($query) {
+            return $query->where([
+                        ['paciente_id', '=', $request->paciente_id],
+                        ['Fecha_hora', '=', $request->Fecha_Hora],
+                    ]
+                );
+        })] ]);
+        
+        
+        return $request->Fecha_Hora;
+        $exist = cita::where([
+                        ['paciente_id', '=', $request->paciente_id],
+                        ['Fecha_hora', '=', $request->Fecha_Hora],
+                    ])->first();
+
+        return $exist;
+        if($exist){
+            return  redirect('cita/index')
+                        ->with('$errors',['La cita ya se encuentra registrada'])
+                        ->withInput();
+        }
     
+        
        cita::create([
             'paciente_id' =>$paciente->id,
             'terapista_id'=>$request->terapista_id,
