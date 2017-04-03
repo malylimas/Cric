@@ -10,6 +10,8 @@ use App\Paciente;
 use Validator;
 use App\terapia;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\MessageBag;
+
 class CitaController extends Controller
 {
     
@@ -46,34 +48,48 @@ class CitaController extends Controller
     
     public function store(Request $request,  Paciente $paciente)
     {
-        $validator = Validator::make($request->all(), [
-        'paciente_id' => ['required', Rule::exists('cita')->where(function ($query) {
-            return $query->where([
-            ['paciente_id', '=', $request->paciente_id],
-            ['Fecha_hora', '=', $request->Fecha_Hora],
-            ]
-            );
-        })] ]);
+        
+        $this->Validate($request,
+        ['Fecha_Hora' => ['required'],
+        'terapista_id' => ['required']]);
         
         
-        return $request->Fecha_Hora;
-        $exist = cita::where([
-        ['paciente_id', '=', $request->paciente_id],
+        
+        
+        $existPaciente = cita::where([
+        ['paciente_id', '=', $paciente->id],
         ['Fecha_hora', '=', $request->Fecha_Hora],
         ])->first();
         
-        return $exist;
-        if($exist){
-            return  redirect('cita/index')
-            ->with('$errors',['La cita ya se encuentra registrada'])
-            ->withInput();
+        $existTerapista = cita::where([
+        ['terapista_id', '=', $request->terapista_id],
+        ['Fecha_hora', '=', $request->Fecha_Hora],
+        ])->first();
+        
+        $bag = new MessageBag();
+        
+        if($existPaciente){
+            
+            $bag->add('paciente', 'La cita ya se encuentra registrada para este paciente');
+            
         }
         
+         if($existTerapista){
+            
+            $bag->add('terapista_id', 'El terapista ya tiene una cita a esta hora');
+            
+        }
         
+
+        if($bag->any())
+        return back()
+            ->with('errors',$bag)
+            ->withInput();
+
+
         cita::create([
         'paciente_id' =>$paciente->id,
-        'terapista_id'=>$request->terapista_id,
-        'terapia_id'=>$request->terpia_id,
+        'terapista_id'=>$request->terapista_id,        
         'Patologia_id'=>$request->Patologia_id,
         'Fecha_Hora'=>$request->Fecha_Hora,
         
@@ -108,9 +124,57 @@ class CitaController extends Controller
     
     
     public function put(Request  $request, Cita $cita){
+
+        $paciente = $cita->paciente;
+
+        $this->Validate($request,
+        ['Fecha_Hora' => ['required'],
+        'terapista_id' => ['required']]);
+        
+        
+        
+        
+        $existPaciente = cita::where([
+        ['paciente_id', '=', $paciente->id],
+        ['Fecha_hora', '=', $request->Fecha_Hora],
+        ])->first();
+        
+        $existTerapista = cita::where([
+        ['terapista_id', '=', $request->terapista_id],
+        ['Fecha_hora', '=', $request->Fecha_Hora],
+        ])->first();
+        
+        $bag = new MessageBag();
+        
+        if($existPaciente && $existPaciente->id != $cita->id){
+        
+            $bag->add('paciente', 'La cita ya se encuentra registrada para este paciente');
+            
+        }
+        
+         if($existTerapista && $existPaciente->id != $cita->id ){
+            
+            $bag->add('terapista_id', 'El terapista ya tiene una cita a esta hora');
+            
+        }
+        
+
+        if($bag->any())
+        return back()
+            ->with('errors',$bag)
+            ->withInput();
+
+
+
+
+
+
+
+
+
         
         $cita->terapista_id= $request->terapista_id;
-        $cita->terapia_id= $request->terapia_id;
+        
         $cita->Patologia_id= $request->Patologia_id;
         $cita->Fecha_Hora= $request->Fecha_Hora;
         $cita->save();

@@ -9,7 +9,7 @@
     <form class="form-inline" action="/Paciente/pacientesatendidos/{{$paciente->id}}">
       <div id="date-container" class="form-group">
         <label for="exampleInputName2">Fecha</label>
-        <input type="input" class="form-control" id="exampleInputName2" name="fecha" placeholder="Jane Doe" value="{{$fecha}}">
+        <input type="input" class="form-control" id="exampleInputName2" name="fecha" placeholder="Jane Doe" value="{{$fecha->format('d/m/Y')}}">
       </div>
       
       <button type="submit" class="btn btn-primary">Buscar Pacientes</button>
@@ -24,7 +24,7 @@
         <h2>Pacientes Atendidos</h2>
       </div>
       <div class="row">
-        <table class="table table-bordered">
+        <table class="table table-bordered"
           <thead>
             <tr>
               <th>#</th>

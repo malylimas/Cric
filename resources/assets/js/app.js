@@ -54,6 +54,13 @@ window.showError = (function () {
             var group = element.closest('.form-group')
             group.addClass('has-error');
 
+             var select = window.$("select[name=" + key + "]");
+            select.popover(options);
+            select.popover('show');
+            //count++;
+            var group = select.closest('.form-group')
+            group.addClass('has-error');
+
 
         }
     };

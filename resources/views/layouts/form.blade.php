@@ -14,7 +14,7 @@
 @endsection
 
 
-@section('script')
+@section('script-validacion')
 @if (count($errors) > 0)
 
   <script>

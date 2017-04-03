@@ -10,7 +10,7 @@
   
   <div class="form-group">
     <label for="example-text-input">Nombre De Paciente</label>
-    <input type="text" class="form-control" name= "Nombre_Paciente" id="example-text-input" value= "{{$cita->paciente->Nombre_Paciente}}">
+    <input type="text" class="form-control" name= "paciente" id="example-text-input" value= "{{$cita->paciente->Nombre_Paciente}}" disabled>
       
   </div>
 
