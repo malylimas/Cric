@@ -35,7 +35,7 @@ class TerapiaController extends Controller
     }
 
      public function index(){
-        $terapias = Terapia::withTrashed()->get();
+        $terapias = Terapia::withTrashed()->paginate(8);
         return view('terapia.index')->with('terapias', $terapias);
     }
 

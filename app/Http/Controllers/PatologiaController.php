@@ -36,7 +36,7 @@ class PatologiaController extends Controller
     }
     
     public function index(){
-        $patologias = Patologia::withTrashed()->get();
+        $patologias = Patologia::withTrashed()->paginate(8);
         return view('Patologia.index')->with('patologias', $patologias);
     }
     

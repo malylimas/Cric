@@ -71,7 +71,7 @@ class PacienteController extends Controller
     }
 
      public function index(){
-        $pacientes = Paciente::withTrashed()->get();
+        $pacientes = Paciente::withTrashed()->paginate(8);
         $var  = Carbon::today();
         return view('Paciente.index')->with('pacientes', $pacientes)->with('var',$var);
 

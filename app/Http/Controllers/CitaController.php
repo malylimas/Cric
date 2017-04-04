@@ -22,7 +22,7 @@ class CitaController extends Controller
     
     public function index()
     {
-        $citas = Cita::withTrashed()->get();
+        $citas = Cita::withTrashed()->paginate(8);
         return view('Citas.index')->with('citas', $citas);
     }
     

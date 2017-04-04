@@ -9,7 +9,7 @@
     </br>
     
     <div class = "row">
-
+          <div class="contianer">
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -37,6 +37,8 @@
               @endforeach
             </tbody>
           </table>
+          </div>
+       {{ $terapias->links() }}
     </div>
 </div>
 @endsection
