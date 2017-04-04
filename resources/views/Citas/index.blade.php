@@ -5,8 +5,8 @@
     <div class="col-md-4">
       <form action="crear" method="GET" class="form-inline">
         <div class="form-group">
-          <label class="sr-only" for="exampleInputEmail3">Numero Identidad</label>
-          <input type="text" required name="numeroIdentidad" class="form-control" id="exampleInputEmail3" placeholder="Numero Identidad">
+          <label class="sr-only" for="exampleInputEmail3">Numero de Identidad del Paciente</label>
+          <input type="text" required name="numeroIdentidad" class="form-control" id="exampleInputEmail3" placeholder="Identidad del Paciente">
         </div>
         <button class="btn btn-primary"> Crear Cita</button>
       </form>
@@ -20,6 +20,7 @@
       <thead>
         <tr>
           <th><center><b>#</center></b></th>
+          <th><center><b>Identidad</center></b></th>
           <th><center><b>Nombre Paciente</center></b></th>
           <th><center><b>Terapista</center></b></th>
           <th><center><b>Tipo De Terapia</center></b></th>
@@ -34,6 +35,7 @@
         <tr>
 
           <th>{{ $cita->id }}</th>
+           <th>{{ $cita->paciente->Identidad}}</th>
           <th>{{ $cita->paciente->Nombre_Paciente}}</th>
           <td>{{ $cita->terapista->Nombre}}</td>
           <td>{{ $cita->Patologia->terapia->Nombre}}</td>

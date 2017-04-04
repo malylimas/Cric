@@ -39,7 +39,7 @@ class TerapistaController extends Controller
     }
     
     public function index(){
-        $terapistas = Terapista::withTrashed()->get();
+        $terapistas = Terapista::withTrashed()->paginate(8);
         $now = Carbon::today();
         return view('terapista.index')->with('terapistas', $terapistas)->with('now',$now);
     }

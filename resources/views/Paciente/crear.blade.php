@@ -85,3 +85,5 @@
      loadChildCombo('#dptoSelect','#municipioSelect',municipios,'departamento_id','Nombre_Municipio')
   </script>
  @endSection
+
+ 
