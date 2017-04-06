@@ -88,7 +88,6 @@ Auth::routes();
 
 //modulo de Contabilidad
 Route::get('/home', 'HomeController@index');
-Route::get('factura/crear', 'FacturaController@crear');
-Route::post('factura/crear/{paciente}','FacturaController@store');
-Route::get('factura/index','FacturaController@index');
 
+
+Route::resource('factura', 'FacturaController');

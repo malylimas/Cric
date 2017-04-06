@@ -24,9 +24,4 @@ class Factura extends Model
 
     protected $dates = ['deleted_at'];
 
-
-
-
-
-    protected $table ="Factura";
 }

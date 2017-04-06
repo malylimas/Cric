@@ -2,14 +2,8 @@
 
 @section('form-content')
     @define $pageTitle = 'Crear Factura'
-
-     <div  class="form-group">
-        <label for="fechaPicker" class="col-2 col-form-label">Fecha Hora</label>
-        <div class="col-10">
-            <input class="form-control" id= "fechaPicker" name = "Fecha_Hora" type="datetime-local">
-        </div>
-    </div>
-
+<form>
+  
       <div class="form-group">
         <label for="example-text-input" class="col-2 col-form-label">Nombre del Paciente</label>
         <div class="col-10">
