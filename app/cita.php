@@ -38,6 +38,9 @@ class cita extends Model
     public function paciente(){
         return $this->belongsTo('App\Paciente');
     }
-
+    
+    public function factura(){
+        return $this->belongsTo('App\Factura');
+    }
      protected $table ="cita";
 }
