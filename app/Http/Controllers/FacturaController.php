@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Factura;
 use Illuminate\Http\Request;
 use App\Paciente;
+use App\cita;
 
 
 class FacturaController extends Controller
@@ -30,7 +31,17 @@ class FacturaController extends Controller
         //
         $paciente = Paciente::where('Identidad', $request->numeroIdentidad)->first();
 
-        return View('Factura.crear')->with('paciente',$paciente);
+        
+        $citas = cita::with('patologia.terapia')->whereNull('factura_id')->where('paciente_id', $paciente->id)->get();
+
+        $precio = 0.0;
+
+        foreach($citas as $cita){
+            $precio = $precio + $cita->patologia->terapia->Precio;
+        }
+
+        
+        return View('Factura.crear')->with('paciente',$paciente)->with('citas',$citas) ->with('precio',$precio);
     }
 
     /**

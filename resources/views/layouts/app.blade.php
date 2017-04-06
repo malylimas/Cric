@@ -66,7 +66,7 @@
                             <li class= "Dropdown">
                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Caja <span class="caret"></span></a>
                                   <ul class="dropdown-menu">
-                                    <li><a href="/factura/index">Cobro de Terapias</a></li>
+                                    <li><a href="/factura">Cobro de Terapias</a></li>
                                     <li><a href="/egreso/index">Egresos de Caja</a></li>
                                     <li><a href="/ingeso/index">Ingresos de Caja</a></li>
                                     
