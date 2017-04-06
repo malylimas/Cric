@@ -90,4 +90,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 
-Route::resource('factura', 'FacturaController');
+Route::resource('factura','FacturaController');
+Route::resource('egreso', 'EgresoController');
+Route::resource('ingreso', 'IngresoController');
