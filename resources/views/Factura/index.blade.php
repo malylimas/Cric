@@ -14,7 +14,7 @@
   </div>
   </br>
   <div class="row">
-    <div class="contianer">
+      <div class="contianer">
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -27,7 +27,7 @@
             <th>
               <center><b>Fecha_Hora</center></b></th>
             <th>
-              <center><b>Precio</center></b></th>
+              <center><b>Descuento</center></b></th>
             <th>
               <center><b>SubTotal</center></b></th>
             <th>
@@ -45,7 +45,7 @@
             <th>{{ $factura->paciente->Identidad}}</th>
             <th>{{ $factura->paciente->Nombre_Paciente}}</th>
             <td>{{ $factura->Fecha_Hora}}</td>
-            <td>{{ $factura->Patologia->terapia->Precio}}</td>
+            <td>{{ $factura->Descuento}}</td>
             <td>{{ $factura->SubTotal}}</td>
             <td>{{ $factura->Total}}</td>
             <td>
@@ -66,6 +66,8 @@
           @endforeach
         </tbody>
       </table>
+      </div>
+      {{ $facturas->links() }} 
     </div>
   </div>
 </div>

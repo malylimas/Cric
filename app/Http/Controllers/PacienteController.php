@@ -36,8 +36,8 @@ class PacienteController extends Controller
         'Telefono' => 'required|digits:8',
         'Ocupacion' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
         'nivel_id' => 'required|exists:nivel,id',
-        'municipio_id' => 'required|exists:departamento,id',
-        'departamento_id' => 'required|exists:municipio,id',
+        'municipio_id' => 'required|exists:municipio,id',
+        'departamento_id' => 'required|exists:departamento,id',
         
         
         ]);

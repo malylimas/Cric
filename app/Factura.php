@@ -24,4 +24,7 @@ class Factura extends Model
 
     protected $dates = ['deleted_at'];
 
+    public function paciente(){
+        return $this->belongsTo('App\Paciente'); 
+    }
 }
