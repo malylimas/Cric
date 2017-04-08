@@ -125,4 +125,12 @@ class FacturaController extends Controller
     {
         //
     }
+
+   public function imprimir(Factura $factura){
+        
+        
+        return view('factura.Imprimir')->with('factura', $factura);
+    }
+
+
 }
