@@ -48,12 +48,12 @@
       
         <label for="example-text-input" class="col-2 col-form-label">Descuento</label>
         <div class="col-10">
-        <select id="selectDescuentos" class="form-control">
-          <option value="0">Ninguno</option>
-          <option value="25">Descuento Tercera Edad</option>
-          <option value="100">Descuento Escasos Recursos</option>
-          <option value="25">Descuento por Discapacidad</option>
+        <select id="selectDescuentos" class="form-control" name="descuento_id">
           
+          @foreach($descuentos as $descuento)
+              <option value="{{$descuento->id}}">{{$descuento->Nombre}}</option>
+          @endforeach
+
         </select>
           
          </div>
@@ -65,7 +65,7 @@
       
         <label for="example-text-input" class="col-2 col-form-label">Total</label>
         <div class="col-10">
-          <input id="total" class="form-control" type="number" placeholder="Ingrese Lps" name="Total" id="example-text-input" value="{{$subTotal}}">
+          <input id="total" class="form-control" type="text" name="Total"  value="{{$subTotal}}" >
 
           
          </div>
@@ -79,13 +79,19 @@
 @endsection
 @section('script')
 <script>
+  var descuentos = convertToJson('{{$descuentos->toJson()}}');
+
   var element =  $('#selectDescuentos');
   var subElement = $('#subTotal');
   var tottal = $('#total');
+  
   element.on('change', function(){
-    var value =this.value;
+    var _this= this;
+    var descuento = _.find(descuentos, function(o){
+      return o.id === parseInt(_this.value)
+    });
     var sub = parseInt(subElement.val());
-    var result = (parseInt(value)/100) * sub;
+    var result = (descuento.Valor/100) * sub;
 
     tottal.val (sub -result) 
   });

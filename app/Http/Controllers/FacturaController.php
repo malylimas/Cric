@@ -6,6 +6,7 @@ use App\Factura;
 use Illuminate\Http\Request;
 use App\Paciente;
 use App\cita;
+use App\Descuento;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\MessageBag;
 
@@ -34,7 +35,8 @@ class FacturaController extends Controller
         //
         $paciente = Paciente::where('Identidad', $request->numeroIdentidad)->first();
         
-        
+        $descuentos = Descuento::all();
+
         $citas = cita::with('patologia.terapia')->whereNull('factura_id')->where('paciente_id', $paciente->id)->get();
         
         $subTotal = 0.0;
@@ -44,7 +46,7 @@ class FacturaController extends Controller
         }
         
         
-        return View('Factura.crear')->with('paciente',$paciente)->with('citas',$citas) ->with('subTotal',$subTotal);
+        return View('Factura.crear')->with('paciente',$paciente)->with('citas',$citas) ->with('subTotal',$subTotal)->with('descuentos',$descuentos);
     }
     
     /**
@@ -58,7 +60,7 @@ class FacturaController extends Controller
         $this->validate($request, [
         'SubTotal' => 'required|min:0|numeric',
         'Total' => 'required|min:0|numeric',
-        
+        'descuento_id' => 'required'
         ]);
         $fecha = Carbon::now();
 
@@ -68,7 +70,8 @@ class FacturaController extends Controller
          'cita_id'=>$request->cita_id,
         'paciente_id'=> $request->paciente_id,
         'SubTotal'=>$request->SubTotal,
-        'Total' => $request->Total
+        'Total' => $request->Total,
+        'descuento_id'=>$request->descuento_id
         
         ]);
         $cita = cita::find($request->cita_id);

@@ -45,7 +45,7 @@
             <th>{{ $factura->paciente->Identidad}}</th>
             <th>{{ $factura->paciente->Nombre_Paciente}}</th>
             <td>{{ $factura->Fecha_Hora}}</td>
-            <td>{{ $factura->Descuento}}</td>
+            <td>{{ $factura->descuento->Nombre}}</td>
             <td>{{ $factura->SubTotal}}</td>
             <td>{{ $factura->Total}}</td>
             <td>
