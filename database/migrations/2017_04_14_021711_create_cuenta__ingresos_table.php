@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEgresosTable extends Migration
+class CreateCuentaIngresosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class CreateEgresosTable extends Migration
      */
     public function up()
     {
-        Schema::create('egresos', function (Blueprint $table) {
+        Schema::create('cuenta_ingresos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Numero_Cheque');
-            $table->datetime('Fecha');
-            $table->decimal('Cantidad');
-            $table->string('Descripcion');
-            $table->string('Benificiario');
-            $table->timestamps();
+            $table->string('Nombre');
             $table->softDeletes();
-            
+            $table->timestamps();
+       
         });
     }
 
@@ -33,6 +29,6 @@ class CreateEgresosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('egresos');
+        Schema::dropIfExists('cuenta__ingresos');
     }
 }

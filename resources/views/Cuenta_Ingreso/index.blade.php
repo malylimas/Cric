@@ -22,23 +22,18 @@
               <center><b>#</center></b></th>
             <th>
               <center><b>Nombre</center></b></th>
-            <th>
-              <center><b>Fecha</center></b></th>
-            <th>
-              <center><b>Descripcion</center></b></th>
-            <th>
+           
               <center><b>Acciones</center></b></th>
             <th>
               <center><b>Imprimir</center></b></th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($ingresos as $ingreso)
+          @foreach ($CuentaIngreso as $CuentaIngreso)
           <tr>
-            <th>{{ $ingreso->id }}</th>
-            <th>{{ $ingreso->Nombre}}</th>
-            <th>{{ $ingreso->Fecha}}</th>
-            <td>{{ $ingreso->Descripcion}}</td>
+            <th>{{ $CuentaIngreso->id }}</th>
+            <th>{{ $CuentaIngreso->Nombre}}</th>
+            
            
             
             <td>

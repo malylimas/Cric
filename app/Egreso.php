@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-class Ingreso extends Model
+class Egreso extends Model
 {
      use SoftDeletes;
      //
@@ -16,13 +16,13 @@ class Ingreso extends Model
      * @var array
      */
     protected $fillable = [
-        'id' , 'Fecha', 'Cantidad', 'Descripcion', 'cuenta_ingreso_id'
+        'id' , 'Fecha', 'Cantidad', 'Descripcion', 'cuenta_egreso_id'
     ];
         
     protected $dates = ['deleted_at'];
 
-    public function cuenta_ingreso(){
-        return $this->belongsTo('App\Cuenta_ingreso'); 
+    public function cuenta_egreso(){
+        return $this->belongsTo('App\Cuenta_Egreso'); 
     }
 
 }
