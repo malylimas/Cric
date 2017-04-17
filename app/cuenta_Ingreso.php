@@ -20,4 +20,6 @@ class cuenta_Ingreso extends Model
     protected $fillable = [
         'id' , 'Nombre',
     ];
+
+    protected $table = 'cuenta_ingresos';
 }

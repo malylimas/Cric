@@ -14,10 +14,10 @@ class CreateIngresosTable extends Migration
     public function up()
     {
         Schema::create('ingresos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string ('Nombre');
+            $table->increments('id');            
             $table->datetime('Fecha');
             $table->string('Descripcion');
+            $table->decimal('Cantidad');
             $table->integer('cuenta_ingreso_id')->unsigned();
             $table->softDeletes(); 
   

@@ -23,5 +23,5 @@ class Cuenta_Egreso extends Model
 
     
 
-
+    protected $table = 'cuenta_egresos';
 }

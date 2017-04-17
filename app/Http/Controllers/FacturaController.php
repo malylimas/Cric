@@ -12,6 +12,7 @@ use Illuminate\Support\MessageBag;
 
 use Carbon\Carbon;
 
+use App\Events\CrearIngreso;
 class FacturaController extends Controller
 {
     /**
@@ -77,7 +78,10 @@ class FacturaController extends Controller
         $cita = cita::find($request->cita_id);
         $cita->factura_id= $factua->id;
         $cita->save();
-
+        $detalle ="Pago de terapia del paciente "+ $cita->paciente->Nombre;
+        
+        event(new CrearIngreso($detalle,$factua->Total,1));
+        
         return redirect('factura');
         
         
