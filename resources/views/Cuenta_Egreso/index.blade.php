@@ -23,10 +23,10 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($Cuenta_Egreso as $Cuenta_Egreso)
+          @foreach ($CuentaEgreso as $CuentaEgreso)
           <tr>
-            <th>{{ $Cuenta_Egreso->id }}</th>
-            <th>{{ $Cuenta_Egreso->Nombre}}</th>
+            <th>{{ $CuentaEgreso->id }}</th>
+            <th>{{ $CuentaEgreso->Nombre}}</th>
             
             
             <td>

@@ -21,20 +21,27 @@
             <th>
               <center><b>#</center></b></th>
             <th>
-              <center><b>Nombre</center></b></th>
-           
+              <center><b>Fecha</center></b></th>
+              <th>
+               <center><b>Cantidad</center></b></th>
+               <th>
+                <center><b>Descripcion</center></b></th>
+               <th>
+                <center><b>Cuenta_Ingreso_id</center></b></th>
+               <th> 
               <center><b>Acciones</center></b></th>
             <th>
               <center><b>Imprimir</center></b></th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($CuentaIngreso as $CuentaIngreso)
+          @foreach ($cuentaingresos as $cuentaingresos)
           <tr>
-            <th>{{ $CuentaIngreso->id }}</th>
-            <th>{{ $CuentaIngreso->Nombre}}</th>
-            
-           
+            <th>{{ $cuentaingresos->id }}</th>
+            <th>{{ $cuentaingresos->Fecha}}</th>
+            <th>{{ $cuentaingresos->Cantidad }}</th>
+            <th>{{ $cuentaingresos->Descripcion}}</th>
+            <th>{{ $cuentaingresos->Cuenta_ingreso_id}}</th>
             
             <td>
               <center>
