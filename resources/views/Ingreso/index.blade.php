@@ -3,19 +3,15 @@
 <div>
   <div class="row">
     <div class="col-md-4">
-      <form action="ingreso/create" method="GET" class="form-inline">
-        <div class="form-group">
-          <label class="sr-only" for="exampleInputEmail3">Nombre</label>
-          <input type="text" required name="Nombre" class="form-control" id="exampleInputEmail3" >
-        </div>
-        <button class="btn btn-primary"> Crear Ingreso</button>
-      </form>
+      <a  class="btn btn-primary" href="ingreso/create">Crear Ingreso</a>
     </div>
   </div>
   </br>
   <div class="row">
     <div class="contianer">
+
       <table class="table table-bordered">
+       
         <thead>
           <tr>
             <th>
@@ -27,41 +23,28 @@
                <th>
                 <center><b>Descripcion</center></b></th>
                <th>
-                <center><b>Cuenta_Ingreso_id</center></b></th>
-               <th> 
-              <center><b>Acciones</center></b></th>
-            <th>
-              <center><b>Imprimir</center></b></th>
+                <center><b>Cuenta de Ingreso</center></b></th>
+               
           </tr>
         </thead>
+       
         <tbody>
-          @foreach ($cuentaingresos as $cuentaingresos)
+          @foreach ($ingresos as $ingreso)
           <tr>
-            <th>{{ $cuentaingresos->id }}</th>
-            <th>{{ $cuentaingresos->Fecha}}</th>
-            <th>{{ $cuentaingresos->Cantidad }}</th>
-            <th>{{ $cuentaingresos->Descripcion}}</th>
-            <th>{{ $cuentaingresos->Cuenta_ingreso_id}}</th>
-            
-            <td>
-              <center>
-                <div class="btn-group" role="group" aria-label="...">
-                  <a type="button" class="btn btn-primary" href="modificar/{{$ingreso->id}}">Modificar</a>
-                </div>
-              </center>
-            </td>
-            <td>
-              <center>
-                <div class="panel-heading">
-                  <a href="/ingreso/imprimir/{{$ingreso->id}}"> <img src="/img/ImagenHTML2.jpg" border="0" width="30" height="30"></a>
-                </div>
-              </center>
-            </td>
+            <th>{{ $ingreso->id }}</th>
+            <th>{{ $ingreso->Fecha}}</th>
+            <th>{{ $ingreso->Cantidad }}</th>
+            <th>{{ $ingreso->Descripcion}}</th>
+            <th>{{ $ingreso->cuentaIngreso->Nombre}}</th>
           </tr>
           @endforeach
+       
         </tbody>
+      
       </table>
+    
     </div>
+      {{ $ingresos->links() }} 
   </div>
 </div>
 

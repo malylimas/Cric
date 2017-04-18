@@ -80,13 +80,13 @@ class FacturaController extends Controller
         $cita->save();
         $detalle ="Pago de terapia del paciente " . $cita->paciente->Nombre_Paciente;
         
-        
-        event(new CrearIngreso($detalle,$request->Total,1,"caja"));
+        $event=new CrearIngreso($detalle,$factura->Total,1,"caja");
+
+        event($event);
+
+        return $event;
         
         return redirect('factura');
-        
-        
-        
     }
     
     /**

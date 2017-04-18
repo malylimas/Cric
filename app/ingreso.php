@@ -21,8 +21,8 @@ class Ingreso extends Model
         
     protected $dates = ['deleted_at'];
 
-    public function cuenta_ingreso(){
-        return $this->belongsTo('App\Cuenta_ingreso'); 
+    public function cuentaIngreso(){
+        return $this->belongsTo('App\cuenta_ingreso','cuenta_ingreso_id'); 
     }
 
 }

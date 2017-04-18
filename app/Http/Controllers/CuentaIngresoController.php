@@ -14,9 +14,12 @@ class CuentaIngresocontroller extends Controller
     }
 
    
-     public function index(){
-        $cuentaingresos= Ingreso::withTrashed()->paginate(8);
-        return view('Ingreso.index')->with('cuentaingreso', $cuentaingresos);
+     public function index(Request $request){
+
+
+        $ingresos= Ingreso::where('modulo',$request->modulo)->paginate(8);
+        
+        return view('Ingreso.index')->with('ingresos', $ingresos);
     }
 }
 
