@@ -20,6 +20,22 @@
     </div>
   </div>
 
+<div class="form-group row">
+    <label for="example-text-input" class="col-2 col-form-label">Beneficiario</label>
+    <div class="col-10">
+      <input class="form-control" type="text" name="beneficiario" id="example-text-input">
+    </div>
+  </div>
+
+@if ($modulo === 'banco')
+  <div class="form-group row">
+    <label for="example-text-input" class="col-2 col-form-label">Numero Cheque</label>
+    <div class="col-10">
+      <input class="form-control" type="text" name="numero_cheque" id="example-text-input">
+    </div>
+  </div>
+@endif
+
   <div class="form-group row">
     <label for="example-text-input" class="col-2 col-form-label">Descripcion</label>
     <div class="col-10">

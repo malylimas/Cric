@@ -16,7 +16,7 @@ class Ingreso extends Model
      * @var array
      */
     protected $fillable = [
-        'id' , 'Fecha', 'Cantidad', 'Descripcion', 'cuenta_ingreso_id', 'modulo'
+        'id' , 'Fecha', 'Cantidad', 'Descripcion', 'cuenta_ingreso_id', 'modulo', 'donante'
     ];
         
     protected $dates = ['deleted_at'];

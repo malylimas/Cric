@@ -16,7 +16,7 @@ class Egreso extends Model
      * @var array
      */
     protected $fillable = [
-        'id' , 'Fecha', 'Cantidad', 'Descripcion', 'cuenta_egreso_id', 'modulo'
+        'id' , 'Fecha', 'Cantidad', 'Descripcion', 'cuenta_egreso_id', 'modulo', 'beneficiario','numero_cheque'
     ];
         
     protected $dates = ['deleted_at'];

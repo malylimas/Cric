@@ -35,6 +35,7 @@ class CreadorIngreso
             'Fecha' => Carbon::now(),
             'modulo' => $event->modulo,
             'cuenta_ingreso_id' =>$event->cuentaIngreso,
+            'donante' => $event->donante
             ]);
     }
 }

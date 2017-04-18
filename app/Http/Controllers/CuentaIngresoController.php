@@ -31,7 +31,8 @@ class CuentaIngresocontroller extends Controller
         'Fecha' => 'required',
         'Descripcion' => 'required|max:255',
         'Cantidad' => 'required|min:0',
-        'cuenta_ingreso_id' => 'required'
+        'cuenta_ingreso_id' => 'required',
+        'donante' => 'required'
         
         ]);
         
@@ -40,7 +41,8 @@ class CuentaIngresocontroller extends Controller
         'Descripcion' => $request->Descripcion,
         'Cantidad' => $request->Cantidad,
         'cuenta_ingreso_id' => $request->cuenta_ingreso_id,
-        'modulo' => $request->modulo
+        'modulo' => $request->modulo,
+        'donante' => $request->donante
         ]);
         
         

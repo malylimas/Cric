@@ -27,23 +27,35 @@ class CuentaEgresocontroller extends Controller
     
     public function store(Request $request){
         
-        $this->validate($request, [
+        $rules = [
         'Fecha' => 'required',
         'Descripcion' => 'required|max:255',
         'Cantidad' => 'required|min:0',
         'cuenta_egreso_id' => 'required',
-        'modulo' =>'required'
-        ]);
+        'modulo' =>'required',
+        'beneficiario' => 'required'
+        ];
 
-        Egreso::create([
+        if($request->modulo == 'banco'){
+            
+            $rules['numero_cheque']= 'required';
+        
+        }
+
+        $this->validate($request, $rules);
+
+        
+
+        $egreso =Egreso::create([
         'Fecha' => Carbon::createFromFormat('d/m/Y', $request->Fecha),
         'Descripcion' => $request->Descripcion,
         'Cantidad' => $request->Cantidad,
         'cuenta_egreso_id' => $request->cuenta_egreso_id,
-        'modulo' => $request->modulo
-        
+        'modulo' => $request->modulo,
+        'beneficiario' => $request->beneficiario, 
+        'numero_cheque' => $request->numero_cheque
         ]);
-        
+        return $egreso;
         return redirect('egreso?modulo=' . $request->modulo);
     }
     

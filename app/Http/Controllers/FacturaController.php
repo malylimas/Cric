@@ -81,7 +81,7 @@ class FacturaController extends Controller
         $detalle ="Pago de terapia del paciente " . $cita->paciente->Nombre_Paciente;
         
 
-        event(new CrearIngreso($detalle,$factura->Total,1,'caja'));
+        event(new CrearIngreso($detalle,$factura->Total,1,'caja',$cita->paciente->Nombre_Paciente));
 
         
         

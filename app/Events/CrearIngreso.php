@@ -18,18 +18,20 @@ class CrearIngreso
     public $cuentaIngreso;
     public $cantidad;
     public $modulo;
+    public $donante;
     /**
     * Create a new event instance.
     *
     * @return void
     */
-    public function __construct($descripcion,$cantidad,$cuentaIngreso,string $modulo)
+    public function __construct($descripcion,$cantidad,$cuentaIngreso,$modulo,$donante)
     {
         //
         $this->descripcion = $descripcion;
         $this->cantidad = $cantidad;
         $this->cuentaIngreso = $cuentaIngreso;
         $this->modulo = $modulo;
+        $this->donante = $donante;
     }
     
     /**
