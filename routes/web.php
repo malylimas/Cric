@@ -91,6 +91,7 @@ Route::get('/home', 'HomeController@index');
 
 
 Route::resource('factura','FacturaController');
-Route::resource('egreso', 'EgresoController');
-Route::resource('ingreso', 'IngresoController');
-route::get('factura/imprimir/{factura}','FacturaController@imprimir');
+
+Route::resource('ingreso', 'CuentaIngresoController');
+
+Route::get('factura/imprimir/{factura}','FacturaController@imprimir');

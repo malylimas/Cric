@@ -1,11 +1,11 @@
 @extends('layouts.form') 
 
 @section('form-content')
-    @define $pageTitle = 'Crear Cuenta Ingreso'
+    @define $pageTitle = 'Modificar Cuenta Ingreso'
 <form>
      
       <div class="form-group ">
-         <label for="example-text-input" class="col-2 col-form-label">Nombre</label>
+         <label for="example-text-input" class="col-2 col-form-label"></label>
          <div class="col-10">
          <input class="form-control" type="text"  name="Nombre" id="example-text-input" >
          
@@ -13,6 +13,7 @@
        </div>
 
       
+
  
         <button class= "btn btn-primary" type ="Submit" >Guardar</button>
     </from>
