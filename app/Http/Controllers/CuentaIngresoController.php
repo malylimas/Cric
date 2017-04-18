@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ingreso;
 use App\cuenta_Ingreso;
+use Carbon\Carbon;
 
 class CuentaIngresocontroller extends Controller
 {
@@ -35,7 +36,7 @@ class CuentaIngresocontroller extends Controller
         ]);
         
         Ingreso::create([
-        'Fecha' => $request->Fecha,
+        'Fecha' => Carbon::createFromFormat('d/m/Y', $request->Fecha),
         'Descripcion' => $request->Descripcion,
         'Cantidad' => $request->Cantidad,
         'cuenta_ingreso_id' => $request->cuenta_ingreso_id,

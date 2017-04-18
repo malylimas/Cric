@@ -4,45 +4,53 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Egreso;
-
-
+use App\Cuenta_Egreso;
+use Carbon\Carbon;
 
 class CuentaEgresocontroller extends Controller
 {
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    /**
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
     public function __construct()
     {
         $this->middleware('auth');
     }
     
-      public function crear (){
-        return view('CuentaEgreso.crear');
+    public function create (Request $request){
+        $cuentas = Cuenta_Egreso::all();
+        
+        return view('Egreso.crear')->with('modulo',$request->modulo)->with('cuentas',$cuentas);
     }
-
+    
     public function store(Request $request){
-
-        Cuenta_Egreso::create([
-            'id'=>$request->id,
-            'Nombre' => $request->Nombre,   
-
+        
+        $this->validate($request, [
+        'Fecha' => 'required',
+        'Descripcion' => 'required|max:255',
+        'Cantidad' => 'required|min:0',
+        'cuenta_egreso_id' => 'required',
+        'modulo' =>'required'
         ]);
 
-        return redirect('cuentaEgreso/index');
+        Egreso::create([
+        'Fecha' => Carbon::createFromFormat('d/m/Y', $request->Fecha),
+        'Descripcion' => $request->Descripcion,
+        'Cantidad' => $request->Cantidad,
+        'cuenta_egreso_id' => $request->cuenta_egreso_id,
+        'modulo' => $request->modulo
+        
+        ]);
+        
+        return redirect('egreso?modulo=' . $request->modulo);
     }
-
-     public function index(){
-        $cuentasegresos= Cuenta_Egreso::withTrashed()->paginate(8);
-        return view('cuentaegreso.index')->with('cuentasegresos', $cuentaegresos);
+    
+    public function index(Request $request){
+        $egresos= Egreso::where('modulo',$request->modulo)->paginate(8);
+        return view('Egreso.index')->with('egresos', $egresos)->with('modulo',$request->modulo);
     }
-
-     
+    
+    
 }
-
-
-    
-    
-

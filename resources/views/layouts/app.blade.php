@@ -67,7 +67,7 @@
                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Caja <span class="caret"></span></a>
                                   <ul class="dropdown-menu">
                                     <li><a href="/factura">Cobro de Terapias</a></li>
-                                    <li><a href="/egreso/index">Egresos de Caja</a></li>
+                                    <li><a href="/egreso?modulo=caja">Egresos de Caja</a></li>
                                     <li><a href="/ingreso?modulo=caja">Ingresos de Caja</a></li>
                                     
                                 </ul>
@@ -76,16 +76,16 @@
                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bancos <span class="caret"></span></a>
                                   <ul class="dropdown-menu">
                                     <li><a href="/terapista/index">Cuentas de Banco</a></li>
-                                    <li><a href="/terapista/index">Egresos de Banco</a></li>
-                                    <li><a href="/terapista/index">Ingresos de Banco</a></li>                                    
+                                    <li><a href="/egreso?modulo=banco">Egresos de Banco</a></li>
+                                    <li><a href="/ingreso?modulo=banco">Ingresos de Banco</a></li>                                    
                                 </ul>
                             </li>
 
                             <li class= "Dropdown">
                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contabilidad <span class="caret"></span></a>
                                   <ul class="dropdown-menu">
-                                    <li><a href="/terapista/index">Cuentas de Ingreso</a></li>
-                                    <li><a href="/terapista/index">Cuentas de Egreso</a></li>
+                                    <li><a href="/egreso?modulo=contabilidad">Cuentas de Ingreso</a></li>
+                                    <li><a href="/ingreso?modulo=contabilidad"">Cuentas de Egreso</a></li>
                                     
                                 </ul>
                             </li>

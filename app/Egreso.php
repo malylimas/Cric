@@ -21,8 +21,8 @@ class Egreso extends Model
         
     protected $dates = ['deleted_at'];
 
-    public function cuenta_egreso(){
-        return $this->belongsTo('App\Cuenta_Egreso'); 
+    public function cuentaEgreso(){
+        return $this->belongsTo('App\Cuenta_Egreso','cuenta_egreso_id'); 
     }
 
 }
