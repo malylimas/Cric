@@ -16,19 +16,26 @@
             <th>
               <center><b>#</center></b></th>
             <th>
-              <center><b>Nombre</center></b></th>
+              <center><b>Fecha</center></b></th>
             <th>
-              
+              <center><b>Cantidad</center></b></th>
+            <th>
+               <center><b>Descripcion</center></b></th>
+            <th>
+               <center><b>cuenta_Egreso</center></b></th>
+            <th> 
               <center><b>Imprimir</center></b></th>
           </tr>
         </thead>
         <tbody>
           @foreach ($CuentaEgreso as $CuentaEgreso)
           <tr>
-            <th>{{ $CuentaEgreso->id }}</th>
-            <th>{{ $CuentaEgreso->Nombre}}</th>
-            
-            
+            <th>{{ $Egreso->id }}</th>
+            <th>{{ $Egreso->Fecha}}</th>
+            <th>{{ $Egreso->Cantidad}}</th>
+            <th>{{ $Egreso->Descripcion}}</th
+            <th>{{ $Egreso->cuenta_Egreo}}</th
+         
             <td>
               <center>
                 <div class="btn-group" role="group" aria-label="...">
