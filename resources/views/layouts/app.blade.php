@@ -68,7 +68,7 @@
                                   <ul class="dropdown-menu">
                                     <li><a href="/factura">Cobro de Terapias</a></li>
                                     <li><a href="/egreso/index">Egresos de Caja</a></li>
-                                    <li><a href="/ingeso/index">Ingresos de Caja</a></li>
+                                    <li><a href="/ingreso?modulo=caja">Ingresos de Caja</a></li>
                                     
                                 </ul>
                             </li>

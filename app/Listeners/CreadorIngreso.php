@@ -33,8 +33,8 @@ class CreadorIngreso
             'Descripcion'=>$event->descripcion,
             'Cantidad' =>$event->cantidad,
             'Fecha' => Carbon::now(),
+            'modulo' => $event->modulo,
             'cuenta_ingreso_id' =>$event->cuentaIngreso,
-            'modulo', $event->modulo
             ]);
     }
 }

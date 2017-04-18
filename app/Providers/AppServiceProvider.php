@@ -17,6 +17,9 @@ class AppServiceProvider extends ServiceProvider
         \Blade::extend(function($value) {
             return preg_replace('/\@define(.+)/', '<?php ${1}; ?>', $value);
         });
+
+
+     
     }
 
     /**

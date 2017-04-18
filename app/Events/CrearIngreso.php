@@ -23,7 +23,7 @@ class CrearIngreso
     *
     * @return void
     */
-    public function __construct($descripcion,$cantidad,$cuentaIngreso, $modulo)
+    public function __construct($descripcion,$cantidad,$cuentaIngreso,string $modulo)
     {
         //
         $this->descripcion = $descripcion;

@@ -3,7 +3,7 @@
 <div>
   <div class="row">
     <div class="col-md-4">
-      <a  class="btn btn-primary" href="ingreso/create">Crear Ingreso</a>
+      <a  class="btn btn-primary" href="ingreso/create?modulo={{$modulo}}">Crear Ingreso</a>
     </div>
   </div>
   </br>
