@@ -31,9 +31,10 @@ class CreadorIngreso
 
         ingreso::create([
             'Descripcion'=>$event->descripcion,
-            'Cantidad' =>$event->descripcion,
+            'Cantidad' =>$event->cantidad,
             'Fecha' => Carbon::now(),
             'cuenta_ingreso_id' =>$event->cuentaIngreso,
+            'modulo', $event->modulo
             ]);
     }
 }

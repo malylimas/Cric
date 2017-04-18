@@ -37,7 +37,7 @@ class FacturaController extends Controller
         $paciente = Paciente::where('Identidad', $request->numeroIdentidad)->first();
         
         $descuentos = Descuento::all();
-
+        
         $citas = cita::with('patologia.terapia')->whereNull('factura_id')->where('paciente_id', $paciente->id)->get();
         
         $subTotal = 0.0;
@@ -64,11 +64,11 @@ class FacturaController extends Controller
         'descuento_id' => 'required'
         ]);
         $fecha = Carbon::now();
-
-    
-       $factua = Factura::create([
+        
+        
+        $factura = Factura::create([
         'Fecha_Hora'=>$fecha,
-         'cita_id'=>$request->cita_id,
+        'cita_id'=>$request->cita_id,
         'paciente_id'=> $request->paciente_id,
         'SubTotal'=>$request->SubTotal,
         'Total' => $request->Total,
@@ -76,11 +76,12 @@ class FacturaController extends Controller
         
         ]);
         $cita = cita::find($request->cita_id);
-        $cita->factura_id= $factua->id;
+        $cita->factura_id= $factura->id;
         $cita->save();
-        $detalle ="Pago de terapia del paciente "+ $cita->paciente->Nombre;
+        $detalle ="Pago de terapia del paciente " . $cita->paciente->Nombre_Paciente;
         
-        event(new CrearIngreso($detalle,$factua->Total,1));
+        
+        event(new CrearIngreso($detalle,$request->Total,1,"caja"));
         
         return redirect('factura');
         
@@ -132,12 +133,12 @@ class FacturaController extends Controller
     {
         //
     }
-
-   public function imprimir(Factura $factura){
+    
+    public function imprimir(Factura $factura){
         
         
         return view('factura.Imprimir')->with('factura', $factura);
     }
-
-
+    
+    
 }

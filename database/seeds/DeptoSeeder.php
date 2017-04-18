@@ -13,18 +13,6 @@ class DeptoSeeder extends Seeder
     public function run()
     {
         
-        DB::table('departamento')->insert([
-        'Nombre_Departamento' => 'Comayagua',
         
-        ]);
-        
-        DB::table('departamento')->insert([
-        'Nombre_Departamento' => 'La Paz',
-        
-        ]);
-        DB::table('departamento')->insert([
-        'Nombre_Departamento' => 'Yoro',
-        
-        ]);
     }
 }
