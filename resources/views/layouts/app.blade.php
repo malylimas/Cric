@@ -73,6 +73,7 @@
                 <li><a href="/factura">Cobro de Terapias</a></li>
                 <li><a href="/egreso?modulo=caja">Egresos de Caja</a></li>
                 <li><a href="/ingreso?modulo=caja">Ingresos de Caja</a></li>
+                <li><a href="/reporte/caja">Reporte de Caja</a></li>
 
               </ul>
             </li>
@@ -81,10 +82,18 @@
               <ul class="dropdown-menu">
                 <li><a href="/egreso?modulo=banco">Egresos de Banco</a></li>
                 <li><a href="/ingreso?modulo=banco">Ingresos de Banco</a></li>
+                <li><a href="/reporte/cheque">Reporte de Cheque</a></li>
               </ul>
             </li>
 
-            
+            <li class="Dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contabilidad <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/egreso?modulo=banco">Cuenta de Egreso</a></li>
+                <li><a href="/ingreso?modulo=banco">Cuenta de Ingreso</a></li>
+                <li><a href="/reporte/financiero">Reporte Financiero</a></li>
+              </ul>
+            </li>
 
             @endif
           </ul>

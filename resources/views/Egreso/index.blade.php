@@ -18,11 +18,11 @@
             <th>
               <center><b>Fecha</center></b></th>
             <th>
-              <center><b>Cantidad</center></b></th>
+              <center><b>Beneficiario</center></b></th>
               <th>
-               <center><b>Beneficiario</center></b></th>
-            <th>
                <center><b>Descripcion</center></b></th>
+            <th>
+               <center><b>Cantidad</center></b></th>
                @if ($modulo === 'banco')
                <th>
                <center><b>Numero Cheque</center></b></th>
@@ -30,7 +30,7 @@
 
             <th>
                <center><b>Cuenta Egreso</center></b></th>
-        
+             
               
           </tr>
         </thead>
@@ -39,16 +39,15 @@
           <tr>
             <th>{{ $egreso->id }}</th>
             <th>{{ $egreso->Fecha}}</th>
-            <th>{{ $egreso->Cantidad}}</th>
             <th>{{ $egreso->beneficiario}}</th>
             <th>{{ $egreso->Descripcion}}</th>
+            <th>{{ $egreso->Cantidad}}</th>>
              @if ($modulo === 'banco')
                <th>{{ $egreso->numero_cheque}}</th>
                @endif
             <th>{{ $egreso->cuentaEgreso->Nombre}}</th>       
            
-           
-          </tr>
+
           @endforeach
         </tbody>
       </table>

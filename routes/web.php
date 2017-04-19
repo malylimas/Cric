@@ -94,7 +94,11 @@ Route::resource('factura','FacturaController');
 
 Route::resource('ingreso', 'CuentaIngresoController');
 Route::resource('egreso', 'CuentaEgresoController');
-
+Route::get('reporte/caja', 'ReporteContabilidadController@reportecaja');
+Route::get('reporte/cheque', 'ReporteContabilidadController@reportecheque');
+Route::get('reporte/financiero', 'ReporteContabilidadController@reportefinanciero');
+Route::resource('ingresocuenta', 'IngresoCuentaController');
+Route::resource('egresocuenta', 'EgresoCuentaController');
 Route::get('factura/imprimir/{factura}','FacturaController@imprimir');
 
 

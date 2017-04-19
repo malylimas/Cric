@@ -49,6 +49,8 @@ class CuentaIngresocontroller extends Controller
         
         return redirect('/ingreso?modulo=' . $request->modulo);
     }
+     
+   
     
     
 }

@@ -25,7 +25,10 @@
               <center><b>Descripcion</center></b></th>
             <th>
               <center><b>Cuenta de Ingreso</center></b></th>
-
+            <th>
+              <center><b>Imrpimir</center></b></th>
+               
+          
           </tr>
         </thead>
 
@@ -38,6 +41,7 @@
             <th>{{ $ingreso->donante}}</th>
             <th>{{ $ingreso->Descripcion}}</th>
             <th>{{ $ingreso->cuentaIngreso->Nombre}}</th>
+
           </tr>
           @endforeach
 

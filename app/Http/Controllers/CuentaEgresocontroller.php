@@ -24,6 +24,11 @@ class CuentaEgresocontroller extends Controller
         
         return view('Egreso.crear')->with('modulo',$request->modulo)->with('cuentas',$cuentas);
     }
+
+
+    
+
+
     
     public function store(Request $request){
         
@@ -59,10 +64,11 @@ class CuentaEgresocontroller extends Controller
         return redirect('egreso?modulo=' . $request->modulo);
     }
     
-    public function index(Request $request){
+        public function index(Request $request){
         $egresos= Egreso::where('modulo',$request->modulo)->paginate(8);
         return view('Egreso.index')->with('egresos', $egresos)->with('modulo',$request->modulo);
     }
-    
-    
+       
+        
+
 }

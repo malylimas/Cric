@@ -86,6 +86,7 @@ class PacienteController extends Controller
         
     }
 
+
     public function delete(Paciente $paciente){
         $paciente->delete();
         return redirect('Paciente/index');
@@ -95,6 +96,7 @@ class PacienteController extends Controller
         
         return view('Paciente.eliminar')->with('paciente', $paciente);
     }
+
 
 
      public function put(Request  $request, Paciente $paciente){
@@ -179,11 +181,6 @@ class PacienteController extends Controller
         
         return view('paciente.pacientesatendidos')->with('paciente', $paciente)->with('citas',$citas)->with('fecha',$fecha)->with('diarios', $request->diarios);
     }
-
-
-
-
-
 
 
 }
