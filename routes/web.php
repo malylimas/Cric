@@ -100,6 +100,8 @@ Route::get('reporte/financiero', 'ReporteContabilidadController@reportefinancier
 Route::resource('ingresocuenta', 'IngresoCuentaController');
 Route::resource('egresocuenta', 'EgresoCuentaController');
 Route::get('factura/imprimir/{factura}','FacturaController@imprimir');
-
+Route::get('cuenta_egreso/modificar{cuenta_egreso}', 'EgresoCuentaController@modificar');
+Route::get('cuenta_ingreso/modificar{cuenta_ingreso}', 'EgresoCuentaController@modificar');
+Route::get('cuenta_ingreso/modificar{cuenta_ingreso}', 'EgresoCuentaController@modificar');
 
 

@@ -87,8 +87,8 @@
             <li class="Dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contabilidad <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/egreso?modulo=banco">Cuenta de Egreso</a></li>
-                <li><a href="/ingreso?modulo=banco">Cuenta de Ingreso</a></li>
+                <li><a href="/egresocuenta">Cuenta de Egreso</a></li>
+                <li><a href="/ingresocuenta">Cuenta de Ingreso</a></li>
                 <li><a href="/reporte/financiero">Reporte Financiero</a></li>
               </ul>
             </li>

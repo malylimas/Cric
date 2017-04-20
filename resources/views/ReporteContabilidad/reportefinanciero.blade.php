@@ -1,4 +1,4 @@
-@extends('layouts.form') @section('form-content') @define $pageTitle = 'Reporte De Banco'
+@extends('layouts.form') @section('form-content') @define $pageTitle = 'Reporte De financiero'
 
 
 <div>
@@ -14,7 +14,7 @@
     <center>
     
     <form>
-    <h1>hola gggfdfdgjdjgjgjjgjggg</h1>
+    <h1>hola feo</h1>
      </form>       
        
 
