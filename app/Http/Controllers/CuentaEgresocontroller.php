@@ -58,7 +58,7 @@ class CuentaEgresocontroller extends Controller
         'beneficiario' => $request->beneficiario, 
         'numero_cheque' => $request->numero_cheque
         ]);
-        return $egreso;
+        
         return redirect('egreso?modulo=' . $request->modulo);
     }
     

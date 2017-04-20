@@ -4,13 +4,11 @@
   <div class="row">
    
         <a class="btn btn-primary" href="egreso/create?modulo={{$modulo}}" > Crear  Egreso</a>
-      
     </div>
   </div>
   </br>
   <div class="row">
-    <div class="contianer">
-      <table class="table table-bordered">
+    <div class="contianer"><table class="table table-bordered">
         <thead>
           <tr>
             <th>
@@ -41,10 +39,12 @@
             <th>{{ $egreso->Fecha}}</th>
             <th>{{ $egreso->beneficiario}}</th>
             <th>{{ $egreso->Descripcion}}</th>
-            <th>{{ $egreso->Cantidad}}</th>>
+            <th>{{ $egreso->Cantidad}}</th>
+            
              @if ($modulo === 'banco')
                <th>{{ $egreso->numero_cheque}}</th>
-               @endif
+            @endif
+            
             <th>{{ $egreso->cuentaEgreso->Nombre}}</th>       
            
 

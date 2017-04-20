@@ -80,7 +80,7 @@
               <ul class="dropdown-menu">
                 <li><a href="/egreso?modulo=banco">Egresos de Banco</a></li>
                 <li><a href="/ingreso?modulo=banco">Ingresos de Banco</a></li>
-                <li><a href="/reporte/cheque">Reporte de Cheque</a></li>
+                <li><a href="/reporte/cheque?fecha={{Carbon\Carbon::now()->format('y/m/Y')}}">Reporte de Cheque</a></li>
               </ul>
             </li>
 
