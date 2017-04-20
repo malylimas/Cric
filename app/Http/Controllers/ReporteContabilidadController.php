@@ -15,9 +15,13 @@ class ReporteContabilidadController extends Controller
         return view('ReporteContabilidad.reportecaja');
     }
     
-    
+
    
    public function reportecheque(request $request){
        return view('ReporteContabilidad.reportecheque');
+   }
+
+   public  function reportefinanciero(request $request){
+       return view ('ReporteContabilidad.reportefinanciero');
    }
 }
