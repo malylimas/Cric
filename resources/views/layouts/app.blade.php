@@ -17,11 +17,9 @@
 
   <!-- Scripts -->
   <script>
-    window.Laravel = {
-      !!json_encode([
-        'csrfToken' => csrf_token(),
-      ]) !!
-    };
+    window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
   </script>
 </head>
 
@@ -73,7 +71,7 @@
                 <li><a href="/factura">Cobro de Terapias</a></li>
                 <li><a href="/egreso?modulo=caja">Egresos de Caja</a></li>
                 <li><a href="/ingreso?modulo=caja">Ingresos de Caja</a></li>
-                <li><a href="/reporte/caja">Reporte de Caja</a></li>
+                <li><a href="/reporte/caja?fecha={{Carbon\Carbon::now()->format('y/m/Y')}}">Reporte de Caja</a></li>
 
               </ul>
             </li>
@@ -82,7 +80,7 @@
               <ul class="dropdown-menu">
                 <li><a href="/egreso?modulo=banco">Egresos de Banco</a></li>
                 <li><a href="/ingreso?modulo=banco">Ingresos de Banco</a></li>
-                <li><a href="/reporte/cheque">Reporte de Cheque</a></li>
+                <li><a href="/reporte/cheque?fecha={{Carbon\Carbon::now()->format('y/m/Y')}}">Reporte de Cheque</a></li>
                 <li><a href="/ reporte/cheque"> Proveedores</a><li>
               </ul>
             </li>

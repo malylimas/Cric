@@ -25,8 +25,7 @@
               <center><b>Descripcion</center></b></th>
             <th>
               <center><b>Cuenta de Ingreso</center></b></th>
-            <th>
-              <center><b>Imrpimir</center></b></th>
+           
                
           
           </tr>
