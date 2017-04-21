@@ -104,4 +104,5 @@ Route::get('cuenta_egreso/modificar{cuenta_egreso}', 'EgresoCuentaController@mod
 Route::get('cuenta_ingreso/modificar{cuenta_ingreso}', 'EgresoCuentaController@modificar');
 Route::get('cuenta_ingreso/modificar{cuenta_ingreso}', 'EgresoCuentaController@modificar');
 
-
+Route::resource('compra', 'CompraController');
+Route::resource('proveedores', 'ProveedoresController');

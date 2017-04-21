@@ -15,7 +15,7 @@ class CreateProveedoresTable extends Migration
     {
         Schema::create('proveedores', function (Blueprint $table) {
             $table->increments('id');
-            $table->Nombre;
+            $table->string('Nombre');
             $table->softDeletes(); 
             $table->timestamps();
         });
@@ -24,7 +24,7 @@ class CreateProveedoresTable extends Migration
 
         public function down()
     {
-        Schema::dropIfExists('Proveedores');
+        Schema::dropIfExists('proveedores');
     }
     
 
@@ -35,15 +35,5 @@ class CreateProveedoresTable extends Migration
 
 
        
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        //
-    }
+    
 }

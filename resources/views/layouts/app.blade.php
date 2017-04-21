@@ -81,7 +81,7 @@
                 <li><a href="/egreso?modulo=banco">Egresos de Banco</a></li>
                 <li><a href="/ingreso?modulo=banco">Ingresos de Banco</a></li>
                 <li><a href="/reporte/cheque?fecha={{Carbon\Carbon::now()->format('y/m/Y')}}">Reporte de Cheque</a></li>
-                <li><a href="/ reporte/cheque"> Proveedores</a><li>
+                
               </ul>
             </li>
 
@@ -94,7 +94,14 @@
               </ul>
             </li>
 
-
+               <li class="Dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compras <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/compra">Crear cuenta</a></li>
+                <li><a href="/proveedores">Proveedores</a></li>
+               
+              </ul>
+            </li>
            
 
             @endif

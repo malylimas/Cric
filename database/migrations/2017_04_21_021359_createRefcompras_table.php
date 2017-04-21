@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateComprasTable extends Migration
+class CreateRefcomprasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateComprasTable extends Migration
      */
     public function up()
     {
-        Schema::create('compras', function (Blueprint $table) {
-            $table->increments('id');
-            $table->datetime('Fecha');
-            $table->string('Descripcion');
-            $table->integer('proveedore_id')->unsigned();
-            $table->decimal('NumeroFactura');
-            $table->timestamps();
-        });
+        Schema::table('compras', function (Blueprint $table) {
+        $table->foreign('proveedore_id')->references('id')->on('proveedores'); 
+
+         }); 
     }
 
     /**

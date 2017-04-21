@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Compra;
+use App\proveedores;
 use Illuminate\Http\Request;
 
 class CompraController extends Controller
@@ -14,8 +15,8 @@ class CompraController extends Controller
      */
     public function index()
     {
-       $compras = Compras::paginate(8);
-        return View('Compra.index')->with('comppras', $compras);
+       $compra = Compra::paginate(8);
+        return View('Compras.index')->with('compra', $compra);
     }
 
     /**
@@ -26,12 +27,12 @@ class CompraController extends Controller
     public function create()
     
     {
-        $compras = Compras ::all();
+        $proveedores = Proveedores ::all();
 
-        return View('compras.crear')->with('Fecha', $Fecha)->with('Descripcion', $Descripcion) ->with('proveedores', $proveedores)->with('facturas', $factura);
+        return View('Compras.crear')->with('proveedores',$proveedores);
+
+
     }
-       
-      
 
     /**
      * Store a newly created resource in storage.
@@ -41,9 +42,27 @@ class CompraController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        
+        
+        $compra = Compras::create([
+        'Fecha'=>$request->Fecha,
+        'Descripcion'=>$request->Descripcion,
+        'proveedores_id'=> $request->provedores_id,
+        'NumeroFactura'=>$request->NumeroFactura,
+        ]);
 
+
+        
+        
+        return redirect('Compras');
+    }
+    
+     
+
+       public function modificar(compras $compra){
+        return view('Compras.modificar')->with('compra',$compra);
+    }
+    
     /**
      * Display the specified resource.
      *
@@ -88,4 +107,13 @@ class CompraController extends Controller
     {
         //
     }
+
+     public function imprimir(Compra $compra){
+        
+        
+        return view('Compras.Imprimir')->with('compra', $compra);
+    }
+
+
+
 }

@@ -20,7 +20,7 @@ class AddReporteCajaView extends Migration
         DEFINER = `root`@`localhost`
         SQL SECURITY DEFINER
         VIEW `ReporteCaja` AS
-        SELECT * FROM (SELECT fecha,
+        SELECT fecha,
         descripcion,
         cantidad     AS Egreso,
         NULL         AS Ingreso,
@@ -34,9 +34,7 @@ class AddReporteCajaView extends Migration
         cantidad AS Igreso,
         donante  AS Beneficiario
         FROM   ingresos
-        WHERE  modulo = \'caja\') AS CAJA
-        
-        order by CAJA.FECHA
+        WHERE  modulo = \'caja\'
         ');
     }
     

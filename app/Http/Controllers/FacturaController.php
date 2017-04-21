@@ -48,7 +48,7 @@ class FacturaController extends Controller
         
         
         return View('Factura.crear')->with('paciente',$paciente)->with('citas',$citas) ->with('subTotal',$subTotal)->with('descuentos',$descuentos);
-    }
+  }
     
     /**
     * Store a newly created resource in storage.

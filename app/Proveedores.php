@@ -21,7 +21,7 @@ class Proveedores extends Model
     protected $dates = ['deleted_at'];
     
     
-    protected $table ="Provedores";
+    protected $table ="Proveedores";
     
     
 }
