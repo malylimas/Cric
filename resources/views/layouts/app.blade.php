@@ -83,6 +83,7 @@
                 <li><a href="/egreso?modulo=banco">Egresos de Banco</a></li>
                 <li><a href="/ingreso?modulo=banco">Ingresos de Banco</a></li>
                 <li><a href="/reporte/cheque">Reporte de Cheque</a></li>
+                <li><a href="/ reporte/cheque"> Proveedores</a><li>
               </ul>
             </li>
 
@@ -94,6 +95,9 @@
                 <li><a href="/reporte/financiero">Reporte Financiero</a></li>
               </ul>
             </li>
+
+
+           
 
             @endif
           </ul>
