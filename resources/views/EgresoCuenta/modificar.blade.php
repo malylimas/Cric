@@ -3,7 +3,7 @@
 @section('form-content')
     @define $pageTitle = 'Modificar EgresoCuenta'
 
-<form action= "/egresocuenta/modificar/{{$cuenta_egreso->id}}" method="Post" role="form">
+<form action= "/egresocuenta/modificar{{$cuenta_egreso->id}}" method="Post" role="form">
    {{ csrf_field()}}
 
 <div class="form-group row">

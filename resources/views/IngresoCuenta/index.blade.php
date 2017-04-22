@@ -3,7 +3,7 @@
 @section('content')
 <div>
     <div class ="row">
-        <a class="btn btn-primary" href="crear" > crear IngresoCuenta</a>
+        <a class="btn btn-primary" href="ingresocuenta/create" > crear IngresoCuenta</a>
     </div>
     </br>
     
