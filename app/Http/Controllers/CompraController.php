@@ -15,8 +15,10 @@ class CompraController extends Controller
      */
     public function index()
     {
-       $compra = Compra::paginate(8);
-        return View('Compras.index')->with('compra', $compra);
+        $compra = Compra::paginate(8);
+         
+         return View('Compras.index')->with('compra', $compra);
+
     }
 
     /**
@@ -44,10 +46,11 @@ class CompraController extends Controller
     {
         
         
-        $compra = Compras::create([
+        $compra = Compra::create([
         'Fecha'=>$request->Fecha,
         'Descripcion'=>$request->Descripcion,
-        'proveedores_id'=> $request->provedores_id,
+        'proveedore_id'=> $request->provedore_id,
+        'cantidad'=> $request->cantidad,
         'NumeroFactura'=>$request->NumeroFactura,
         ]);
 
@@ -59,7 +62,7 @@ class CompraController extends Controller
     
      
 
-       public function modificar(compras $compra){
+       public function modificar(Compra $compra){
         return view('Compras.modificar')->with('compra',$compra);
     }
     

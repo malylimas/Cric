@@ -24,9 +24,10 @@
             <th>
               <center><b>Proveedores</center></b></th>
             <th>
-              <center><b>NumeroFactura</center></b></th>
+              <center><b>Cantidad</center></b></th>
             <th>
-               <center><b>Imprimir</center></b></th>
+              <center><b>NumeroFactura</center></b></th>
+            
                
           </tr>
         </thead>
@@ -36,7 +37,8 @@
             <th>{{ $compra->id }}</th>
             <th>{{ $compra->Fecha}}</th>
             <th>{{ $compra->Descripcion}}</th>
-            <td>{{ $compra->proveedore->provedore_id}}</td>
+            <td>{{ $compra->proveedore->proveedore_id}}</td>
+            <td>{{ $compra->cantidad}}</td>
             <td>{{ $compra->NumeroFactura}}</td>
             <td>
               <center>

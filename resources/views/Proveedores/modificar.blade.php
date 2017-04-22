@@ -2,13 +2,15 @@
 
 @section('form-content')
     @define $pageTitle = 'Modificar Proveedores'
-    <form action="create" method="Post" role="form" class= "" >
+    <form action="/proveedores/{{$proveedor->id}}" method="Post" role="form" class= "" >
       {{ csrf_field() }}
+      {{ method_field('PUT') }}
+
 
       <div class="form-group ">
         <label for="nombretxt" class="">Nombre</label>
         <div class="col-10">
-          <input class="form-control" type="text" name="Nombre" id="nombretxt"  >
+          <input class="form-control" type="text" name="Nombre" id="nombretxt" value="{{$proveedor->Nombre}}" >
         </div>
 
       </div>

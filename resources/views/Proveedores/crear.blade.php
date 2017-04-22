@@ -2,7 +2,7 @@
 
 @section('form-content')
     @define $pageTitle = 'Crear Proveedores'
-    <form action="create" method="Post" role="form" class= "" >
+    <form action="/proveedores" method="Post" role="form" class= "" >
       {{ csrf_field() }}
 
       <div class="form-group ">
