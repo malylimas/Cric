@@ -4,7 +4,7 @@
     @define $pageTitle = 'Crear Egreso Cuenta'
     @define
 
-     <form action="crear" method="Post" role="form">
+     <form action="create" method="Post" role="form">
       
        <div class="form-group">
        <label for="example-text-input" class="col-2 col-form-label">Nombre </label>
