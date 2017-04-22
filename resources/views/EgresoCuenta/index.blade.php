@@ -3,7 +3,7 @@
 @section('content')
 <div>
     <div class ="row">
-        <a class="btn btn-primary" href="egresocuenta/create" > crear EgresoCuenta</a>
+        <a class="btn btn-primary" href="egresocuentas/create" > crear EgresoCuenta</a>
     </div>
     </br>
     
@@ -27,7 +27,7 @@
                 <td>
                 <center>
                   <div class="btn-group" role="group" aria-label="...">
-                     <a type="button" class="btn btn-primary" href="modificar/{{$cuenta_egreso->id}}">Modificar</a>
+                     <a type="button" class="btn btn-primary" href="/egresocuentas/{{$cuenta_egreso->id}}/edit">Modificar</a>
                      </center>
                 </td>
               </tr>

@@ -3,13 +3,14 @@
 @section('form-content')
     @define $pageTitle = 'Modificar EgresoCuenta'
 
-<form action= "/egresocuenta/modificar{{$cuenta_egreso->id}}" method="Post" role="form">
+<form action= "/egresocuentas/{{$cuenta_egreso->id}}" method="Post" role="form">
    {{ csrf_field()}}
+        {{ method_field('PUT') }}
 
 <div class="form-group row">
   <label for="example-text-input" class="col-2 col-form-label">Nombre</label>
   <div class="col-10">
-    <input class="form-control" type="text" name="Nombre" value="{{ $cuenta_egreso->Nombre}}"   id="example-text-input">
+    <input class="form-control" type="text" name="Nombre" value="{{ $cuenta_egreso->Nombre }}"   id="example-text-input">
   </div>
 </div>
 

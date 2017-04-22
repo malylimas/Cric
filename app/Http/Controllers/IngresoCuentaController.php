@@ -8,53 +8,70 @@ use App\Ingreso;
 
 class IngresoCuentaController extends Controller
 {
-
- public function __construct()
+    
+    public function __construct()
     {
         $this->middleware('auth');
     }
-
-
+    
+    
     public function create(Request $request){
-
-
+        
+        
         return view('IngresoCuenta.crear');
     }
     
     
-   
-   public function store(request $request){
-      
-
+    
+    public function store(request $request){
+        
+        
         $this->validate($request, [
         'Nombre' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
         
         
         ]);
         
-            IngresoCuenta::create([
-            'Nombre'=>$request->Nombre,
-           
-
+        cuenta_Ingreso::create([
+        'Nombre'=>$request->Nombre,
+        
+        
         ]);
         
-       
-        return redirect('IngresoCuenta.index');
-
-   }
-    
-        public function index(){
-
-        $cuenta_ingreso = Cuenta_Ingreso::withTrashed()->paginate(8);
-      
-        return view('Ingresocuenta.index')->with('cuenta_ingreso', $cuenta_ingreso);
+        
+        return redirect('ingresocuentas');
+        
     }
-
-
-
-        public function modificar( $cuenta_ingreso){
-        return view('IngresoCuenta.modificar')->with('cuenta_ingreso',$cuenta_ingreso);
-     
-     }
-
+    
+    public function index(){
+        
+        $cuenta_ingreso = cuenta_Ingreso::withTrashed()->paginate(8);
+        
+        return view('Ingresocuenta.index')->with('cuenta_ingresos', $cuenta_ingreso);
+    }
+    
+    
+    
+    public function edit(cuenta_Ingreso $ingresocuenta){
+        return view('IngresoCuenta.modificar')->with('cuenta_ingreso',$ingresocuenta);
+        
+    }
+    
+    
+    public function update(request $request, cuenta_Ingreso $ingresocuenta){
+        
+        
+        $this->validate($request, [
+        'Nombre' => 'required|max:255|regex:/^[\pL\s\-]+$/u',
+        
+        
+        ]);
+        
+        $ingresocuenta->Nombre= $request->Nombre;
+        $ingresocuenta->save();
+        
+        return redirect('ingresocuentas');
+        
+    }
+    
 }

@@ -12,19 +12,19 @@ class EgresoCuentaController extends Controller
     {
         $this->middleware('auth');
     }
-
-
+    
+    
     public function create(Request $request){
-
-
+        
+        
         return view('EgresoCuenta.crear');
     }
     
     
-   
-   public function store(request $request){
-      
-
+    
+    public function store(request $request){
+        
+        
         $this->validate($request, [
         'Nombre' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
         
@@ -32,26 +32,47 @@ class EgresoCuentaController extends Controller
         ]);
         
         Cuenta_Egreso::create([
-            'Nombre'=>$request->Nombre,
-           
-
+        'Nombre'=>$request->Nombre,
+        
+        
         ]);
         
-       
-        return redirect('egresocuenta');
-
-   }
-
-
-
-     public function index(){
+        
+        return redirect('egresocuentas');
+        
+    }
+    
+    
+    
+    public function index(){
         $cuenta_egreso = Cuenta_Egreso::withTrashed()->paginate(8);
         return view('EgresoCuenta.index')->with('cuenta_egresos', $cuenta_egreso);
     }
-
-
-    public function modificar(cuenta_Egreso $cuentaegreso){
-        return view('EgresoCuenta.modificar')->with('cuenta_egreso',$cuenta_egreso);
+    
+    
+    public function edit(Cuenta_Egreso $egresocuenta){
+        
+        
+        return view('EgresoCuenta.modificar')->with('cuenta_egreso',$egresocuenta);
     }
 
+    public function update(request $request,Cuenta_Egreso $egresocuenta){
+        
+        
+        $this->validate($request, [
+        'Nombre' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
+        
+        
+        ]);
+        
+        $egresocuenta->Nombre = $request->Nombre;
+        
+        $egresocuenta->save();
+        return redirect('egresocuentas');
+        
+    }
+    
+    
+    
+    
 }

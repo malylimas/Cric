@@ -97,8 +97,10 @@ Route::resource('egreso', 'CuentaEgresoController');
 Route::get('reporte/caja', 'ReporteContabilidadController@reportecaja');
 Route::get('reporte/cheque', 'ReporteContabilidadController@reportecheque');
 Route::get('reporte/financiero', 'ReporteContabilidadController@reportefinanciero');
-Route::resource('ingresocuenta', 'IngresoCuentaController');
-Route::resource('egresocuenta', 'EgresoCuentaController');
+
+Route::resource('ingresocuentas', 'IngresoCuentaController');
+Route::resource('egresocuentas', 'EgresoCuentaController');
+
 Route::get('factura/imprimir/{factura}','FacturaController@imprimir');
 Route::get('cuenta_egreso/modificar{cuenta_egreso}', 'EgresoCuentaController@modificar');
 Route::get('cuenta_ingreso/modificar{cuenta_ingreso}', 'IngresoCuentaController@modificar');

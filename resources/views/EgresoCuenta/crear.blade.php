@@ -4,7 +4,7 @@
     @define $pageTitle = 'Crear Egreso Cuenta'
     @define
 
-     <form action="/egresocuenta" method="Post" role="form">
+     <form action="/egresocuentas" method="Post" role="form">
       {{ csrf_field()}}
        <div class="form-group ">
         <label for="nombretxt" class="">Nombre</label>
