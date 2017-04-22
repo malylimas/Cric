@@ -31,14 +31,14 @@ class EgresoCuentaController extends Controller
         
         ]);
         
-        EgresoCuenta::create([
+        Cuenta_Egreso::create([
             'Nombre'=>$request->Nombre,
            
 
         ]);
         
        
-        return redirect('EgresoCuenta.index');
+        return redirect('egresocuenta');
 
    }
 
@@ -46,7 +46,7 @@ class EgresoCuentaController extends Controller
 
      public function index(){
         $cuenta_egreso = Cuenta_Egreso::withTrashed()->paginate(8);
-        return view('EgresoCuenta.index')->with('cuenta_egreso', $cuenta_egreso);
+        return view('EgresoCuenta.index')->with('cuenta_egresos', $cuenta_egreso);
     }
 
 

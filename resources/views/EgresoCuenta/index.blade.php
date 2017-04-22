@@ -18,7 +18,7 @@
               </tr>
             </thead>
             <tbody>
-            @foreach ($cuenta_egreso as $cuenta_egreso)
+            @foreach ($cuenta_egresos as $cuenta_egreso)
               <tr>
                 <th>{{ $cuenta_egreso->id }}</th>
                 <td>{{ $cuenta_egreso->Nombre }}</td>
@@ -36,7 +36,7 @@
             </tbody>
           </table>
           </div>
-      
+          {{$cuenta_egresos->links()}}
     </div>
 </div>
 @endsection
