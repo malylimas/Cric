@@ -97,7 +97,7 @@
                <li class="Dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compras <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/compra">Crear cuenta</a></li>
+                <li><a href="/compra">Crear Compras</a></li>
                 <li><a href="/proveedores">Proveedores</a></li>
                
               </ul>

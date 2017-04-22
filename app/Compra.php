@@ -18,7 +18,7 @@ class Compra extends Model
      * @var array
      */
     protected $fillable = [
-        'Id' , 'Fecha', 'Descripcion','provedore_id','NumeroFactura', 
+        'Id' , 'Fecha', 'Descripcion','provedore_id','cantidad','NumeroFactura', 
     ];
 
 
