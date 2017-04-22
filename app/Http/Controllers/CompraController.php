@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Compra;
 use App\proveedores;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class CompraController extends Controller
 {
@@ -17,7 +18,7 @@ class CompraController extends Controller
     {
         $compra = Compra::paginate(8);
          
-         return View('Compras.index')->with('compra', $compra);
+         return View('Compras.index')->with('compras', $compra);
 
     }
 
@@ -29,7 +30,7 @@ class CompraController extends Controller
     public function create()
     
     {
-        $proveedores = Proveedores ::all();
+        $proveedores = Proveedores::all();
 
         return View('Compras.crear')->with('proveedores',$proveedores);
 
@@ -44,12 +45,13 @@ class CompraController extends Controller
      */
     public function store(Request $request)
     {
-        
+
+        $fecha = Carbon::createFromFormat('d/m/Y', $request->Fecha);
         
         $compra = Compra::create([
-        'Fecha'=>$request->Fecha,
+        'Fecha'=>$fecha,
         'Descripcion'=>$request->Descripcion,
-        'proveedore_id'=> $request->provedore_id,
+        'proveedore_id'=> $request->proveedore_id,
         'cantidad'=> $request->cantidad,
         'NumeroFactura'=>$request->NumeroFactura,
         ]);
@@ -57,7 +59,7 @@ class CompraController extends Controller
 
         
         
-        return redirect('Compras');
+        return redirect('compra');
     }
     
      

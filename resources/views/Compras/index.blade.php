@@ -18,6 +18,8 @@
             <th>
               <center><b>#</center></b></th>
             <th>
+
+
               <center><b>Fecha</center></b></th>
             <th>
               <center><b>Descripcion</center></b></th>
@@ -32,34 +34,21 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($compra as $compra)
+          @foreach ($compras as $compra)
           <tr>
             <th>{{ $compra->id }}</th>
             <th>{{ $compra->Fecha}}</th>
             <th>{{ $compra->Descripcion}}</th>
-            <td>{{ $compra->proveedore->proveedore_id}}</td>
+            <td>{{ $compra->proveedores->Nombre}}</td>
             <td>{{ $compra->cantidad}}</td>
             <td>{{ $compra->NumeroFactura}}</td>
-            <td>
-              <center>
-                <div class="btn-group" role="group" aria-label="...">
-                  <a type="button" class="btn btn-primary" href="modificar/{{$compra->id}}">Modificar</a>
-                </div>
-              </center>
-            </td>
-            <td>
-              <center>
-                <div class="panel-heading">
-                  <a href="/compra/imprimir/{{$compra->id}}"> <img src="/img/ImagenHTML2.jpg" border="0" width="30" height="30"></a>
-                </div>
-              </center>
-            </td>
+            
           </tr>
           @endforeach
         </tbody>
       </table>
       </div>
-      {{ $compra->links() }} 
+      {{ $compras->links() }} 
     </div>
   </div>
 </div>
