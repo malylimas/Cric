@@ -90,7 +90,7 @@
               <ul class="dropdown-menu">
                 <li><a href="/egresocuenta">Cuenta de Egreso</a></li>
                 <li><a href="/ingresocuenta">Cuenta de Ingreso</a></li>
-                <li><a href="/reporte/financiero">Reporte Financiero</a></li>
+                <li><a href="/reporte/financiero?year={{Carbon\Carbon::now()->year}}">Reporte Financiero</a></li>
               </ul>
             </li>
 
