@@ -109,6 +109,7 @@
                 <li><a href="/clases">Clases</a></li>
                 <li><a href="/grados">Grados</a></li>
                 <li><a href="/alumnos">Alumnos</a></li>
+                <li><a href="/matriculas">Matricula</a></li>
                
               </ul>
             </li>

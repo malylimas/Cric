@@ -20,7 +20,7 @@
                             <center><b>#</center></b></th>
 
                         <th>
-                            <center><b>Mombre</center></b></th>
+                            <center><b>Nombre</center></b></th>
 
                             <th>
                             <center><b>Acciones</center></b></th>
