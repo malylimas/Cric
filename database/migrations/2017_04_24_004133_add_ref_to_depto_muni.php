@@ -15,6 +15,8 @@ class AddRefToDeptoMuni extends Migration
     {
         Schema::table('alumnos', function (Blueprint $table) {
             //
+             $table->foreign('departamento_id')->references('id')->on('departamento');
+            $table->foreign('municipio_id')->references('id')->on('municipio');       
         });
     }
 
@@ -27,8 +29,7 @@ class AddRefToDeptoMuni extends Migration
     {
         Schema::table('alumnos', function (Blueprint $table) {
             //
-            $table->foreign('departamento_id')->references('id')->on('departamento');
-            $table->foreign('municipio_id')->references('id')->on('municipio');         
+             
         });
     }
 }
