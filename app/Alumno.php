@@ -17,4 +17,13 @@ class Alumno extends Model
     public function municipio(){
         return $this->belongsTo('App\Municipio');
     }
+     
+      protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'fechaNacimiento'
+    ];
+
+   
 }

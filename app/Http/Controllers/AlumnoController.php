@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\departamento;
 use App\municipio;
+use Carbon\Carbon;
 class AlumnoController extends Controller
 {
     /**
@@ -63,7 +64,7 @@ class AlumnoController extends Controller
         'identidad' => $request->identidad,
         'nombre' => $request->nombre,
         'direccion' => $request->direccion,
-        'fechaNacimiento' => $request->fechaNacimiento,
+        'fechaNacimiento' => Carbon::createFromFormat('d/m/Y', $request->fechaNacimiento),
         'telefono' => $request->telefono,
         'departamento_id' => $request->departamento_id,
         'nombreEncargado' => $request->nombreEncargado,
@@ -96,7 +97,7 @@ class AlumnoController extends Controller
         //
         $departamentos = departamento::all();
         $municipios = municipio::all();
-        return views('Alumnos.modificar')->with('departamentos',$departamentos)->with('municipios',$municipios)->with('alumnos',$alumno);
+        return view('Alumnos.modificar')->with('departamentos',$departamentos)->with('municipios',$municipios)->with('alumno',$alumno);
     }
 
     /**
@@ -109,6 +110,32 @@ class AlumnoController extends Controller
     public function update(Request $request, Alumno $alumno)
     {
         //
+         $this->validate($request, [
+        'identidad' => 'required|digits:13',
+        'nombre' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
+        'direccion' => 'required|max:255',
+        'fechaNacimiento' => 'required|date_format:d/m/Y|before:'. date('Y-m-d'),
+        'telefono' => 'required|digits:8',
+        'nombreEncargado' => 'required|max:30|regex:/^[\pL\s\-]+$/u',        
+        'municipio_id' => 'required|exists:municipio,id',
+        'departamento_id' => 'required|exists:departamento,id',
+        
+        
+        ]);
+        
+       
+         
+        $alumno->identidad = $request->identidad;
+        $alumno->nombre = $request->nombre;
+        $alumno->direccion = $request->direccion;
+        $alumno->fechaNacimiento = Carbon::createFromFormat('d/m/Y', $request->fechaNacimiento);
+        $alumno->telefono = $request->telefono;
+        $alumno->departamento_id = $request->departamento_id;
+        $alumno->nombreEncargado = $request->nombreEncargado;
+        $alumno->municipio_id = $request->municipio_id;
+        
+        $alumno->save();
+        return redirect('alumnos');
     }
 
     /**

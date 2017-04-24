@@ -11,4 +11,10 @@ class Clase extends Model
     'nombre'
     
     ];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        
+    ];
 }
