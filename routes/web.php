@@ -112,3 +112,4 @@ Route::resource('clases', 'ClaseController');
 Route::resource('grados', 'GradoController');
 Route::resource('alumnos', 'AlumnoController');
 Route::resource('matriculas', 'MatriculaController');
+Route::resource('notas', 'MatriculaController');
