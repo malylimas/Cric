@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Alumno;
 use Illuminate\Http\Request;
 
+use App\departamento;
+use App\municipio;
 class AlumnoController extends Controller
 {
     /**
@@ -15,6 +17,10 @@ class AlumnoController extends Controller
     public function index()
     {
         //
+
+        $alumnos = Alumno::paginate(8);
+
+        return view('Alumnos.index')->with('alumnos',$alumnos);
     }
 
     /**
@@ -25,6 +31,9 @@ class AlumnoController extends Controller
     public function create()
     {
         //
+        $departamentos = departamento::all();
+        $municipios = municipio::all();
+        return view('Alumnos.crear')->with('departamentos',$departamentos)->with('municipios',$municipios);
     }
 
     /**
@@ -36,6 +45,33 @@ class AlumnoController extends Controller
     public function store(Request $request)
     {
         //
+         $this->validate($request, [
+        'identidad' => 'required|digits:13|unique:alumnos,identidad',
+        'nombre' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
+        'direccion' => 'required|max:255',
+        'fechaNacimiento' => 'required|date_format:d/m/Y|before:'. date('Y-m-d'),
+        'telefono' => 'required|digits:8',
+        'nombreEncargado' => 'required|max:30|regex:/^[\pL\s\-]+$/u',        
+        'municipio_id' => 'required|exists:municipio,id',
+        'departamento_id' => 'required|exists:departamento,id',
+        
+        
+        ]);
+        
+       
+         Alumno::create([
+        'identidad' => $request->identidad,
+        'nombre' => $request->nombre,
+        'direccion' => $request->direccion,
+        'fechaNacimiento' => $request->fechaNacimiento,
+        'telefono' => $request->telefono,
+        'departamento_id' => $request->departamento_id,
+        'nombreEncargado' => $request->nombreEncargado,
+        'municipio_id' => $request->municipio_id        
+        ]);
+        
+        return redirect('alumnos');
+        
     }
 
     /**
@@ -58,6 +94,9 @@ class AlumnoController extends Controller
     public function edit(Alumno $alumno)
     {
         //
+        $departamentos = departamento::all();
+        $municipios = municipio::all();
+        return views('Alumnos.modificar')->with('departamentos',$departamentos)->with('municipios',$municipios)->with('alumnos',$alumno);
     }
 
     /**

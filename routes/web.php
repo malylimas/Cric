@@ -110,3 +110,4 @@ Route::resource('proveedores', 'ProveedoresController');
 
 Route::resource('clases', 'ClaseController');
 Route::resource('grados', 'GradoController');
+Route::resource('alumnos', 'AlumnoController');

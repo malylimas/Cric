@@ -8,7 +8,13 @@ class Alumno extends Model
 {
     //
     protected $fillable = [
-    'nombre'
-    
-    ]
+    'nombre','identidad','direccion','fechaNacimiento','telefono','municipio_id','departamento_id','nombreEncargado'    
+    ];
+
+    public function departamento(){
+        return $this->belongsTo('App\Departamento');
+    }
+    public function municipio(){
+        return $this->belongsTo('App\Municipio');
+    }
 }

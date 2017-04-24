@@ -6,8 +6,8 @@
 
 
 
-                <a class="btn btn-primary" href="/grados/create"> Crear Grados</a>
-           
+            <a class="btn btn-primary" href="/alumnos/create"> Crear Alumno</a>
+
         </div>
     </div>
     </br>
@@ -18,29 +18,40 @@
                     <tr>
                         <th>
                             <center><b>#</center></b></th>
+                        <th>
+                            <center><b>Identidad</center></b></th>
+                        <th><center><b>Nombre</center></b></th>
+                        <th><center><b>Telefono</center></b></th>
+                        <th><center><b>Encargado</center></b></th>
+                        <th><center><b>Departamento</center></b></th>
+                        <th><center><b>Municipio</center></b></th>
 
                         <th>
-                            <center><b>Mombre</center></b></th>
-
-                            <th>
                             <center><b>Acciones</center></b></th>
 
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($grados as $grado)
+                    @foreach ($alumnos as $alumno)
                     <tr>
-                        <th>{{ $grado->id }}</th>
-                        <th>{{ $grado->nombre}}</th>
-                        
-                        <th><center><a class="btn btn-primary" href="/grados/{{$grado->id}}/edit">Modificar</a></center></th>
-                        
+                        <th>{{ $alumno->id }}</th>
+                        <th>{{ $alumno->identidad}}</th>
+                        <th>{{ $alumno->nombre}}</th>
+                        <th>{{ $alumno->telefono}}</th>
+                        <th>{{ $alumno->nombreEncargado}}</th>
+                        <th>{{ $alumno->departamento->Nombre_Departamento}}</th>
+                        <th>{{ $alumno->municipio->Nombre_Municipio}}</th>
+
+                        <th>
+                            <center><a class="btn btn-primary" href="/alumnos/{{$alumno->id}}/edit">Modificar</a></center>
+                        </th>
+
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-        {{ $grados->links() }}
+        {{ $alumnos->links() }}
     </div>
 </div>
 
