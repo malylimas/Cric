@@ -103,6 +103,16 @@
               </ul>
             </li>
            
+           <li class="Dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Escuela <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/clases">Clases</a></li>
+                <li><a href="/grados">Grados</a></li>
+                <li><a href="/alumnos">Alumnos</a></li>
+               
+              </ul>
+            </li>
+           
 
             @endif
           </ul>

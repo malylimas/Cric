@@ -107,3 +107,6 @@ Route::get('cuenta_ingreso/modificar{cuenta_ingreso}', 'IngresoCuentaController@
 
 Route::resource('compra', 'CompraController');
 Route::resource('proveedores', 'ProveedoresController');
+
+Route::resource('clases', 'ClaseController');
+Route::resource('grados', 'GradoController');
