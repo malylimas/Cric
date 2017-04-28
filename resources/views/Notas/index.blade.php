@@ -6,7 +6,7 @@
 
 
 
-                <a class="btn btn-primary" href="/matriculas/create"> Ingresar Notas</a>
+                <a class="btn btn-primary" href="/notas/create"> Ingresar Notas</a>
            
         </div>
     </div>
@@ -20,26 +20,22 @@
                             <center><b>#</center></b></th>
 
                         <th>
-                            <center><b>Alumno</center></b></th>
-
-                            <th>
                             <center><b>Grado</center></b></th>
 
-                            
                             <th>
-                            <center><b>Año</center></b></th>
+                            <center><b>Cantidad de Alumnos</center></b></th>
 
                             
                             <th>
-                            <center><b>Fecha</center></b></th>
-
+                            <center><b>Año</center></b></th>                        
+                         
                             <th>
                             <center><b>Acciones</center></b></th>
 
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($matriculas as $matricula)
+                    @foreach ($curso as $matricula)
                     <tr>
                         <th>{{ $matricula->id }}</th>
                         <th>{{ $matricula->alumno->nombre}}</th>
