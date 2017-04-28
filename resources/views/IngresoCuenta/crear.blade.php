@@ -1,4 +1,4 @@
-@extends('layouts.form') @section('form-content') @define $pageTitle = 'Crear Egreso Cuenta'
+@extends('layouts.form') @section('form-content') @define $pageTitle = 'Crear Ingreso Cuenta'
 <form action="/ingresocuentas" method="Post" role="form">
       {{ csrf_field() }}
 

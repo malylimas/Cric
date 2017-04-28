@@ -2,7 +2,7 @@
 @extends('layouts.form') 
 
 @section('form-content')
-    @define $pageTitle = 'Crear Matricula'
+    @define $pageTitle = 'Crear Notas'
     
 
      <form action="/matriculas" method="Post" role="form">
