@@ -35,23 +35,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($curso as $matricula)
+                    @foreach ($cursos as $curso)
                     <tr>
-                        <th>{{ $matricula->id }}</th>
-                        <th>{{ $matricula->alumno->nombre}}</th>
-                        <th>{{ $matricula->grado->nombre}}</th>
-                        <th>{{ $matricula->ano}}</th>
-                        <th>{{ $matricula->fecha->format('d/m/Y')}}</th>
-                        
-                        <th><center><a class="btn btn-primary" href="/matriculas/{{$matricula->id}}/edit">Modificar</a></center></th>
+                        <th>{{ $curso->id }}</th>
+                        <th>{{ $curso->nombre}}</th>
+                        <th>{{ $curso->cantidadAlumnos}}</th>
+                        <th>{{ $curso->anio}}</th>
+                      
+                       <th><center><a class="btn btn-primary" href="/curso/{{$curso->id}}/edit">Ingresar Notas</a></center></th>
                         
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-        {{ $matriculas->links() }}
-    </div>
 </div>
 
 

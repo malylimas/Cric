@@ -4,7 +4,7 @@
     @define $pageTitle = 'Crear Grados'
     @define
 
-     <form action="/grados" method="Post" role="form">
+      <form action="/grados" method="Post" role="form">
       {{ csrf_field()}}
        <div class="form-group ">
         <label for="nombretxt" class="">Nombre</label>
@@ -17,5 +17,7 @@
     <button class= "btn btn-primary" type ="Submit" >Guardar</button>
 </from>
 
-
 @endsection
+
+       
+      
