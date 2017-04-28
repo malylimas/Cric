@@ -15,7 +15,16 @@ class CreateNotasTable extends Migration
     {
         Schema::create('notas', function (Blueprint $table) {
             $table->increments('id');
+            
+            $table->integer('matricula_id')->unsigned();
+            $table->integer('clase_id')->unsigned();
+            $table->integer('primerParcial')->nullable();
+            $table->integer('segundoParcial')->nullable();
+            $table->integer('tercerParcial')->nullable();
+            $table->integer('cuartoParcial')->nullable();
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
