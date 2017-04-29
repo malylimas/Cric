@@ -17,6 +17,10 @@ class Matricula extends Model
     public function alumno(){
         return $this->belongsTo('App\Alumno');
     }
+
+    public function notas(){
+        return $this->hasMany('App\Nota');
+    }
      
       protected $dates = [
         'created_at',

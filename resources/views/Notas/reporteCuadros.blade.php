@@ -11,10 +11,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="sr-only" for="exampleInputEmail3">Clase</label>
-                    <select  name="claseId" class="form-control" value="{{$claseId}}">
-                     @foreach ($clases as $c)
-                        <option value="{{ $c->id }}" {{ $c->id == $claseId ? 'selected':'' }} >  {{$c->nombre}}</option>
+                    <label class="sr-only" for="exampleInputEmail3">Grado</label>
+                    <select  name="gradoId" class="form-control" >
+                     @foreach ($grados as $c)
+                        <option value="{{ $c->id }}" {{ $c->id == $gradoId ? 'selected':'' }} >  {{$c->nombre}}</option>
                      @endforeach
                     </select>
                 </div>
@@ -24,9 +24,9 @@
         </div>
     </div>
     </br>
-    @if($clase)
+    @if($grado)
         <div class="row">
-            <h3>Clase seleccionada: {{$clase->nombre}}</h3>
+            <h3>Imprimir calificaciones de  {{$grado->nombre}}</h3>
         </div>
     @endif
     <div class="row">
@@ -38,14 +38,7 @@
                             <center><b>#</center></b></th>
 
                         <th>
-                            <center><b>Grado</center></b></th>
-
-                            <th>
-                            <center><b>Cantidad de Alumnos</center></b></th>
-
-                            
-                            <th>
-                            <center><b>Año</center></b></th>                        
+                            <center><b>Nombre</center></b></th>                   
                          
                             <th>
                             <center><b>Acciones</center></b></th>
@@ -53,14 +46,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($cursos as $curso)
+                    @foreach ($matriculas as $matricula)
                     <tr>
-                        <th>{{ $curso->id }}</th>
-                        <th>{{ $curso->nombre}}</th>
-                        <th>{{ $curso->cantidadAlumnos}}</th>
-                        <th>{{ $curso->anio}}</th>
+                        <th>{{ $matricula->id }}</th>
+                        <th>{{ $matricula->alumno->nombre}}</th>
+                       
                       
-                       <th><center><a class="btn btn-primary" href="/notas/create?year={{$year}}&claseId={{$claseId}}&gradoId={{$curso->id}}">Ingresar Notas</a></center></th>
+                       <th><center><a class="btn btn-primary" href="/boletascalificaciones?matriculaId={{$matricula->id}}&alumnoId={{$matricula->alumno->id}}">Imprimir</a></center></th>
                         
                     </tr>
                     @endforeach

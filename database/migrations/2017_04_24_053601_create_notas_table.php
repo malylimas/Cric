@@ -22,6 +22,7 @@ class CreateNotasTable extends Migration
             $table->integer('segundoParcial')->nullable();
             $table->integer('tercerParcial')->nullable();
             $table->integer('cuartoParcial')->nullable();
+            $table->integer('promedio')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

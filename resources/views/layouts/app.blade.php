@@ -127,6 +127,7 @@
                 <li><a href="/alumnos">Alumnos</a></li>
                 <li><a href="/matriculas">Matricula</a></li>
                 <li><a href="/notas">Notas</a></li>
+                <li><a href="/reportecuadros">Imprimir Calificaciones</a></li>
                
               </ul>
             </li>
