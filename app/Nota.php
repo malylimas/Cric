@@ -10,6 +10,9 @@ class Nota extends Model
      use SoftDeletes;
     //
 
+    protected $fillable = [
+    'matricula_id','clase_id','primerParcial','segundoParcial','tercerParcial','cuartoParcial'
+    ];
     
 
 
@@ -18,4 +21,16 @@ class Nota extends Model
         'updated_at',
         'deleted_at',        
     ];
+
+    protected $casts = [
+        'primerParcial' => 'integer',
+        'segundoParcial' => 'integer',
+        'tercerParcial' => 'integer',
+        'cuartoParcial' => 'integer',
+    ];
+
+    public function calcularPromedio(){
+
+        $this->promedio = ($this->primerParcial + $this->segundoParcial + $this->tercerParcial + $this->cuartoParcial )/4  ;
+    }
 }

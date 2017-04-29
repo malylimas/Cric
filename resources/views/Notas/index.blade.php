@@ -2,15 +2,33 @@
 @section('content')
 <div>
     <div class="row">
-        <div class="col-md-4">
+        <div >
 
+            <form  method="GET" class="form-inline">
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputEmail3">Año</label>
+                    <input type="number" required name="year" class="form-control"  placeholder="Año" value="{{$year}}">
+                </div>
 
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputEmail3">Clase</label>
+                    <select  name="claseId" class="form-control" value="{{$claseId}}">
+                     @foreach ($clases as $c)
+                        <option value="{{ $c->id }}" {{ $c->id == $claseId ? 'selected':'' }} >  {{$c->nombre}}</option>
+                     @endforeach
+                    </select>
+                </div>
 
-                <a class="btn btn-primary" href="/notas/create"> Ingresar Notas</a>
-           
+                <button class="btn btn-primary"> Buscar</button>
+            </form>
         </div>
     </div>
     </br>
+    @if($clase)
+        <div class="row">
+            <h3>Clase seleccionada: {{$clase->nombre}}</h3>
+        </div>
+    @endif
     <div class="row">
         <div class="contianer">
             <table class="table table-bordered">
@@ -42,7 +60,7 @@
                         <th>{{ $curso->cantidadAlumnos}}</th>
                         <th>{{ $curso->anio}}</th>
                       
-                       <th><center><a class="btn btn-primary" href="/curso/{{$curso->id}}/edit">Ingresar Notas</a></center></th>
+                       <th><center><a class="btn btn-primary" href="/notas/create?year={{$year}}&claseId={{$claseId}}&gradoId={{$curso->id}}">Ingresar Notas</a></center></th>
                         
                     </tr>
                     @endforeach
