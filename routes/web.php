@@ -113,3 +113,6 @@ Route::resource('grados', 'GradoController');
 Route::resource('alumnos', 'AlumnoController');
 Route::resource('matriculas', 'MatriculaController');
 Route::resource('notas',  'NotaController');
+
+Route::get('reportecuadros',  'ReporteNotaController@reporteCuadros');
+Route::get('boletascalificaciones',  'ReporteNotaController@boletaCalficaciones');

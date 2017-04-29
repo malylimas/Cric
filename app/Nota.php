@@ -29,6 +29,9 @@ class Nota extends Model
         'cuartoParcial' => 'integer',
     ];
 
+    public function clase(){
+        return $this->belongsTo('App\Clase');
+    }
     public function calcularPromedio(){
 
         $this->promedio = ($this->primerParcial + $this->segundoParcial + $this->tercerParcial + $this->cuartoParcial )/4  ;
