@@ -91,7 +91,7 @@ window.loadChildCombo = (function () {
             loadData(childElement,childData,value,childId,childDisplay)
         })
 
-         loadData(childElement,childData,,childId,childDisplay)
+         loadData(childElement,childData,fatherElement.val(),childId,childDisplay)
     };
 })();
 
