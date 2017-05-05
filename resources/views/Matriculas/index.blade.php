@@ -2,11 +2,17 @@
 @section('content')
 <div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-8">
+            <form action="/matriculas/create" class="form-inline">
+                <div class="form-group">
+                    <label for="exampleInputName2">Identidad</label>
+                    <input type="text" name="identidad" class="form-control" id="exampleInputName2" placeholder="Identidad" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Crear Matricula</button>
+            </form>
 
 
-
-                <a class="btn btn-primary" href="/matriculas/create"> Crear Matricula</a>
            
         </div>
     </div>

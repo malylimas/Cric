@@ -24,15 +24,15 @@ class MatriculaController extends Controller
     /**
     * Show the form for creating a new resource.
     *
-    * @return \Illuminate\Http\Response
-    */
-    public function create()
+    * @return \Illuminate\View\View
+     */
+    public function create(Request $request)
     {
         //
-        $alumnos = Alumno::all();
+        $alumno = Alumno::where('identidad',$request->identidad)->first();
         $grados = Grado::all();
         
-        return view('Matriculas.crear')->with('alumnos',$alumnos)->with('grados',$grados);
+        return view('Matriculas.crear')->with('alumno',$alumno)->with('grados',$grados);
     }
     
     /**
