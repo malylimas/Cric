@@ -18,13 +18,9 @@
    
     <div class="form-group row">
     <label for="dptoSelect">Alumno</label>
-    <select id="dptoSelect" name="alumno_id" class="form-control">
-    
-     @foreach($alumnos as $alumno)
-      
-       <option value="{{$alumno->id}}" {{ $alumno->id === $matricula->alumno_id ? 'selected' : '' }}> {{$alumno->nombre}} </option>
-     @endforeach
-      </select>
+    <input id="dptoSelect"  class="form-control" disabled value="{{$matricula->alumno->nombre}}"/>
+    <input  name="alumno_id" type="hidden"   value="{{$matricula->alumno_id}}"/>
+
    </div>
 
    <div class="form-group row">
