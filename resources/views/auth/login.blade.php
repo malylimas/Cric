@@ -5,7 +5,8 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><img src="img/imagenHTML.jpg" border="0" width="50" height="50">
+                <div class="panel-heading">
+                    <i class="material-icons">account_circle</i>
                 </div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
