@@ -9,12 +9,18 @@
     
     <div class = "row">
           <div class="contianer">
-          <table class="table table-bordered">
+          <table class="table table-responsive table-striped table-hover">
             <thead>
               <tr>
-                <th><center><b>#</center></b></th>
-                <th><center><b>Nombre</center></b></th>
-                <th><center><b>Acciones</center></b></th>
+                <th>
+                    #
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Acciones
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -25,10 +31,12 @@
                
                 
                 <td>
-                <center>
+
                   <div class="btn-group" role="group" aria-label="...">
-                     <a type="button" class="btn btn-primary" href="ingresocuentas/{{$cuenta_ingreso->id}}/edit">Modificar</a>
-                     </center>
+                     <a  href="ingresocuentas/{{$cuenta_ingreso->id}}/edit">
+                         <i class="material-icons text-info">edit</i>
+                     </a>
+                  </div>
                 </td>
               </tr>
               

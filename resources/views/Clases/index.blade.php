@@ -1,48 +1,53 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 @section('content')
-<div>
-    <div class="row">
-        <div class="col-md-4">
-
+    <div>
+        <div class="row">
+            <div class="col-md-4">
 
 
                 <a class="btn btn-primary" href="/clases/create"> Crear Clases</a>
-           
+
+            </div>
         </div>
-    </div>
-    </br>
-    <div class="row">
-        <div class="contianer">
-            <table class="table table-bordered">
-                <thead>
+        </br>
+        <div class="row">
+            <div class="contianer">
+                <table class="table table-responsive table-striped table-hover">
+                    <thead>
                     <tr>
-                        <th>
-                            <center><b>#</center></b></th>
+                        <th>#</th>
 
                         <th>
-                            <center><b>Nombre</center></b></th>
+                            Nombre
+                        </th>
 
-                            <th>
-                            <center><b>Acciones</center></b></th>
+                        <th>
+                           Acciones
+                        </th>
 
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     @foreach ($clases as $clase)
-                    <tr>
-                        <th>{{ $clase->id }}</th>
-                        <th>{{ $clase->nombre}}</th>
-                        
-                        <th><center><a class="btn btn-primary" href="/clases/{{$clase->id}}/edit">Modificar</a></center></th>
-                        
-                    </tr>
+                        <tr>
+                            <td>{{ $clase->id }}</td>
+                            <td>{{ $clase->nombre}}</td>
+
+                            <td>
+                                <a  href="/clases/{{$clase->id}}/edit">
+                                    <i class="text-info material-icons">edit</i>
+                                </a>
+
+                            </td>
+
+                        </tr>
                     @endforeach
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+            {{ $clases->links() }}
         </div>
-        {{ $clases->links() }}
     </div>
-</div>
 
 
 @endsection

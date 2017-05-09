@@ -19,28 +19,32 @@
     </br>
     <div class="row">
         <div class="contianer">
-            <table class="table table-bordered">
+            <table class="table table-responsive table-striped table-hover">
                 <thead>
                     <tr>
                         <th>
-                            <center><b>#</center></b></th>
+                            #
+                        </th>
 
                         <th>
-                            <center><b>Alumno</center></b></th>
+                            Alumno
+                        </th>
 
                             <th>
-                            <center><b>Grado</center></b></th>
+                                Grado
+                            </th>
+
+                            
+                            <th>Año</th>
 
                             
                             <th>
-                            <center><b>Año</center></b></th>
-
-                            
-                            <th>
-                            <center><b>Fecha</center></b></th>
+                                Fecha
+                            </th>
 
                             <th>
-                            <center><b>Acciones</center></b></th>
+                                Acciones
+                            </th>
 
                     </tr>
                 </thead>
@@ -53,7 +57,13 @@
                         <th>{{ $matricula->ano}}</th>
                         <th>{{ $matricula->fecha->format('d/m/Y')}}</th>
                         
-                        <th><center><a class="btn btn-primary" href="/matriculas/{{$matricula->id}}/edit">Modificar</a></center></th>
+                        <th>
+
+                                <a href="/matriculas/{{$matricula->id}}/edit">
+                                    <i class="material-icons text-info">edit</i>
+                                </a>
+
+                        </th>
                         
                     </tr>
                     @endforeach

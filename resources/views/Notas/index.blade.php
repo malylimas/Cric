@@ -31,24 +31,29 @@
     @endif
     <div class="row">
         <div class="contianer">
-            <table class="table table-bordered">
+            <table class="table table-responsive table-striped table-hover">
                 <thead>
                     <tr>
                         <th>
-                            <center><b>#</center></b></th>
+                            #
+                        </th>
 
                         <th>
-                            <center><b>Grado</center></b></th>
+                            Grado
+                        </th>
 
                             <th>
-                            <center><b>Cantidad de Alumnos</center></b></th>
+                                Cantidad de Alumnos
+                            </th>
 
                             
                             <th>
-                            <center><b>Año</center></b></th>                        
+                                Año
+                            </th>
                          
                             <th>
-                            <center><b>Acciones</center></b></th>
+                                Acciones
+                            </th>
 
                     </tr>
                 </thead>
@@ -60,7 +65,13 @@
                         <th>{{ $curso->cantidadAlumnos}}</th>
                         <th>{{ $curso->anio}}</th>
                       
-                       <th><center><a class="btn btn-primary" href="/notas/create?year={{$year}}&claseId={{$claseId}}&gradoId={{$curso->id}}">Ingresar Notas</a></center></th>
+                       <th>
+
+                               <a  href="/notas/create?year={{$year}}&claseId={{$claseId}}&gradoId={{$curso->id}}">
+                                  <i class="text-info material-icons">edit</i>
+                               </a>
+
+                       </th>
                         
                     </tr>
                     @endforeach

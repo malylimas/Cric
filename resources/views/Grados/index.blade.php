@@ -1,48 +1,53 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 @section('content')
-<div>
-    <div class="row">
-        <div class="col-md-4">
-
+    <div>
+        <div class="row">
+            <div class="col-md-4">
 
 
                 <a class="btn btn-primary" href="/grados/create"> Crear Grados</a>
-           
+
+            </div>
         </div>
-    </div>
-    </br>
-    <div class="row">
-        <div class="contianer">
-            <table class="table table-bordered">
-                <thead>
+        </br>
+        <div class="row">
+            <div class="contianer">
+                <table class="table table-responsive table-striped table-hover">
+                    <thead>
                     <tr>
                         <th>
-                            <center><b>#</center></b></th>
+                            #
+                        </th>
 
                         <th>
-                            <center><b>Nombre</center></b></th>
+                            Nombre
+                        </th>
+                            Acciones
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($grados as $grado)
+                        <tr>
+                            <th>{{ $grado->id }}</th>
+                            <th>{{ $grado->nombre}}</th>
 
                             <th>
-                            <center><b>Acciones</center></b></th>
+                                <a href="/grados/{{$grado->id}}/edit">
+                                    <i class="material-icons text-info">edit</i>
+                                </a>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($grados as $grado)
-                    <tr>
-                        <th>{{ $grado->id }}</th>
-                        <th>{{ $grado->nombre}}</th>
-                        
-                        <th><center><a class="btn btn-primary" href="/grados/{{$grado->id}}/edit">Modificar</a></center></th>
-                        
-                    </tr>
+                            </th>
+
+                        </tr>
                     @endforeach
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+            {{ $grados->links() }}
         </div>
-        {{ $grados->links() }}
     </div>
-</div>
 
 
 @endsection

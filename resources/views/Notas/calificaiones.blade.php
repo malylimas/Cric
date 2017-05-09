@@ -18,7 +18,7 @@
         <h3>Alumno: {{$alumno->nombre}}</h3>
       </div>
       <div class="row">
-        <table class="table table-bordered"
+        <table class="table table-bordered">
           <thead>
             <tr>           
               <th>Clase</th>

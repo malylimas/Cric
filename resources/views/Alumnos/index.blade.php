@@ -13,21 +13,30 @@
     </br>
     <div class="row">
         <div class="contianer">
-            <table class="table table-bordered">
+            <table class="table table-responsive table-striped table-hover">
                 <thead>
                     <tr>
                         <th>
-                            <center><b>#</center></b></th>
+                            #
+                        </th>
                         <th>
-                            <center><b>Identidad</center></b></th>
-                        <th><center><b>Nombre</center></b></th>
-                        <th><center><b>Telefono</center></b></th>
-                        <th><center><b>Encargado</center></b></th>
-                        <th><center><b>Departamento</center></b></th>
-                        <th><center><b>Municipio</center></b></th>
+                            Identidad
+                        </th>
+                            Nombre
+                        </th>
+                        <th>
+                            Telefono
+                        </th>
+                            Encargado
+                        </th>
+                            Departamento
+                        </th>
+                            Municipio
+                        </th>
 
                         <th>
-                            <center><b>Acciones</center></b></th>
+                            Acciones
+                        </th>
 
                     </tr>
                 </thead>
@@ -43,7 +52,9 @@
                         <th>{{ $alumno->municipio->Nombre_Municipio}}</th>
 
                         <th>
-                            <center><a class="btn btn-primary" href="/alumnos/{{$alumno->id}}/edit">Modificar</a></center>
+                            <a  href="/alumnos/{{$alumno->id}}/edit">
+                                <i class="material-icons text-info">edit</i>
+                            </a>
                         </th>
 
                     </tr>

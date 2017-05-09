@@ -1,75 +1,64 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 @section('content')
-<div>
-  <div class="row">
-    <div class="col-md-4">
-      <form action="factura/create" method="GET" class="form-inline">
-        <div class="form-group">
-          <label class="sr-only" for="exampleInputEmail3">Numero de Identidad del Paciente</label>
-          <input type="text" required name="numeroIdentidad" class="form-control" id="exampleInputEmail3" placeholder="Identidad del Paciente">
+    <div>
+        <div class="row">
+            <div class="col-md-4">
+                <form action="factura/create" method="GET" class="form-inline">
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail3">Numero de Identidad del Paciente</label>
+                        <input type="text" required name="numeroIdentidad" class="form-control" id="exampleInputEmail3"
+                               placeholder="Identidad del Paciente">
+                    </div>
+                    <button class="btn btn-primary"> Crear Factura</button>
+                </form>
+            </div>
         </div>
-        <button class="btn btn-primary"> Crear Factura</button>
-      </form>
+        </br>
+        <div class="row">
+            <div class="contianer">
+                <table class="table table-responsive table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Identidad</th>
+                        <th>Nombre Paciente</th>
+                        <th>Fecha/Hora</th>
+                        <th>Descuento</th>
+                        <th>SubTotal</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($facturas as $factura)
+                        <tr>
+                            <td>{{ $factura->id }}</td>
+                            <td>{{ $factura->paciente->Identidad}}</td>
+                            <td>{{ $factura->paciente->Nombre_Paciente}}</td>
+                            <td>{{ $factura->Fecha_Hora}}</td>
+                            <td>{{ $factura->descuento->Nombre}}</td>
+                            <td>{{ $factura->SubTotal}}</td>
+                            <td>{{ $factura->Total}}</td>
+                            <td>
+
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <a  href="modificar/{{$factura->id}}"><i
+                                                class="material-icons text-info">edit</i> </a>
+                                    <a href="/factura/imprimir/{{$factura->id}}"><i class="material-icons">print</i>
+                                    </a>
+                                </div>
+
+                            </td>
+
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+            {{ $facturas->links() }}
+        </div>
     </div>
-  </div>
-  </br>
-  <div class="row">
-      <div class="contianer">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>
-              <center><b>#</center></b></th>
-            <th>
-              <center><b>Identidad</center></b></th>
-            <th>
-              <center><b>Nombre Paciente</center></b></th>
-            <th>
-              <center><b>Fecha_Hora</center></b></th>
-            <th>
-              <center><b>Descuento</center></b></th>
-            <th>
-              <center><b>SubTotal</center></b></th>
-            <th>
-              <center><b>Total</center></b></th>
-            <th>
-              <center><b>Acciones</center></b></th>
-            <th>
-              <center><b>Imprimir</center></b></th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach ($facturas as $factura)
-          <tr>
-            <th>{{ $factura->id }}</th>
-            <th>{{ $factura->paciente->Identidad}}</th>
-            <th>{{ $factura->paciente->Nombre_Paciente}}</th>
-            <td>{{ $factura->Fecha_Hora}}</td>
-            <td>{{ $factura->descuento->Nombre}}</td>
-            <td>{{ $factura->SubTotal}}</td>
-            <td>{{ $factura->Total}}</td>
-            <td>
-              <center>
-                <div class="btn-group" role="group" aria-label="...">
-                  <a type="button" class="btn btn-primary" href="modificar/{{$factura->id}}">Modificar</a>
-                </div>
-              </center>
-            </td>
-            <td>
-              <center>
-                <div class="panel-heading">
-                  <a href="/factura/imprimir/{{$factura->id}}"> <img src="/img/ImagenHTML2.jpg" border="0" width="30" height="30"></a>
-                </div>
-              </center>
-            </td>
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
-      </div>
-      {{ $facturas->links() }} 
     </div>
-  </div>
-</div>
 
 @endsection

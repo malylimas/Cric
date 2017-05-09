@@ -6,33 +6,35 @@
   <br>
   <div class="row">
     <div class="contianer">
-      <table class="table table-bordered">
+      <table class="table table-responsive table-striped table-hover">
         <thead>
           <tr>
             <th>
-              <center><b>#</b></center>
+              #
             </th>
             <th>
-              <center><b>Nombre</b></center>
+              Nombre
             </th>
                <th>
-              <center><b>Imprimir</b></center>
+                 Acciones
+               </th>
           </tr>
         </thead>
         <tbody>
           @foreach ($proveedores as $proveedore)
           <tr>
-            <th scope="row">{{ $proveedore->id }}</th>
+            <td scope="row">{{ $proveedore->id }}</td>
             <td>{{ $proveedore->Nombre }}</td>
 
             <td>
-              <center>
+
                 <div class="btn-group" role="group" aria-label="...">
-                  <a type="button" class="btn btn-primary" href="proveedores/{{$proveedore->id}}/edit">Modificar</a> 
-                  @if($proveedore->trashed())
-                 @endif
+                  <a href="proveedores/{{$proveedore->id}}/edit">
+                    <i class="text-info material-icons">edit</i>
+                  </a>
+
                 </div>
-              </center>
+
 
             </td>
 
