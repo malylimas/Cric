@@ -9,6 +9,7 @@ window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
 
+
 require('bootstrap-sass');
 
 /**
@@ -39,6 +40,8 @@ require('bootstrap-datepicker');
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
+require("bootstrap-material-design");
+$.material.init();
 
 // import Echo from "laravel-echo"
 

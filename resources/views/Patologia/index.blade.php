@@ -9,13 +9,13 @@
     
     <div class = "row">
           <div class="contianer">
-          <table class="table table-bordered">
+          <table class="table table-responsive table-striped table-hover">
             <thead>
               <tr>
-                <th><center><b>#</center></b></th>
-                <th><center><b>Nombre De Patología</center></b></th>
-                <th><center><b>Tipo De Terapia</center></b></th>
-                <th><center><b>Acciones</center></b></th>
+                <th>#</th>
+                <th>Nombre De Patología</th>
+                <th>Tipo De Terapia</th>
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -26,10 +26,12 @@
                 <td>{{ $Patologia->terapia->Nombre}}</td>
                 
                 <td>
-                <center>
+
                   <div class="btn-group" role="group" aria-label="...">
-                     <a type="button" class="btn btn-primary" href="modificar/{{$Patologia->id}}">Modificar</a>
-                     </center>
+                     <a href="modificar/{{$Patologia->id}}">
+                         <i class="text-info material-icons">edit</i>
+                     </a>
+                  </div>
 
                 </td>
               </tr>

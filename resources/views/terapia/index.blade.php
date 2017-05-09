@@ -10,13 +10,13 @@
     
     <div class = "row">
           <div class="contianer">
-          <table class="table table-bordered">
+          <table class="table table-responsive">
             <thead>
               <tr>
-                <th><center><b>#</center></b></th>
-                <th><center><b>Nombre</center></b></th>
-                <th><center><b>Precio</center></b></th>
-                <th><center><b>Acciones</center></b></th>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -27,10 +27,12 @@
                 <td>{{ $terapia->Precio }}</td>
                 
                 <td>
-                <center>
+
                   <div class="btn-group" role="group" aria-label="...">
-                     <a type="button" class="btn btn-primary" href="modificar/{{$terapia->id}}">Modificar</a>
-                     </center>
+                     <a  href="modificar/{{$terapia->id}}">
+                         <i class="material-icons text-info" >edit</i>
+                     </a>
+                  </div>
                 </td>
               </tr>
               

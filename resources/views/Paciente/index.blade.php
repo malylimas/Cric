@@ -14,21 +14,21 @@
     
     <div class = "row">
           <div class="contianer">
-          <table class="table table-bordered">
+          <table class="table table-responsive table-striped table-hover ">
             <thead>
               <tr>
-                <th><center><b>#</center></b></th>
-                <th><center><b>Identidad</center></b></th>
-                <th><center><b>Nombre Paciente</center></b></th>
-                <th><center><b>Direccion Actual</center></b></th>
-                <th><center><b>Fecha de Nacimiento</center></b></th>
-                <th><center><b>Edad</center></b></th>
-                <th><center><b>Teléfono</center></b></th>
-                <th><center><b>Ocupación</center></b></th>
-                <th><center><b>Nivel Educativo</center></b></th>
-                <th><center><b>Departamento</center></b></th>
-                <th><center><b>Municipio</center></b></th>
-                <th><center><b>Acciones</center></b></th>
+                <th>#</th>
+                <th>Identidad</th>
+                <th>Nombre Paciente</th>
+                <th>Direccion Actual</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Edad</th>
+                <th>Teléfono</th>
+                <th>Ocupación</th>
+                <th>Nivel Educativo</th>
+                <th>Departamento</th>
+                <th>Municipio</th>
+                <th>Acciones</th>
                
                 
               </tr>
@@ -37,7 +37,7 @@
             @foreach ($pacientes as $paciente)
               <tr>
 
-                <th scope="row">{{ $paciente->id }}</th>
+                <th >{{ $paciente->id }}</th>
                 <td>{{ $paciente->Identidad }}</td>
                 <td>{{ $paciente->Nombre_Paciente }}</td>
                 <td>{{ $paciente->Direccion_Actual }}</td>
@@ -51,8 +51,10 @@
                
                 <td>
                   <div class="btn-group" role="group" aria-label="...">
-                    <a type="button" class="btn btn-primary" href="modificar/{{$paciente->id}}">Modificar</a>
-                   
+                    <a  href="modificar/{{$paciente->id}}">
+                        <i class="material-icons text-info">edit</i>
+                    </a>
+                  </div>
                 </td>
                 </tr>
               

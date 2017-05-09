@@ -1,68 +1,75 @@
 @extends('layouts.app') @section('content')
-<div>
-  <div class="row">
-    <a class="btn btn-primary" href="crear"> Crear Terapista</a>
-  </div>
-  <br>
-  <div class="row">
-    <div class="contianer">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>
-              <center><b>#</b></center>
-            </th>
-            <th>
-              <center><b>Nombre</b></center>
-            </th>
-            <th>
-              <center><b>Teléfono</b</center></th>
-              <th><center><b>Dirección</b></center>
-            </th>
-            <th>
-              <center><b>Acciones</b></center>
-            </th>
-            <th>
-              <center><b> Disponibilidad</b></center>
-            </th>
+    <div>
+        <div class="row">
+            <a class="btn btn-primary" href="crear"> Crear Terapista</a>
+        </div>
+        <br>
+        <div class="row">
+            <div class="contianer">
+                <table class="table table-striped table-hover table-responsive">
+                    <thead>
+                    <tr class="text-center">
+                        <th>#</th>
+                        </th>
+                        <th><span class="text-center">Nombre</span></th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>
+                            Acciones
+                        </th>
+                        <th>
+                            <b> Disponibilidad</b>
+                        </th>
 
 
-          </tr>
-        </thead>
-        <tbody>
-          @foreach ($terapistas as $terapista)
-          <tr>
-            <th scope="row">{{ $terapista->id }}</th>
-            <td>{{ $terapista->Nombre }}</td>
-            <td>{{ $terapista->Telefono }}</td>
-            <td>{{ $terapista->Direccion }}</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($terapistas as $terapista)
+                        <tr>
+                            <th scope="row">{{ $terapista->id }}</th>
+                            <td>{{ $terapista->Nombre }}</td>
+                            <td>{{ $terapista->Telefono }}</td>
+                            <td>{{ $terapista->Direccion }}</td>
 
-            <td>
-              <center>
-                <div class="btn-group" role="group" aria-label="...">
-                  <a type="button" class="btn btn-primary" href="modificar/{{$terapista->id}}">Modificar</a> @if($terapista->trashed())
-                  <a type="button" class="btn btn-success" href="habilitar/{{$terapista->id}}">Activar</a> @else
-                  <a type="button" class="btn btn-danger" href="eliminar/{{$terapista->id}}">Dar de Baja</a> @endif
-                </div>
-              </center>
-
-            </td>
-
-            <td>
-              <center>
-                <div class="btn-group" role="group" aria-label="...">
-                  <a type="button" class="btn btn-primary" href="disponibilidad/{{$terapista->id}}/?tipo=d&fechaDiaria={{$now}}">Disponibilidad</a>
-                </div>
-              </center>
-          </tr>
+                            <td>
+                                <div class="btn-group-sm" role="group">
+                                    <a class="" href="modificar/{{$terapista->id}}">
+                                        <i class="material-icons text-info">edit</i>
+                                    </a>
 
 
+                                @if($terapista->trashed())
+                                    <a  href="habilitar/{{$terapista->id}}">
+                                        <i class="material-icons text-primary">check</i>
+                                    </a>
+                                @else
+                                    <a  href="eliminar/{{$terapista->id}}">
+                                        <i class="material-icons text-danger">delete</i>
+                                    </a>
+                                @endif
 
-          @endforeach
-        </tbody>
-      </table>
+                                </div>
+
+
+                            </td>
+
+                            <td>
+
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <a type="button" class="btn btn-primary"
+                                       href="disponibilidad/{{$terapista->id}}/?tipo=d&fechaDiaria={{$now}}">Disponibilidad</a>
+                                </div>
+                            </td>
+                        </tr>
+
+
+
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+            {{ $terapistas->links() }}
+        </div>
     </div>
-    {{ $terapistas->links() }}
-  </div>
-</div>
 @endsection
