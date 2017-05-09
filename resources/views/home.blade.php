@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="jumbotron">
-  <h1> Sistema de Rehabilitacion integral !</h1>
+  <h1> Sistema de Rehabilitacion Integral !</h1>
   <p></p>
     
   
